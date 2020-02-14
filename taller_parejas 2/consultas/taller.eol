@@ -2,8 +2,8 @@
 
 //validateDB().println();
 
-
-validateDbByProvider().println();
+validateRules().println();
+//validateDbByProvider().println();
 
 
 
@@ -68,7 +68,52 @@ var serverName = "";
 
 
 //punto 3
+
+operation validateRules(){
+	var result = new List<String>();
+	var reglas = new List<String>(); 
+	reglas.Add(List{"Custom TCP", "TCP", "1024 to 65535"});
+	reglas.Add(List{"Custom UDP", "UDP", "1024 to 65535"});
+	reglas.Add(List{"DNS UDP", "UDP", "53"});
+	reglas.Add(List{"DNS TCP", "TCP", "53"});
+	reglas.Add(List{"HTTP", "TCP", "80"});
+	reglas.Add(List{"HTTPS", "TCP", "443"});
+	reglas.Add(List{"SSH", "TCP", "22"});
+	reglas.Add(List{"NFS", "TCP", "2049"});
+	reglas.Add(List{"PostgresSQL", "TCP", "5432"});
+	reglas.Add(List{"MySQL/Aurora/MariaDB", "TCP", "3306"});
+	reglas.Add(List{"POP3", "TCP", "110"});
+	reglas.Add(List{"IMAP", "TCP", "143"});
+	reglas.Add(List{"LDAP", "TCP", "389"});
+	reglas.Add(List{"SMTP", "TCP", "25"});
+	reglas.Add(List{"Oracle", "TCP", "1521"});
+	
+	
+	for (rule in Rules.allInstances) {
+		for (regla in reglas){
+			if(rule.type = regla[0]){
+				if(rule.protocol = regla[1] and rule.portRange = regla[2]){
+					result.Add("la regla " + rule.type + " esta correcta");
+				}
+				else{
+					result.Add("la regla " + rule.type + " esta correcta");
+				}
+				
+			}
+		}
+	}
+	if (result.size() > 0){
+		return result;	
+	}
+	else{
+		return "No se evaluaron reglas";
+	}
+	
+}
 operation validateDbByProvider(){
+
+var string[2] = new String();
+
 
 for (proveedor in Proveedor.allInstances) { 
 
@@ -83,3 +128,4 @@ var providerName = proveedor.nombre;
 } 
 
 }
+
