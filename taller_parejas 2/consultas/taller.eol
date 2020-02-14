@@ -2,9 +2,8 @@ validateCIDR().println();
 
 validateDB().println();
 
-//validateRules().println();
 validateAZ().println();
-//validateDbByProvider().println();
+
 validateRules().println();
 
 validateDbByProvider().println();

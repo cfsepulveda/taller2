@@ -12,9 +12,9 @@
   </ambientedesplegue>
   <vpc name="internet">
     <vpc name="SIstemas">
-      <rules type="Custom TCP" protocol="MAL" portRange="1024 to 65537" Source="localhost" description="Custom TCP 1024 to 65535"/>
+      <rules type="Custom TCP" protocol="TCP" portRange="1024 to 65535" Source="localhost" description="Custom TCP 1024 to 65535"/>
       <rules type="Custom UDP" protocol="UDP" portRange="1024 to 65535" Source="localhost" description="Custom UDP 1024 to 65535"/>
-      <rules type="DNS UDP" protocol="UDP" portRange="5000" Source="lcoalhost" description="DNS UDP 53"/>
+      <rules type="DNS UDP" protocol="UDP" portRange="53" Source="lcoalhost" description="DNS UDP 53"/>
       <subred name="dev" cidr="192.168.0.1/24"/>
       <securitygroup name="Grupo seguridad 1" description="Grupo seguridad 1"/>
     </vpc>
