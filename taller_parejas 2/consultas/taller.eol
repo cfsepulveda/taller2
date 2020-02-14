@@ -2,7 +2,8 @@
 
 //validateDB().println();
 
-validateRules().println();
+//validateRules().println();
+validateAZ().println();
 //validateDbByProvider().println();
 
 
@@ -177,5 +178,80 @@ operation validateDbByProvider() {
 	} else {
 		return "Los servidores de bases de datos : " + serverName + "No cumplen las condiciones";
 	}
+	
 }
 
+//punto 5
+
+operation validateAZ(){
+	var result = new List<String>();
+	var reglas = new List<String>(); 
+	reglas.Add(List{"AWS", "us-east-2", "EE.UU. Este (Ohio)"});
+	reglas.Add(List{"AWS", "us-east-1", "US East (N. Virginia)"});
+	reglas.Add(List{"AWS", "us-west-1", "EE.UU. Oeste (Norte de California)"});
+	reglas.Add(List{"AWS", "us-west-2", "EE.UU. Oeste (Oregón)"});
+	reglas.Add(List{"AWS", "ap-east-1", "Asia Pacífico (Hong Kong)"});
+	reglas.Add(List{"AWS", "ap-south-1", "Asia Pacífico (Mumbai)"});
+	reglas.Add(List{"AWS", "ap-northeast-3", "Asia Pacífico (Osaka-local)"});
+	reglas.Add(List{"AWS", "ap-northeast-2", "Asia Pacífico (Seúl)"});
+	reglas.Add(List{"AWS", "ap-southeast-1", "Asia Pacífico (Singapur)"});
+	reglas.Add(List{"AWS", "ap-southeast-2", "Asia Pacífico (Sídney)"});
+	reglas.Add(List{"AWS", "ap-northeast-1", "Asia Pacífico (Tokio)"});
+	reglas.Add(List{"AWS", "ca-central-1", "Canadá (Central)"});
+	reglas.Add(List{"AWS", "eu-central-1", "Europa (Fráncfort)"});
+	reglas.Add(List{"AWS", "eu-west-1", "Europa (Irlanda)"});
+	reglas.Add(List{"AWS", "eu-west-2", "Europa (Londres)"});
+	reglas.Add(List{"AWS", "eu-west-3", "Europa (París)"});
+	reglas.Add(List{"AWS", "eu-north-1", "Europa (Estocolmo)"});
+	reglas.Add(List{"AWS", "me-south-1", "Medio Oriente (Baréin)"});
+	reglas.Add(List{"AWS", "sa-east-1", "América del Sur (São Paulo)"});
+	reglas.Add(List{"GCP", "asia-east1", "Condado de Changhua, Taiwán"});
+	reglas.Add(List{"GCP", "asia-east2", "Hong Kong"});
+	reglas.Add(List{"GCP", "asia-northeast1", "Tokio, Japón"});
+	reglas.Add(List{"GCP", "asia-northeast2", "Osaka, Japón"});
+	reglas.Add(List{"GCP", "asia-south1", "Bombay, India"});
+	reglas.Add(List{"GCP", "asia-southeast1", "Jurong West, Singapur"});
+	reglas.Add(List{"GCP", "australia-southeast1", "Sídney, Australia"});
+	reglas.Add(List{"GCP", "europe-north1", "Hamina, Finlandia"});
+	reglas.Add(List{"GCP", "europe-west1", "Saint-Ghislain, Bélgica"});
+	reglas.Add(List{"GCP", "europe-west2", "Londres, Inglaterra, Reino Unido"});
+	reglas.Add(List{"GCP", "europe-west3", "Fráncfort, Alemania"});
+	reglas.Add(List{"GCP", "europe-west4", "Puerto de Ems, Países Bajos"});
+	reglas.Add(List{"GCP", "europe-west6", "Zúrich, Suiza"});
+	reglas.Add(List{"GCP", "northamerica-northeast1", "Montreal, Quebec, Canadá"});
+	reglas.Add(List{"GCP", "southamerica-east1", "Osasco (São Paulo), Brasil"});
+	reglas.Add(List{"GCP", "us-central1", "Council Bluffs, Iowa, EE.UU."});
+	reglas.Add(List{"GCP", "us-east1", "Moncks Corner, Carolina del Sur, EE.UU."});
+	reglas.Add(List{"GCP", "us-east4", "Ashburn, Virginia, EE.UU."});
+	reglas.Add(List{"GCP", "us-west1", "The Dalles, Oregón, EE.UU."});
+	reglas.Add(List{"GCP", "us-west2", "Los Ángeles, California, EE.UU."});
+	
+	
+	
+	for (proveedor in Proveedor.AllInstances.first()) {
+			for (gateway in proveedor.vpc) {
+				for (vpc in gateway.vpc) {
+					for (subred in vpc.subred) {
+						for (regla in reglas){
+							if(proveedor.nombre.name = regla[0] and subred.az = regla[1]){
+								result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.nombre.name + " " + subred.az  + " esta correcta");
+							}
+							else{
+								result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.nombre.name + " " + subred.az  + " no es válida");
+							}
+						
+							
+						}
+					}
+				}
+			}
+		
+	}
+	if (result.size() > 0){
+		return result;	
+	}
+	else{
+		return "No se evaluaron reglas";
+	}
+	
+}
