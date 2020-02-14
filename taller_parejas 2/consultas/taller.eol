@@ -103,7 +103,7 @@ operation validateRules(){
 					result.Add("la regla " + rule.type + " esta correcta");
 				}
 				else{
-					result.Add("la regla " + rule.type + " esta correcta");
+					result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
 				}
 				
 			}
