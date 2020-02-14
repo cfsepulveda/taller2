@@ -110,22 +110,72 @@ operation validateRules(){
 	}
 	
 }
-operation validateDbByProvider(){
+//punto 4
+operation validateDbByProvider() {
+	var isError = false;
+	var serverName = "";
+	if (Proveedor.allInstances().first().nombre.name = "AWS") {
+		for (ambientedesplegue in Proveedor.allInstances().first().ambientedesplegue) {
+			for (ambiente in ambientedesplegue) {
+				for (servidor in ambiente.servidor) {
+					if (servidor.isTypeOf(ServidorBaseDeDatos)) {
+						if (servidor.tipo.name = "RELACIONAL") {
+							if (servidor.sistemaManejador.name = "PostgreSQL"
+								or servidor.sistemaManejador.name = "Oracle"
+								or servidor.sistemaManejador.name = "Aurora"
+								or servidor.sistemaManejador.name = "MariaDB"
+								or servidor.sistemaManejador.name = "SQLServer"
+								or servidor.sistemaManejador.name = "MySQL") {} else {
+								isError = true;
+							}
+						} else {
+							if (servidor.sistemaManejador.name = "DocumentDB"
+								or servidor.sistemaManejador.name = "Dynamo"
+								or servidor.sistemaManejador.name = "Cassandra"
+								or servidor.sistemaManejador.name = "Redis") {} else {
+								isError = true;
+							}
+						}
+						if (isError) {
+							serverName = serverName + servidor.nombre + " ";
+						}
+					}
+				}
+			}
+		}
+	} else {
 
-var string[2] = new String();
+		for (ambientedesplegue in Proveedor.allInstances().first().ambientedesplegue) {
+			for (ambiente in ambientedesplegue) {
+				for (servidor in ambiente.servidor) {
+					if (servidor.isTypeOf(ServidorBaseDeDatos)) {
+						if (servidor.tipo.name = "RELACIONAL") {
+							if (servidor.sistemaManejador.name = "PostgreSQL"
+								or servidor.sistemaManejador.name = "SQLServer"
+								or servidor.sistemaManejador.name = "MySQL") {} else {
+								isError = true;
+							}
+						} else {
+							if (servidor.sistemaManejador.name = "PostgreSQL"
+								or servidor.sistemaManejador.name = "SQLServer"
+								or servidor.sistemaManejador.name = "MySQL") {
+								isError = true;
+							} else {}
+						}
+						if (isError) {
+							serverName = serverName + servidor.nombre + " ";
+						}
+					}
+				}
+			}
+		}
 
+	}
 
-for (proveedor in Proveedor.allInstances) { 
-
-var providerName = proveedor.nombre;
-
-//providerName.println();
-
-
-
-
-	
-} 
-
+	if (serverName.isEmpty()) {
+		return "todos los servidores de bases de datos cumplen las condiciones";
+	} else {
+		return "Los servidores de bases de datos : " + serverName + "No cumplen las condiciones";
+	}
 }
 
