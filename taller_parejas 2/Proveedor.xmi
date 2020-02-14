@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cloud_computing:Proveedor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cloud_computing="https://uniandes.edu.co/cloud_computing">
+  <conexion nombreConexion="Login">
+    <atributos nombre="user" tipoDato="text" tipoConexion="Basica"/>
+    <atributos nombre="password" tipoDato="password" tipoConexion="basica"/>
+  </conexion>
+  <ambientedesplegue>
+    <servidor xsi:type="cloud_computing:ServidorAplicacion" nombre="TOMCAT" servidor="//@ambientedesplegue.0/@servidor.2"/>
+    <servidor xsi:type="cloud_computing:ServidorBaseDeDatos" nombre="PostgresSQL" servidor="//@ambientedesplegue.0/@servidor.2"/>
+    <servidor xsi:type="cloud_computing:ServidorAlmacenamiento" nombre="Repositorios" tamanoInicial="50000GB"/>
+    <servidor xsi:type="cloud_computing:ServidorAplicacion" nombre="GLASSFISH" servidor="//@ambientedesplegue.0/@servidor.2"/>
+  </ambientedesplegue>
+  <vpc name="internet">
+    <vpc name="SIstemas">
+      <subred name="dev" cidr="254.168.0.1"/>
+    </vpc>
+  </vpc>
+</cloud_computing:Proveedor>

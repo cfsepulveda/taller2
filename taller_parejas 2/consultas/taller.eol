@@ -1,0 +1,85 @@
+//validarCIDR().println();
+
+//validateDB().println();
+
+
+validateDbByProvider().println();
+
+
+
+//Punto
+operation validateCIDR(): String {
+	var isError = false;
+	var subredName = "";
+	for (subred in Subred.allInstances) {
+		var count = 0;
+
+		for (number in subred.cidr.split("\\.")) {
+			if (count < 3) {
+				if (subred.cidr.split("\\.").size() <>4 or number.asInteger() >= 255) {
+					"error".println();
+					isError = true;
+				}
+			}
+			count = count++;
+		}
+
+		if (subred.cidr.split("\\/").size() <> 2) {
+			isError = true;
+		} else if (subred.cidr.split("\\/")[1].isInteger() = false) {
+			isError = true;
+		} else if (subred.cidr.split("\\/")[1].asInteger() > 32) {
+			isError = true;
+		}
+		
+		if(isError){
+		subredName = subredName + subred.name;
+		}
+
+	}
+
+	if (isError) {
+		return "no cumple las condiciones necesarias: "+ subredName;
+	} else {
+		return "";
+	}
+
+}
+
+
+//Punto 2
+operation validateDB(): String {
+var isError = false;
+var serverName = "";
+		for (servidor in ServidorBaseDeDatos.allInstances()) {
+		isError = false;
+			for (servidor in servidor.servidor) {
+				if (servidor.isTypeOf(ServidorAlmacenamiento)) {
+					isError = true;
+				}
+			}
+			if(isError){
+			serverName = serverName + servidor.nombre + " ";
+			}
+		}
+		
+		return "Error Los servidores de bases de datos: "+serverName+"se conectan a servidores de almacenamiento";
+}
+
+
+//punto 3
+operation validateDbByProvider(){
+
+for (proveedor in Proveedor.allInstances) { 
+
+var providerName = proveedor.nombre;
+
+//providerName.println();
+
+
+
+
+	
+} 
+
+}
