@@ -1,14 +1,16 @@
-//validarCIDR().println();
+validateCIDR().println();
 
-//validateDB().println();
+validateDB().println();
 
 //validateRules().println();
 validateAZ().println();
 //validateDbByProvider().println();
+validateRules().println();
+
+validateDbByProvider().println();
 
 
-
-//Punto
+//Punto 1
 operation validateCIDR(): String {
 	var isError = false;
 	var subredName = "";
@@ -34,15 +36,15 @@ operation validateCIDR(): String {
 		}
 		
 		if(isError){
-		subredName = subredName + subred.name;
+		subredName = subredName + subred.name +" ";
 		}
 
 	}
 
 	if (isError) {
-		return "no cumple las condiciones necesarias: "+ subredName;
+		return "la subred CIDR: "+ subredName + "no cumple el estandar";
 	} else {
-		return "";
+		return "No hay errores en CIDR OK";
 	}
 
 }
@@ -64,7 +66,11 @@ var serverName = "";
 			}
 		}
 		
-		return "Error Los servidores de bases de datos: "+serverName+"se conectan a servidores de almacenamiento";
+		if(serverName.isEmpty()){
+			return "Los servidores de bases de datos no se conectan a ningun servidor de almacenamiento OK";
+		}else{
+			return "Error Los servidores de bases de datos: "+serverName+"se conectan a servidores de almacenamiento";
+		}
 }
 
 
@@ -174,7 +180,7 @@ operation validateDbByProvider() {
 	}
 
 	if (serverName.isEmpty()) {
-		return "todos los servidores de bases de datos cumplen las condiciones";
+		return "todos los servidores de bases de datos cumplen las condiciones OK";
 	} else {
 		return "Los servidores de bases de datos : " + serverName + "No cumplen las condiciones";
 	}
