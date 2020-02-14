@@ -1,9 +1,10 @@
-//validarCIDR().println();
+validateCIDR().println();
 
-//validateDB().println();
+validateDB().println();
 
 validateRules().println();
-//validateDbByProvider().println();
+
+validateDbByProvider().println();
 
 
 
@@ -41,7 +42,7 @@ operation validateCIDR(): String {
 	if (isError) {
 		return "no cumple las condiciones necesarias: "+ subredName;
 	} else {
-		return "";
+		return "No hay errores en CIDR";
 	}
 
 }
@@ -63,7 +64,11 @@ var serverName = "";
 			}
 		}
 		
-		return "Error Los servidores de bases de datos: "+serverName+"se conectan a servidores de almacenamiento";
+		if(serverName.isEmpty()){
+			return "Los servidores de bases de datos no se conectan a ningun servidor de almacenamiento";
+		}else{
+			return "Error Los servidores de bases de datos: "+serverName+"se conectan a servidores de almacenamiento";
+		}
 }
 
 
