@@ -231,27 +231,24 @@ operation validateAZ(){
 	reglas.Add(List{"GCP", "us-west1", "The Dalles, Oregón, EE.UU."});
 	reglas.Add(List{"GCP", "us-west2", "Los Ángeles, California, EE.UU."});
 	
-	
-	
-	for (proveedor in Proveedor.AllInstances.first()) {
-			for (gateway in proveedor.vpc) {
-				for (vpc in gateway.vpc) {
-					for (subred in vpc.subred) {
-						for (regla in reglas){
-							if(proveedor.nombre.name = regla[0] and subred.az = regla[1]){
-								result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.nombre.name + " " + subred.az  + " esta correcta");
-							}
-							else{
-								result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.nombre.name + " " + subred.az  + " no es válida");
-							}
-						
-							
-						}
-					}
-				}
-			}
+	var proveedor = Proveedor.AllInstances.first();
+	if (proveedor.isTypeOf(Proveedor)) {
+		var azs = proveedor.vpc.collect(i | i.vpc).flatten().collect(v | v.subred).flatten().collect(c | c.az).println();
 		
+		for (az in azs){
+			for (regla in reglas){
+				if(proveedor.nombre.name = regla[0] and az = regla[1]){
+					result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.nombre.name + " - " + az  + " esta correcta");
+				}
+				else{
+					result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.nombre.name + " - " + az  + " no es válida");
+				}
+			
+				
+			}
+		}
 	}
+
 	if (result.size() > 0){
 		return result;	
 	}
