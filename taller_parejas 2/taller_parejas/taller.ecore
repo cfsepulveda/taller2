@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cloud_computing" nsURI="https://uniandes.edu.co/cloud_computing"
     nsPrefix="cloud_computing">
   <eClassifiers xsi:type="ecore:EClass" name="Conexion">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="atributos" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributosC" upperBound="-1"
         eType="#//Atributos" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreConexion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -13,16 +13,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoConexion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Proveedor">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conexion" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conexiones" upperBound="-1"
         eType="#//Conexion" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ambientedesplegue" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ambientesdesplegue" upperBound="-1"
         eType="#//AmbienteDesplegue" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" upperBound="-1" eType="#//Gateway"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gate" upperBound="-1" eType="#//Gateway"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="#//ProveedorServicio"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="securitygroup" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitygroups" upperBound="-1"
         eType="#//SecurityGroup" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subred" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subredes" upperBound="-1"
         eType="#//Subred" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
         eType="#//Rules" containment="true"/>
@@ -30,7 +30,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AmbienteDesplegue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoAmbiente" eType="#//Ambiente"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="servidor" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servidores" upperBound="-1"
         eType="#//Servidor" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Ambiente">
@@ -41,16 +41,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Servidor" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TamañoMaquina" eType="#//TamañoMaquina"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TamanoM" eType="#//TamanoMaquina"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servidor" upperBound="-1"
         eType="#//Servidor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" upperBound="-1" eType="#//VPC"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpcs" upperBound="-1" eType="#//VPC"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServidorAplicacion" eSuperTypes="#//Servidor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sistemaOperativo" eType="#//SistemaOperativo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sistemaO" eType="#//SistemaOperativo"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="TamañoMaquina">
+  <eClassifiers xsi:type="ecore:EEnum" name="TamanoMaquina">
     <eLiterals name="MICRO"/>
     <eLiterals name="SMALL" value="1"/>
     <eLiterals name="MEDIUM" value="2"/>
@@ -100,7 +100,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SecurityGroup">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rulesSG" upperBound="-1"
         eType="#//Rules" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subred">

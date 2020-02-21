@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/taller2/src" modelPluginID="taller2" modelName="Taller"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>taller.ecore</foreignModel>
+  <genPackages prefix="Cloud_computing" disposableProviderFactory="true" ecorePackage="taller.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="taller.ecore#//Ambiente">
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//Ambiente/DESARROLLO"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//Ambiente/PRUEBAS"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//Ambiente/QA"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//Ambiente/PRODUCCION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="taller.ecore#//TamañoMaquina">
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//TamañoMaquina/MICRO"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//TamañoMaquina/SMALL"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//TamañoMaquina/MEDIUM"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//TamañoMaquina/LARGE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="taller.ecore#//TipoBaseDeDatos">
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//TipoBaseDeDatos/RELACIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//TipoBaseDeDatos/NoSQL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="taller.ecore#//SistemaManejador">
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/PostgreSQL"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/MySQL"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/Oracle"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/SQLServer"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/NoSql"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/Aurora"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/MariaDB"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/DocumentDB"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/Dynamo"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/Cassandra"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaManejador/Redis"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="taller.ecore#//SistemaOperativo">
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaOperativo/WINDOWS"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaOperativo/lINUX"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//SistemaOperativo/MAC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="taller.ecore#//ProveedorServicio">
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//ProveedorServicio/AWS"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//ProveedorServicio/GCP"/>
+    </genEnums>
+    <genClasses ecoreClass="taller.ecore#//Conexion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Conexion/atributos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/nombreConexion"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//Atributos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Atributos/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Atributos/tipoDato"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Atributos/tipoConexion"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//Proveedor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Proveedor/conexion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Proveedor/ambientedesplegue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Proveedor/vpc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Proveedor/nombre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Proveedor/securitygroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Proveedor/subred"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Proveedor/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//AmbienteDesplegue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//AmbienteDesplegue/tipoAmbiente"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//AmbienteDesplegue/alias"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//AmbienteDesplegue/servidor"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="taller.ecore#//Servidor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Servidor/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Servidor/TamañoMaquina"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/servidor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/vpc"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//ServidorAplicacion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorAplicacion/sistemaOperativo"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//ServidorBaseDeDatos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorBaseDeDatos/tipo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorBaseDeDatos/sistemaManejador"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//Gateway">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Gateway/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Gateway/vpc"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//VPC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//VPC/name"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//Rules">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/portRange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/Source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/description"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//SecurityGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//SecurityGroup/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//SecurityGroup/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//SecurityGroup/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//Subred">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Subred/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Subred/cidr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Subred/az"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//ServidorAlmacenamiento">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorAlmacenamiento/tamanoInicial"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
