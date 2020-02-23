@@ -12,20 +12,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoDato" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoConexion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Proveedor">
+  <eClassifiers xsi:type="ecore:EClass" name="Infraestructura">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conexiones" upperBound="-1"
         eType="#//Conexion" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ambientesdesplegue" upperBound="-1"
         eType="#//AmbienteDesplegue" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="gate" upperBound="-1" eType="#//Gateway"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="#//ProveedorServicio"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//ProveedorServicio"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="securitygroups" upperBound="-1"
         eType="#//SecurityGroup" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subredes" upperBound="-1"
         eType="#//Subred" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
         eType="#//Rules" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreProyecto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" upperBound="-1" eType="#//VPC"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AmbienteDesplegue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoAmbiente" eType="#//Ambiente"/>
@@ -81,11 +82,6 @@
     <eLiterals name="WINDOWS"/>
     <eLiterals name="lINUX" value="1"/>
     <eLiterals name="MAC" value="2"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Gateway">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" upperBound="-1" eType="#//VPC"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VPC">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

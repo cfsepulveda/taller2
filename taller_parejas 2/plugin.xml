@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated taller -->
+      <package
+            uri="https://uniandes.edu.co/cloud_computing"
+            class="cloud_computing.Cloud_computingPackage"
+            genModel="taller_parejas/taller.genmodel"/>
+   </extension>
+
+</plugin>
