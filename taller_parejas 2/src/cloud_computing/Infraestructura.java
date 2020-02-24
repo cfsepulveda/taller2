@@ -17,12 +17,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link cloud_computing.Infraestructura#getConexiones <em>Conexiones</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getAmbientesdesplegue <em>Ambientesdesplegue</em>}</li>
- *   <li>{@link cloud_computing.Infraestructura#getGate <em>Gate</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getTipo <em>Tipo</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getSecuritygroups <em>Securitygroups</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getSubredes <em>Subredes</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getRules <em>Rules</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getNombreProyecto <em>Nombre Proyecto</em>}</li>
+ *   <li>{@link cloud_computing.Infraestructura#getVpc <em>Vpc</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getInfraestructura()
@@ -53,18 +53,6 @@ public interface Infraestructura extends EObject {
 	 * @generated
 	 */
 	EList<AmbienteDesplegue> getAmbientesdesplegue();
-
-	/**
-	 * Returns the value of the '<em><b>Gate</b></em>' containment reference list.
-	 * The list contents are of type {@link cloud_computing.Gateway}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gate</em>' containment reference list.
-	 * @see cloud_computing.Cloud_computingPackage#getInfraestructura_Gate()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Gateway> getGate();
 
 	/**
 	 * Returns the value of the '<em><b>Tipo</b></em>' attribute.
@@ -148,5 +136,17 @@ public interface Infraestructura extends EObject {
 	 * @generated
 	 */
 	void setNombreProyecto(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Vpc</b></em>' containment reference list.
+	 * The list contents are of type {@link cloud_computing.VPC}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vpc</em>' containment reference list.
+	 * @see cloud_computing.Cloud_computingPackage#getInfraestructura_Vpc()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<VPC> getVpc();
 
 } // Infraestructura

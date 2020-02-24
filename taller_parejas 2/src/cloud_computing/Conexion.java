@@ -2,8 +2,6 @@
  */
 package cloud_computing;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,8 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.Conexion#getAtributosC <em>Atributos C</em>}</li>
  *   <li>{@link cloud_computing.Conexion#getNombreConexion <em>Nombre Conexion</em>}</li>
+ *   <li>{@link cloud_computing.Conexion#getUsuario <em>Usuario</em>}</li>
+ *   <li>{@link cloud_computing.Conexion#getContrasena <em>Contrasena</em>}</li>
+ *   <li>{@link cloud_computing.Conexion#getAccessId <em>Access Id</em>}</li>
+ *   <li>{@link cloud_computing.Conexion#getSecret <em>Secret</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getConexion()
@@ -24,18 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Conexion extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Atributos C</b></em>' containment reference list.
-	 * The list contents are of type {@link cloud_computing.Atributos}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Atributos C</em>' containment reference list.
-	 * @see cloud_computing.Cloud_computingPackage#getConexion_AtributosC()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Atributos> getAtributosC();
-
 	/**
 	 * Returns the value of the '<em><b>Nombre Conexion</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,5 +46,93 @@ public interface Conexion extends EObject {
 	 * @generated
 	 */
 	void setNombreConexion(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Usuario</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Usuario</em>' attribute.
+	 * @see #setUsuario(String)
+	 * @see cloud_computing.Cloud_computingPackage#getConexion_Usuario()
+	 * @model
+	 * @generated
+	 */
+	String getUsuario();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Conexion#getUsuario <em>Usuario</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Usuario</em>' attribute.
+	 * @see #getUsuario()
+	 * @generated
+	 */
+	void setUsuario(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Contrasena</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contrasena</em>' attribute.
+	 * @see #setContrasena(String)
+	 * @see cloud_computing.Cloud_computingPackage#getConexion_Contrasena()
+	 * @model
+	 * @generated
+	 */
+	String getContrasena();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Conexion#getContrasena <em>Contrasena</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contrasena</em>' attribute.
+	 * @see #getContrasena()
+	 * @generated
+	 */
+	void setContrasena(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Access Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Access Id</em>' attribute.
+	 * @see #setAccessId(String)
+	 * @see cloud_computing.Cloud_computingPackage#getConexion_AccessId()
+	 * @model
+	 * @generated
+	 */
+	String getAccessId();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Conexion#getAccessId <em>Access Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Access Id</em>' attribute.
+	 * @see #getAccessId()
+	 * @generated
+	 */
+	void setAccessId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Secret</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Secret</em>' attribute.
+	 * @see #setSecret(String)
+	 * @see cloud_computing.Cloud_computingPackage#getConexion_Secret()
+	 * @model
+	 * @generated
+	 */
+	String getSecret();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Conexion#getSecret <em>Secret</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Secret</em>' attribute.
+	 * @see #getSecret()
+	 * @generated
+	 */
+	void setSecret(String value);
 
 } // Conexion

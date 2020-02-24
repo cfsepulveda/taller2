@@ -4,7 +4,7 @@
     modelName="Taller" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
-  <foreignModel>../taller_parejas/taller.ecore</foreignModel>
+  <foreignModel>taller.ecore</foreignModel>
   <genPackages prefix="Cloud_computing" disposableProviderFactory="true" ecorePackage="taller.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="taller.ecore#//Ambiente">
       <genEnumLiterals ecoreEnumLiteral="taller.ecore#//Ambiente/DESARROLLO"/>
@@ -45,23 +45,21 @@
       <genEnumLiterals ecoreEnumLiteral="taller.ecore#//ProveedorServicio/GCP"/>
     </genEnums>
     <genClasses ecoreClass="taller.ecore#//Conexion">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Conexion/atributosC"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/nombreConexion"/>
-    </genClasses>
-    <genClasses ecoreClass="taller.ecore#//Atributos">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Atributos/nombre"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Atributos/tipoDato"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Atributos/tipoConexion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/usuario"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/contrasena"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/accessId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/secret"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//Infraestructura">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/conexiones"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/ambientesdesplegue"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/gate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Infraestructura/tipo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/securitygroups"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/subredes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/rules"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Infraestructura/nombreProyecto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/vpc"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//AmbienteDesplegue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//AmbienteDesplegue/tipoAmbiente"/>
@@ -78,12 +76,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorAplicacion/sistemaO"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//ServidorBaseDeDatos">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorBaseDeDatos/tipo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorBaseDeDatos/sistemaManejador"/>
-    </genClasses>
-    <genClasses ecoreClass="taller.ecore#//Gateway">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Gateway/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Gateway/vpc"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//VPC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//VPC/name"/>

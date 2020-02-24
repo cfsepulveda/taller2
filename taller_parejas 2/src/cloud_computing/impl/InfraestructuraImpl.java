@@ -5,12 +5,12 @@ package cloud_computing.impl;
 import cloud_computing.AmbienteDesplegue;
 import cloud_computing.Cloud_computingPackage;
 import cloud_computing.Conexion;
-import cloud_computing.Gateway;
 import cloud_computing.Infraestructura;
 import cloud_computing.ProveedorServicio;
 import cloud_computing.Rules;
 import cloud_computing.SecurityGroup;
 import cloud_computing.Subred;
+import cloud_computing.VPC;
 
 import java.util.Collection;
 
@@ -38,12 +38,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getConexiones <em>Conexiones</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getAmbientesdesplegue <em>Ambientesdesplegue</em>}</li>
- *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getGate <em>Gate</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getTipo <em>Tipo</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getSecuritygroups <em>Securitygroups</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getSubredes <em>Subredes</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getNombreProyecto <em>Nombre Proyecto</em>}</li>
+ *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getVpc <em>Vpc</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,16 +68,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<AmbienteDesplegue> ambientesdesplegue;
-
-	/**
-	 * The cached value of the '{@link #getGate() <em>Gate</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGate()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Gateway> gate;
 
 	/**
 	 * The default value of the '{@link #getTipo() <em>Tipo</em>}' attribute.
@@ -150,6 +140,16 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 	protected String nombreProyecto = NOMBRE_PROYECTO_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVpc()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<VPC> vpc;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -192,19 +192,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 			ambientesdesplegue = new EObjectContainmentEList<AmbienteDesplegue>(AmbienteDesplegue.class, this, Cloud_computingPackage.INFRAESTRUCTURA__AMBIENTESDESPLEGUE);
 		}
 		return ambientesdesplegue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Gateway> getGate() {
-		if (gate == null) {
-			gate = new EObjectContainmentEList<Gateway>(Gateway.class, this, Cloud_computingPackage.INFRAESTRUCTURA__GATE);
-		}
-		return gate;
 	}
 
 	/**
@@ -298,20 +285,33 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public EList<VPC> getVpc() {
+		if (vpc == null) {
+			vpc = new EObjectContainmentEList<VPC>(VPC.class, this, Cloud_computingPackage.INFRAESTRUCTURA__VPC);
+		}
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Cloud_computingPackage.INFRAESTRUCTURA__CONEXIONES:
 				return ((InternalEList<?>)getConexiones()).basicRemove(otherEnd, msgs);
 			case Cloud_computingPackage.INFRAESTRUCTURA__AMBIENTESDESPLEGUE:
 				return ((InternalEList<?>)getAmbientesdesplegue()).basicRemove(otherEnd, msgs);
-			case Cloud_computingPackage.INFRAESTRUCTURA__GATE:
-				return ((InternalEList<?>)getGate()).basicRemove(otherEnd, msgs);
 			case Cloud_computingPackage.INFRAESTRUCTURA__SECURITYGROUPS:
 				return ((InternalEList<?>)getSecuritygroups()).basicRemove(otherEnd, msgs);
 			case Cloud_computingPackage.INFRAESTRUCTURA__SUBREDES:
 				return ((InternalEList<?>)getSubredes()).basicRemove(otherEnd, msgs);
 			case Cloud_computingPackage.INFRAESTRUCTURA__RULES:
 				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
+			case Cloud_computingPackage.INFRAESTRUCTURA__VPC:
+				return ((InternalEList<?>)getVpc()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -328,8 +328,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return getConexiones();
 			case Cloud_computingPackage.INFRAESTRUCTURA__AMBIENTESDESPLEGUE:
 				return getAmbientesdesplegue();
-			case Cloud_computingPackage.INFRAESTRUCTURA__GATE:
-				return getGate();
 			case Cloud_computingPackage.INFRAESTRUCTURA__TIPO:
 				return getTipo();
 			case Cloud_computingPackage.INFRAESTRUCTURA__SECURITYGROUPS:
@@ -340,6 +338,8 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return getRules();
 			case Cloud_computingPackage.INFRAESTRUCTURA__NOMBRE_PROYECTO:
 				return getNombreProyecto();
+			case Cloud_computingPackage.INFRAESTRUCTURA__VPC:
+				return getVpc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -361,10 +361,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				getAmbientesdesplegue().clear();
 				getAmbientesdesplegue().addAll((Collection<? extends AmbienteDesplegue>)newValue);
 				return;
-			case Cloud_computingPackage.INFRAESTRUCTURA__GATE:
-				getGate().clear();
-				getGate().addAll((Collection<? extends Gateway>)newValue);
-				return;
 			case Cloud_computingPackage.INFRAESTRUCTURA__TIPO:
 				setTipo((ProveedorServicio)newValue);
 				return;
@@ -382,6 +378,10 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case Cloud_computingPackage.INFRAESTRUCTURA__NOMBRE_PROYECTO:
 				setNombreProyecto((String)newValue);
+				return;
+			case Cloud_computingPackage.INFRAESTRUCTURA__VPC:
+				getVpc().clear();
+				getVpc().addAll((Collection<? extends VPC>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -401,9 +401,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 			case Cloud_computingPackage.INFRAESTRUCTURA__AMBIENTESDESPLEGUE:
 				getAmbientesdesplegue().clear();
 				return;
-			case Cloud_computingPackage.INFRAESTRUCTURA__GATE:
-				getGate().clear();
-				return;
 			case Cloud_computingPackage.INFRAESTRUCTURA__TIPO:
 				setTipo(TIPO_EDEFAULT);
 				return;
@@ -418,6 +415,9 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case Cloud_computingPackage.INFRAESTRUCTURA__NOMBRE_PROYECTO:
 				setNombreProyecto(NOMBRE_PROYECTO_EDEFAULT);
+				return;
+			case Cloud_computingPackage.INFRAESTRUCTURA__VPC:
+				getVpc().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -435,8 +435,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return conexiones != null && !conexiones.isEmpty();
 			case Cloud_computingPackage.INFRAESTRUCTURA__AMBIENTESDESPLEGUE:
 				return ambientesdesplegue != null && !ambientesdesplegue.isEmpty();
-			case Cloud_computingPackage.INFRAESTRUCTURA__GATE:
-				return gate != null && !gate.isEmpty();
 			case Cloud_computingPackage.INFRAESTRUCTURA__TIPO:
 				return tipo != TIPO_EDEFAULT;
 			case Cloud_computingPackage.INFRAESTRUCTURA__SECURITYGROUPS:
@@ -447,6 +445,8 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return rules != null && !rules.isEmpty();
 			case Cloud_computingPackage.INFRAESTRUCTURA__NOMBRE_PROYECTO:
 				return NOMBRE_PROYECTO_EDEFAULT == null ? nombreProyecto != null : !NOMBRE_PROYECTO_EDEFAULT.equals(nombreProyecto);
+			case Cloud_computingPackage.INFRAESTRUCTURA__VPC:
+				return vpc != null && !vpc.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -68,22 +68,49 @@ public interface Cloud_computingPackage extends EPackage {
 	int CONEXION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Atributos C</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONEXION__ATRIBUTOS_C = 0;
-
-	/**
 	 * The feature id for the '<em><b>Nombre Conexion</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION__NOMBRE_CONEXION = 1;
+	int CONEXION__NOMBRE_CONEXION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Usuario</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__USUARIO = 1;
+
+	/**
+	 * The feature id for the '<em><b>Contrasena</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__CONTRASENA = 2;
+
+	/**
+	 * The feature id for the '<em><b>Access Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__ACCESS_ID = 3;
+
+	/**
+	 * The feature id for the '<em><b>Secret</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__SECRET = 4;
 
 	/**
 	 * The number of structural features of the '<em>Conexion</em>' class.
@@ -92,7 +119,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION_FEATURE_COUNT = 2;
+	int CONEXION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Conexion</em>' class.
@@ -104,61 +131,6 @@ public interface Cloud_computingPackage extends EPackage {
 	int CONEXION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link cloud_computing.impl.AtributosImpl <em>Atributos</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloud_computing.impl.AtributosImpl
-	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getAtributos()
-	 * @generated
-	 */
-	int ATRIBUTOS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATRIBUTOS__NOMBRE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tipo Dato</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATRIBUTOS__TIPO_DATO = 1;
-
-	/**
-	 * The feature id for the '<em><b>Tipo Conexion</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATRIBUTOS__TIPO_CONEXION = 2;
-
-	/**
-	 * The number of structural features of the '<em>Atributos</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATRIBUTOS_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Atributos</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATRIBUTOS_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link cloud_computing.impl.InfraestructuraImpl <em>Infraestructura</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,7 +138,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getInfraestructura()
 	 * @generated
 	 */
-	int INFRAESTRUCTURA = 2;
+	int INFRAESTRUCTURA = 1;
 
 	/**
 	 * The feature id for the '<em><b>Conexiones</b></em>' containment reference list.
@@ -187,22 +159,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int INFRAESTRUCTURA__AMBIENTESDESPLEGUE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Gate</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFRAESTRUCTURA__GATE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Tipo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INFRAESTRUCTURA__TIPO = 3;
+	int INFRAESTRUCTURA__TIPO = 2;
 
 	/**
 	 * The feature id for the '<em><b>Securitygroups</b></em>' containment reference list.
@@ -211,7 +174,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFRAESTRUCTURA__SECURITYGROUPS = 4;
+	int INFRAESTRUCTURA__SECURITYGROUPS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Subredes</b></em>' containment reference list.
@@ -220,7 +183,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFRAESTRUCTURA__SUBREDES = 5;
+	int INFRAESTRUCTURA__SUBREDES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -229,7 +192,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFRAESTRUCTURA__RULES = 6;
+	int INFRAESTRUCTURA__RULES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Nombre Proyecto</b></em>' attribute.
@@ -238,7 +201,16 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFRAESTRUCTURA__NOMBRE_PROYECTO = 7;
+	int INFRAESTRUCTURA__NOMBRE_PROYECTO = 6;
+
+	/**
+	 * The feature id for the '<em><b>Vpc</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRAESTRUCTURA__VPC = 7;
 
 	/**
 	 * The number of structural features of the '<em>Infraestructura</em>' class.
@@ -266,7 +238,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getAmbienteDesplegue()
 	 * @generated
 	 */
-	int AMBIENTE_DESPLEGUE = 3;
+	int AMBIENTE_DESPLEGUE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Tipo Ambiente</b></em>' attribute.
@@ -321,7 +293,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getServidor()
 	 * @generated
 	 */
-	int SERVIDOR = 4;
+	int SERVIDOR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
@@ -385,7 +357,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getServidorAplicacion()
 	 * @generated
 	 */
-	int SERVIDOR_APLICACION = 5;
+	int SERVIDOR_APLICACION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
@@ -458,7 +430,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getServidorBaseDeDatos()
 	 * @generated
 	 */
-	int SERVIDOR_BASE_DE_DATOS = 6;
+	int SERVIDOR_BASE_DE_DATOS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
@@ -497,22 +469,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_BASE_DE_DATOS__VPCS = SERVIDOR__VPCS;
 
 	/**
-	 * The feature id for the '<em><b>Tipo</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_BASE_DE_DATOS__TIPO = SERVIDOR_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Sistema Manejador</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR = SERVIDOR_FEATURE_COUNT + 1;
+	int SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR = SERVIDOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Servidor Base De Datos</em>' class.
@@ -521,7 +484,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_BASE_DE_DATOS_FEATURE_COUNT = SERVIDOR_FEATURE_COUNT + 2;
+	int SERVIDOR_BASE_DE_DATOS_FEATURE_COUNT = SERVIDOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Servidor Base De Datos</em>' class.
@@ -533,52 +496,6 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_BASE_DE_DATOS_OPERATION_COUNT = SERVIDOR_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link cloud_computing.impl.GatewayImpl <em>Gateway</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloud_computing.impl.GatewayImpl
-	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getGateway()
-	 * @generated
-	 */
-	int GATEWAY = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GATEWAY__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Vpc</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GATEWAY__VPC = 1;
-
-	/**
-	 * The number of structural features of the '<em>Gateway</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GATEWAY_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Gateway</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GATEWAY_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link cloud_computing.impl.VPCImpl <em>VPC</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -586,7 +503,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getVPC()
 	 * @generated
 	 */
-	int VPC = 8;
+	int VPC = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -623,7 +540,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getRules()
 	 * @generated
 	 */
-	int RULES = 9;
+	int RULES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -696,7 +613,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getSecurityGroup()
 	 * @generated
 	 */
-	int SECURITY_GROUP = 10;
+	int SECURITY_GROUP = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -751,7 +668,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getSubred()
 	 * @generated
 	 */
-	int SUBRED = 11;
+	int SUBRED = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -806,7 +723,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getServidorAlmacenamiento()
 	 * @generated
 	 */
-	int SERVIDOR_ALMACENAMIENTO = 12;
+	int SERVIDOR_ALMACENAMIENTO = 10;
 
 	/**
 	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
@@ -879,7 +796,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getAmbiente()
 	 * @generated
 	 */
-	int AMBIENTE = 13;
+	int AMBIENTE = 11;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.TamanoMaquina <em>Tamano Maquina</em>}' enum.
@@ -889,7 +806,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getTamanoMaquina()
 	 * @generated
 	 */
-	int TAMANO_MAQUINA = 14;
+	int TAMANO_MAQUINA = 12;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.TipoBaseDeDatos <em>Tipo Base De Datos</em>}' enum.
@@ -899,7 +816,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getTipoBaseDeDatos()
 	 * @generated
 	 */
-	int TIPO_BASE_DE_DATOS = 15;
+	int TIPO_BASE_DE_DATOS = 13;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.SistemaManejador <em>Sistema Manejador</em>}' enum.
@@ -909,7 +826,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getSistemaManejador()
 	 * @generated
 	 */
-	int SISTEMA_MANEJADOR = 16;
+	int SISTEMA_MANEJADOR = 14;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.SistemaOperativo <em>Sistema Operativo</em>}' enum.
@@ -919,7 +836,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getSistemaOperativo()
 	 * @generated
 	 */
-	int SISTEMA_OPERATIVO = 17;
+	int SISTEMA_OPERATIVO = 15;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.ProveedorServicio <em>Proveedor Servicio</em>}' enum.
@@ -929,7 +846,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getProveedorServicio()
 	 * @generated
 	 */
-	int PROVEEDOR_SERVICIO = 18;
+	int PROVEEDOR_SERVICIO = 16;
 
 
 	/**
@@ -943,17 +860,6 @@ public interface Cloud_computingPackage extends EPackage {
 	EClass getConexion();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link cloud_computing.Conexion#getAtributosC <em>Atributos C</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Atributos C</em>'.
-	 * @see cloud_computing.Conexion#getAtributosC()
-	 * @see #getConexion()
-	 * @generated
-	 */
-	EReference getConexion_AtributosC();
-
-	/**
 	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getNombreConexion <em>Nombre Conexion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -965,47 +871,48 @@ public interface Cloud_computingPackage extends EPackage {
 	EAttribute getConexion_NombreConexion();
 
 	/**
-	 * Returns the meta object for class '{@link cloud_computing.Atributos <em>Atributos</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getUsuario <em>Usuario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Atributos</em>'.
-	 * @see cloud_computing.Atributos
+	 * @return the meta object for the attribute '<em>Usuario</em>'.
+	 * @see cloud_computing.Conexion#getUsuario()
+	 * @see #getConexion()
 	 * @generated
 	 */
-	EClass getAtributos();
+	EAttribute getConexion_Usuario();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Atributos#getNombre <em>Nombre</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getContrasena <em>Contrasena</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nombre</em>'.
-	 * @see cloud_computing.Atributos#getNombre()
-	 * @see #getAtributos()
+	 * @return the meta object for the attribute '<em>Contrasena</em>'.
+	 * @see cloud_computing.Conexion#getContrasena()
+	 * @see #getConexion()
 	 * @generated
 	 */
-	EAttribute getAtributos_Nombre();
+	EAttribute getConexion_Contrasena();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Atributos#getTipoDato <em>Tipo Dato</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getAccessId <em>Access Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tipo Dato</em>'.
-	 * @see cloud_computing.Atributos#getTipoDato()
-	 * @see #getAtributos()
+	 * @return the meta object for the attribute '<em>Access Id</em>'.
+	 * @see cloud_computing.Conexion#getAccessId()
+	 * @see #getConexion()
 	 * @generated
 	 */
-	EAttribute getAtributos_TipoDato();
+	EAttribute getConexion_AccessId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Atributos#getTipoConexion <em>Tipo Conexion</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getSecret <em>Secret</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tipo Conexion</em>'.
-	 * @see cloud_computing.Atributos#getTipoConexion()
-	 * @see #getAtributos()
+	 * @return the meta object for the attribute '<em>Secret</em>'.
+	 * @see cloud_computing.Conexion#getSecret()
+	 * @see #getConexion()
 	 * @generated
 	 */
-	EAttribute getAtributos_TipoConexion();
+	EAttribute getConexion_Secret();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.Infraestructura <em>Infraestructura</em>}'.
@@ -1038,17 +945,6 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInfraestructura_Ambientesdesplegue();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link cloud_computing.Infraestructura#getGate <em>Gate</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Gate</em>'.
-	 * @see cloud_computing.Infraestructura#getGate()
-	 * @see #getInfraestructura()
-	 * @generated
-	 */
-	EReference getInfraestructura_Gate();
 
 	/**
 	 * Returns the meta object for the attribute '{@link cloud_computing.Infraestructura#getTipo <em>Tipo</em>}'.
@@ -1104,6 +1000,17 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInfraestructura_NombreProyecto();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link cloud_computing.Infraestructura#getVpc <em>Vpc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Vpc</em>'.
+	 * @see cloud_computing.Infraestructura#getVpc()
+	 * @see #getInfraestructura()
+	 * @generated
+	 */
+	EReference getInfraestructura_Vpc();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.AmbienteDesplegue <em>Ambiente Desplegue</em>}'.
@@ -1234,17 +1141,6 @@ public interface Cloud_computingPackage extends EPackage {
 	EClass getServidorBaseDeDatos();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.ServidorBaseDeDatos#getTipo <em>Tipo</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tipo</em>'.
-	 * @see cloud_computing.ServidorBaseDeDatos#getTipo()
-	 * @see #getServidorBaseDeDatos()
-	 * @generated
-	 */
-	EAttribute getServidorBaseDeDatos_Tipo();
-
-	/**
 	 * Returns the meta object for the attribute '{@link cloud_computing.ServidorBaseDeDatos#getSistemaManejador <em>Sistema Manejador</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1254,38 +1150,6 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getServidorBaseDeDatos_SistemaManejador();
-
-	/**
-	 * Returns the meta object for class '{@link cloud_computing.Gateway <em>Gateway</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Gateway</em>'.
-	 * @see cloud_computing.Gateway
-	 * @generated
-	 */
-	EClass getGateway();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Gateway#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see cloud_computing.Gateway#getName()
-	 * @see #getGateway()
-	 * @generated
-	 */
-	EAttribute getGateway_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link cloud_computing.Gateway#getVpc <em>Vpc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Vpc</em>'.
-	 * @see cloud_computing.Gateway#getVpc()
-	 * @see #getGateway()
-	 * @generated
-	 */
-	EReference getGateway_Vpc();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.VPC <em>VPC</em>}'.
@@ -1574,14 +1438,6 @@ public interface Cloud_computingPackage extends EPackage {
 		EClass CONEXION = eINSTANCE.getConexion();
 
 		/**
-		 * The meta object literal for the '<em><b>Atributos C</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONEXION__ATRIBUTOS_C = eINSTANCE.getConexion_AtributosC();
-
-		/**
 		 * The meta object literal for the '<em><b>Nombre Conexion</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1590,38 +1446,36 @@ public interface Cloud_computingPackage extends EPackage {
 		EAttribute CONEXION__NOMBRE_CONEXION = eINSTANCE.getConexion_NombreConexion();
 
 		/**
-		 * The meta object literal for the '{@link cloud_computing.impl.AtributosImpl <em>Atributos</em>}' class.
+		 * The meta object literal for the '<em><b>Usuario</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see cloud_computing.impl.AtributosImpl
-		 * @see cloud_computing.impl.Cloud_computingPackageImpl#getAtributos()
 		 * @generated
 		 */
-		EClass ATRIBUTOS = eINSTANCE.getAtributos();
+		EAttribute CONEXION__USUARIO = eINSTANCE.getConexion_Usuario();
 
 		/**
-		 * The meta object literal for the '<em><b>Nombre</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contrasena</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATRIBUTOS__NOMBRE = eINSTANCE.getAtributos_Nombre();
+		EAttribute CONEXION__CONTRASENA = eINSTANCE.getConexion_Contrasena();
 
 		/**
-		 * The meta object literal for the '<em><b>Tipo Dato</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Access Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATRIBUTOS__TIPO_DATO = eINSTANCE.getAtributos_TipoDato();
+		EAttribute CONEXION__ACCESS_ID = eINSTANCE.getConexion_AccessId();
 
 		/**
-		 * The meta object literal for the '<em><b>Tipo Conexion</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Secret</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATRIBUTOS__TIPO_CONEXION = eINSTANCE.getAtributos_TipoConexion();
+		EAttribute CONEXION__SECRET = eINSTANCE.getConexion_Secret();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.InfraestructuraImpl <em>Infraestructura</em>}' class.
@@ -1648,14 +1502,6 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INFRAESTRUCTURA__AMBIENTESDESPLEGUE = eINSTANCE.getInfraestructura_Ambientesdesplegue();
-
-		/**
-		 * The meta object literal for the '<em><b>Gate</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INFRAESTRUCTURA__GATE = eINSTANCE.getInfraestructura_Gate();
 
 		/**
 		 * The meta object literal for the '<em><b>Tipo</b></em>' attribute feature.
@@ -1696,6 +1542,14 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INFRAESTRUCTURA__NOMBRE_PROYECTO = eINSTANCE.getInfraestructura_NombreProyecto();
+
+		/**
+		 * The meta object literal for the '<em><b>Vpc</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFRAESTRUCTURA__VPC = eINSTANCE.getInfraestructura_Vpc();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.AmbienteDesplegueImpl <em>Ambiente Desplegue</em>}' class.
@@ -1802,46 +1656,12 @@ public interface Cloud_computingPackage extends EPackage {
 		EClass SERVIDOR_BASE_DE_DATOS = eINSTANCE.getServidorBaseDeDatos();
 
 		/**
-		 * The meta object literal for the '<em><b>Tipo</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVIDOR_BASE_DE_DATOS__TIPO = eINSTANCE.getServidorBaseDeDatos_Tipo();
-
-		/**
 		 * The meta object literal for the '<em><b>Sistema Manejador</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR = eINSTANCE.getServidorBaseDeDatos_SistemaManejador();
-
-		/**
-		 * The meta object literal for the '{@link cloud_computing.impl.GatewayImpl <em>Gateway</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloud_computing.impl.GatewayImpl
-		 * @see cloud_computing.impl.Cloud_computingPackageImpl#getGateway()
-		 * @generated
-		 */
-		EClass GATEWAY = eINSTANCE.getGateway();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GATEWAY__NAME = eINSTANCE.getGateway_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Vpc</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GATEWAY__VPC = eINSTANCE.getGateway_Vpc();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.VPCImpl <em>VPC</em>}' class.

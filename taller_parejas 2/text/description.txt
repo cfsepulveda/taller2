@@ -8,23 +8,21 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 Package cloud_computing <https://uniandes.edu.co/cloud_computing>
 
   Class Conexion
-    Reference atributosC : Atributos<<0..*>>
     Attribute nombreConexion : EString
-
-  Class Atributos
-    Attribute nombre : EString
-    Attribute tipoDato : EString
-    Attribute tipoConexion : EString
+    Attribute usuario : EString
+    Attribute contrasena : EString
+    Attribute accessId : EString
+    Attribute secret : EString
 
   Class Infraestructura
     Reference conexiones : Conexion<<0..*>>
     Reference ambientesdesplegue : AmbienteDesplegue<<0..*>>
-    Reference gate : Gateway<<0..*>>
     Attribute tipo : ProveedorServicio
     Reference securitygroups : SecurityGroup<<0..*>>
     Reference subredes : Subred<<0..*>>
     Reference rules : Rules<<0..*>>
     Attribute nombreProyecto : EString
+    Reference vpc : VPC<<0..*>>
 
   Class AmbienteDesplegue
     Attribute tipoAmbiente : Ambiente
@@ -41,12 +39,7 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Attribute sistemaO : SistemaOperativo
 
   Class ServidorBaseDeDatos -> Servidor
-    Attribute tipo : TipoBaseDeDatos
     Attribute sistemaManejador : SistemaManejador
-
-  Class Gateway
-    Attribute name : EString
-    Reference vpc : VPC<<0..*>>
 
   Class VPC
     Attribute name : EString

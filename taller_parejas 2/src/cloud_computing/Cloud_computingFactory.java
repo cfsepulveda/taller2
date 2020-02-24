@@ -31,15 +31,6 @@ public interface Cloud_computingFactory extends EFactory {
 	Conexion createConexion();
 
 	/**
-	 * Returns a new object of class '<em>Atributos</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Atributos</em>'.
-	 * @generated
-	 */
-	Atributos createAtributos();
-
-	/**
 	 * Returns a new object of class '<em>Infraestructura</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,15 +65,6 @@ public interface Cloud_computingFactory extends EFactory {
 	 * @generated
 	 */
 	ServidorBaseDeDatos createServidorBaseDeDatos();
-
-	/**
-	 * Returns a new object of class '<em>Gateway</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Gateway</em>'.
-	 * @generated
-	 */
-	Gateway createGateway();
 
 	/**
 	 * Returns a new object of class '<em>VPC</em>'.

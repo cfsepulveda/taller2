@@ -2,25 +2,15 @@
  */
 package cloud_computing.impl;
 
-import cloud_computing.Atributos;
 import cloud_computing.Cloud_computingPackage;
 import cloud_computing.Conexion;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,23 +20,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.impl.ConexionImpl#getAtributosC <em>Atributos C</em>}</li>
  *   <li>{@link cloud_computing.impl.ConexionImpl#getNombreConexion <em>Nombre Conexion</em>}</li>
+ *   <li>{@link cloud_computing.impl.ConexionImpl#getUsuario <em>Usuario</em>}</li>
+ *   <li>{@link cloud_computing.impl.ConexionImpl#getContrasena <em>Contrasena</em>}</li>
+ *   <li>{@link cloud_computing.impl.ConexionImpl#getAccessId <em>Access Id</em>}</li>
+ *   <li>{@link cloud_computing.impl.ConexionImpl#getSecret <em>Secret</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexion {
-	/**
-	 * The cached value of the '{@link #getAtributosC() <em>Atributos C</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAtributosC()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Atributos> atributosC;
-
 	/**
 	 * The default value of the '{@link #getNombreConexion() <em>Nombre Conexion</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,6 +51,86 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	protected String nombreConexion = NOMBRE_CONEXION_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getUsuario() <em>Usuario</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsuario()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String USUARIO_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUsuario() <em>Usuario</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsuario()
+	 * @generated
+	 * @ordered
+	 */
+	protected String usuario = USUARIO_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getContrasena() <em>Contrasena</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContrasena()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONTRASENA_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getContrasena() <em>Contrasena</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContrasena()
+	 * @generated
+	 * @ordered
+	 */
+	protected String contrasena = CONTRASENA_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAccessId() <em>Access Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccessId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ACCESS_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAccessId() <em>Access Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccessId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String accessId = ACCESS_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSecret() <em>Secret</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecret()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SECRET_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSecret() <em>Secret</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecret()
+	 * @generated
+	 * @ordered
+	 */
+	protected String secret = SECRET_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -84,19 +147,6 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	protected EClass eStaticClass() {
 		return Cloud_computingPackage.Literals.CONEXION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Atributos> getAtributosC() {
-		if (atributosC == null) {
-			atributosC = new EObjectContainmentEList<Atributos>(Atributos.class, this, Cloud_computingPackage.CONEXION__ATRIBUTOS_C);
-		}
-		return atributosC;
 	}
 
 	/**
@@ -128,12 +178,90 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__ATRIBUTOS_C:
-				return ((InternalEList<?>)getAtributosC()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public String getUsuario() {
+		return usuario;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUsuario(String newUsuario) {
+		String oldUsuario = usuario;
+		usuario = newUsuario;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__USUARIO, oldUsuario, usuario));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setContrasena(String newContrasena) {
+		String oldContrasena = contrasena;
+		contrasena = newContrasena;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__CONTRASENA, oldContrasena, contrasena));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAccessId() {
+		return accessId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAccessId(String newAccessId) {
+		String oldAccessId = accessId;
+		accessId = newAccessId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__ACCESS_ID, oldAccessId, accessId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSecret() {
+		return secret;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSecret(String newSecret) {
+		String oldSecret = secret;
+		secret = newSecret;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__SECRET, oldSecret, secret));
 	}
 
 	/**
@@ -144,10 +272,16 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__ATRIBUTOS_C:
-				return getAtributosC();
 			case Cloud_computingPackage.CONEXION__NOMBRE_CONEXION:
 				return getNombreConexion();
+			case Cloud_computingPackage.CONEXION__USUARIO:
+				return getUsuario();
+			case Cloud_computingPackage.CONEXION__CONTRASENA:
+				return getContrasena();
+			case Cloud_computingPackage.CONEXION__ACCESS_ID:
+				return getAccessId();
+			case Cloud_computingPackage.CONEXION__SECRET:
+				return getSecret();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,16 +291,23 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__ATRIBUTOS_C:
-				getAtributosC().clear();
-				getAtributosC().addAll((Collection<? extends Atributos>)newValue);
-				return;
 			case Cloud_computingPackage.CONEXION__NOMBRE_CONEXION:
 				setNombreConexion((String)newValue);
+				return;
+			case Cloud_computingPackage.CONEXION__USUARIO:
+				setUsuario((String)newValue);
+				return;
+			case Cloud_computingPackage.CONEXION__CONTRASENA:
+				setContrasena((String)newValue);
+				return;
+			case Cloud_computingPackage.CONEXION__ACCESS_ID:
+				setAccessId((String)newValue);
+				return;
+			case Cloud_computingPackage.CONEXION__SECRET:
+				setSecret((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,11 +321,20 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__ATRIBUTOS_C:
-				getAtributosC().clear();
-				return;
 			case Cloud_computingPackage.CONEXION__NOMBRE_CONEXION:
 				setNombreConexion(NOMBRE_CONEXION_EDEFAULT);
+				return;
+			case Cloud_computingPackage.CONEXION__USUARIO:
+				setUsuario(USUARIO_EDEFAULT);
+				return;
+			case Cloud_computingPackage.CONEXION__CONTRASENA:
+				setContrasena(CONTRASENA_EDEFAULT);
+				return;
+			case Cloud_computingPackage.CONEXION__ACCESS_ID:
+				setAccessId(ACCESS_ID_EDEFAULT);
+				return;
+			case Cloud_computingPackage.CONEXION__SECRET:
+				setSecret(SECRET_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,10 +348,16 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__ATRIBUTOS_C:
-				return atributosC != null && !atributosC.isEmpty();
 			case Cloud_computingPackage.CONEXION__NOMBRE_CONEXION:
 				return NOMBRE_CONEXION_EDEFAULT == null ? nombreConexion != null : !NOMBRE_CONEXION_EDEFAULT.equals(nombreConexion);
+			case Cloud_computingPackage.CONEXION__USUARIO:
+				return USUARIO_EDEFAULT == null ? usuario != null : !USUARIO_EDEFAULT.equals(usuario);
+			case Cloud_computingPackage.CONEXION__CONTRASENA:
+				return CONTRASENA_EDEFAULT == null ? contrasena != null : !CONTRASENA_EDEFAULT.equals(contrasena);
+			case Cloud_computingPackage.CONEXION__ACCESS_ID:
+				return ACCESS_ID_EDEFAULT == null ? accessId != null : !ACCESS_ID_EDEFAULT.equals(accessId);
+			case Cloud_computingPackage.CONEXION__SECRET:
+				return SECRET_EDEFAULT == null ? secret != null : !SECRET_EDEFAULT.equals(secret);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,6 +374,14 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nombreConexion: ");
 		result.append(nombreConexion);
+		result.append(", usuario: ");
+		result.append(usuario);
+		result.append(", contrasena: ");
+		result.append(contrasena);
+		result.append(", accessId: ");
+		result.append(accessId);
+		result.append(", secret: ");
+		result.append(secret);
 		result.append(')');
 		return result.toString();
 	}

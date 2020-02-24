@@ -72,12 +72,6 @@ public class Cloud_computingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Cloud_computingPackage.ATRIBUTOS: {
-				Atributos atributos = (Atributos)theEObject;
-				T result = caseAtributos(atributos);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case Cloud_computingPackage.INFRAESTRUCTURA: {
 				Infraestructura infraestructura = (Infraestructura)theEObject;
 				T result = caseInfraestructura(infraestructura);
@@ -107,12 +101,6 @@ public class Cloud_computingSwitch<T> extends Switch<T> {
 				ServidorBaseDeDatos servidorBaseDeDatos = (ServidorBaseDeDatos)theEObject;
 				T result = caseServidorBaseDeDatos(servidorBaseDeDatos);
 				if (result == null) result = caseServidor(servidorBaseDeDatos);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Cloud_computingPackage.GATEWAY: {
-				Gateway gateway = (Gateway)theEObject;
-				T result = caseGateway(gateway);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -163,21 +151,6 @@ public class Cloud_computingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConexion(Conexion object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Atributos</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Atributos</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAtributos(Atributos object) {
 		return null;
 	}
 
@@ -253,21 +226,6 @@ public class Cloud_computingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseServidorBaseDeDatos(ServidorBaseDeDatos object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Gateway</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Gateway</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGateway(Gateway object) {
 		return null;
 	}
 

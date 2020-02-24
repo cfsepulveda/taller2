@@ -4,9 +4,6 @@
  */
 package cloud_computing.validation;
 
-import cloud_computing.Atributos;
-
-import org.eclipse.emf.common.util.EList;
 
 /**
  * A sample validator interface for {@link cloud_computing.Conexion}.
@@ -17,6 +14,9 @@ import org.eclipse.emf.common.util.EList;
 public interface ConexionValidator {
 	boolean validate();
 
-	boolean validateAtributosC(EList<Atributos> value);
 	boolean validateNombreConexion(String value);
+	boolean validateUsuario(String value);
+	boolean validateContrasena(String value);
+	boolean validateAccessId(String value);
+	boolean validateSecret(String value);
 }

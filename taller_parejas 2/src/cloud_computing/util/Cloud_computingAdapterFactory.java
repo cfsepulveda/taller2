@@ -72,10 +72,6 @@ public class Cloud_computingAdapterFactory extends AdapterFactoryImpl {
 				return createConexionAdapter();
 			}
 			@Override
-			public Adapter caseAtributos(Atributos object) {
-				return createAtributosAdapter();
-			}
-			@Override
 			public Adapter caseInfraestructura(Infraestructura object) {
 				return createInfraestructuraAdapter();
 			}
@@ -94,10 +90,6 @@ public class Cloud_computingAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseServidorBaseDeDatos(ServidorBaseDeDatos object) {
 				return createServidorBaseDeDatosAdapter();
-			}
-			@Override
-			public Adapter caseGateway(Gateway object) {
-				return createGatewayAdapter();
 			}
 			@Override
 			public Adapter caseVPC(VPC object) {
@@ -150,20 +142,6 @@ public class Cloud_computingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConexionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloud_computing.Atributos <em>Atributos</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloud_computing.Atributos
-	 * @generated
-	 */
-	public Adapter createAtributosAdapter() {
 		return null;
 	}
 
@@ -234,20 +212,6 @@ public class Cloud_computingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServidorBaseDeDatosAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloud_computing.Gateway <em>Gateway</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloud_computing.Gateway
-	 * @generated
-	 */
-	public Adapter createGatewayAdapter() {
 		return null;
 	}
 

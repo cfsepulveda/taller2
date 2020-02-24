@@ -58,12 +58,10 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case Cloud_computingPackage.CONEXION: return createConexion();
-			case Cloud_computingPackage.ATRIBUTOS: return createAtributos();
 			case Cloud_computingPackage.INFRAESTRUCTURA: return createInfraestructura();
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE: return createAmbienteDesplegue();
 			case Cloud_computingPackage.SERVIDOR_APLICACION: return createServidorAplicacion();
 			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS: return createServidorBaseDeDatos();
-			case Cloud_computingPackage.GATEWAY: return createGateway();
 			case Cloud_computingPackage.VPC: return createVPC();
 			case Cloud_computingPackage.RULES: return createRules();
 			case Cloud_computingPackage.SECURITY_GROUP: return createSecurityGroup();
@@ -141,17 +139,6 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public Atributos createAtributos() {
-		AtributosImpl atributos = new AtributosImpl();
-		return atributos;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Infraestructura createInfraestructura() {
 		InfraestructuraImpl infraestructura = new InfraestructuraImpl();
 		return infraestructura;
@@ -188,17 +175,6 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	public ServidorBaseDeDatos createServidorBaseDeDatos() {
 		ServidorBaseDeDatosImpl servidorBaseDeDatos = new ServidorBaseDeDatosImpl();
 		return servidorBaseDeDatos;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Gateway createGateway() {
-		GatewayImpl gateway = new GatewayImpl();
-		return gateway;
 	}
 
 	/**
