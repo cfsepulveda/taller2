@@ -1,0 +1,52 @@
+Infraestructura MiPrimeraInfraestructura {
+tipo = AWS;
+conexion = {
+	nombreConexion = "Mi conexion";
+	accessId = "sadsad";
+	secret = "casda";
+};
+ambientesdespliegue = [
+	{
+		alias = "mi ambiente desarrollo";
+		nombre = DESARROLLO;
+		servidores = [
+			servidorAplicacion =
+				{
+					nombre = "Tomcat";
+					dimension =MICRO ;
+					os =  WINDOWS;
+				},
+			servidorBaseDeDatos = 
+				{
+					nombre = "SQL SERVER";
+					dimension = LARGE;
+					tipo = SQLServer;
+				},
+			servidorBaseDeDatos = 
+				{
+					nombre = "Dynamo";
+					dimension = LARGE;
+					tipo = Dynamo;
+				}
+		];	
+	},
+	{
+		alias = "mi ambiente productivo";
+		nombre = PRODUCCION;
+		servidores = [
+			servidorAplicacion =
+				{
+					nombre = "Tomcat";
+					dimension =MICRO ;
+					os =  WINDOWS;
+				},
+			servidorAlmacenamiento = 
+				{
+					nombre = "resources";
+					dimension = MICRO;
+					gigas = "30gb";
+				}
+		];	
+	}
+] 	
+}
