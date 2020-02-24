@@ -3,14 +3,11 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cloud_computing" nsURI="https://uniandes.edu.co/cloud_computing"
     nsPrefix="cloud_computing">
   <eClassifiers xsi:type="ecore:EClass" name="Conexion">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="atributosC" upperBound="-1"
-        eType="#//Atributos" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreConexion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Atributos">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoDato" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoConexion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usuario" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contrasena" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="secret" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Infraestructura">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conexiones" upperBound="-1"
@@ -58,7 +55,6 @@
     <eLiterals name="LARGE" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServidorBaseDeDatos" eSuperTypes="#//Servidor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoBaseDeDatos"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sistemaManejador" eType="#//SistemaManejador"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TipoBaseDeDatos">
