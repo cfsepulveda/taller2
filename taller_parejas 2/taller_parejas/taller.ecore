@@ -17,15 +17,13 @@
         eType="#//Conexion" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ambientesdesplegue" upperBound="-1"
         eType="#//AmbienteDesplegue" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="gate" upperBound="-1" eType="#//Gateway"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gate" lowerBound="1" upperBound="-1"
+        eType="#//Gateway" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="#//ProveedorServicio"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="securitygroups" upperBound="-1"
         eType="#//SecurityGroup" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subredes" upperBound="-1"
-        eType="#//Subred" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
-        eType="#//Rules" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" lowerBound="1" upperBound="-1"
+        eType="#//VPC" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AmbienteDesplegue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoAmbiente" eType="#//Ambiente"/>
@@ -44,8 +42,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TamanoM" eType="#//TamanoMaquina"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servidor" upperBound="-1"
         eType="#//Servidor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vpcs" upperBound="-1" eType="#//VPC"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" eType="#//VPC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subred" eType="#//Subred"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sgout" eType="#//SecurityGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sgin" eType="#//SecurityGroup"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServidorAplicacion" eSuperTypes="#//Servidor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sistemaO" eType="#//SistemaOperativo"/>
@@ -84,11 +84,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gateway">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" upperBound="-1" eType="#//VPC"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" eType="#//VPC"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VPC">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subredes" lowerBound="1"
+        upperBound="-1" eType="#//Subred" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rules">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

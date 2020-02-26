@@ -18,7 +18,7 @@ operation validateCIDR(): String {
 
 		for (number in subred.cidr.split("\\.")) {
 			if (count < 3) {
-				if (subred.cidr.split("\\.").size() <>4 or number.asInteger() >= 255) {
+				if (subred.cidr.split("\\.").size() <> 4 or (number.asInteger() >= 255 or number.asInteger() < 0)) {
 					"error".println();
 					isError = true;
 				}
@@ -30,7 +30,7 @@ operation validateCIDR(): String {
 			isError = true;
 		} else if (subred.cidr.split("\\/")[1].isInteger() = false) {
 			isError = true;
-		} else if (subred.cidr.split("\\/")[1].asInteger() > 32) {
+		} else if (subred.cidr.split("\\/")[1].asInteger() > 32 or subred.cidr.split("\\/")[1].asInteger() < 0 ) {
 			isError = true;
 		}
 		
@@ -98,12 +98,31 @@ operation validateRules(){
 	for (rule in Rules.allInstances) {
 		for (regla in reglas){
 			if(rule.type = regla[0]){
-				if(rule.protocol = regla[1] and rule.portRange = regla[2]){
-					result.Add("la regla " + rule.type + " esta correcta");
+				if (regla[0] == "Custom TCP" or regla[0] == "Custom UDP")
+				{
+					if (rule.portRange.split("to").size() = 2 and rule.portRange.split("to")[0].asInteger() = true and rule.portRange.split("to")[1].asInteger() = true)
+					{
+						var port1 = rule.portRange.split("to")[0].asInteger();
+						var port2 = rule.portRange.split("to")[1].asInteger();
+						if (port1 >= 1024 and port1 <= 65535 and port2 >= 1024 and port2 <= 65535){
+							result.Add("la regla " + rule.type + " esta correcta");
+						}else{
+							result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
+						}
+					}
+					else{
+						result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
+					}
+					
+				}else{
+					if(rule.protocol = regla[1] and rule.portRange = regla[2]){
+						result.Add("la regla " + rule.type + " esta correcta");
+					}
+					else{
+						result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
+					}
 				}
-				else{
-					result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
-				}
+				
 				
 			}
 		}
