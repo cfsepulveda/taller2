@@ -779,24 +779,24 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_u7cGwE7bEeqca78jf6elwg" name="AmbienteDesplegue" tooltipText="" outgoingEdges="_u8i6A07bEeqca78jf6elwg" incomingEdges="_u8hr4E7bEeqca78jf6elwg" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="taller.ecore#//AmbienteDesplegue"/>
-      <semanticElements xmi:type="ecore:EClass" href="taller.ecore#//AmbienteDesplegue"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_u7cGwE7bEeqca78jf6elwg" name="AmbienteDespliegue" tooltipText="" outgoingEdges="_u8i6A07bEeqca78jf6elwg" incomingEdges="_u8hr4E7bEeqca78jf6elwg" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="taller.ecore#//AmbienteDespliegue"/>
+      <semanticElements xmi:type="ecore:EClass" href="taller.ecore#//AmbienteDespliegue"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_u7ct0E7bEeqca78jf6elwg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_u8DKwE7bEeqca78jf6elwg" name="tipoAmbiente : Ambiente = DESARROLLO" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="taller.ecore#//AmbienteDesplegue/tipoAmbiente"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="taller.ecore#//AmbienteDesplegue/tipoAmbiente"/>
+        <target xmi:type="ecore:EAttribute" href="taller.ecore#//AmbienteDespliegue/tipoAmbiente"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="taller.ecore#//AmbienteDespliegue/tipoAmbiente"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_u8DKwU7bEeqca78jf6elwg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_u8Dx0E7bEeqca78jf6elwg" name="alias : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="taller.ecore#//AmbienteDesplegue/alias"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="taller.ecore#//AmbienteDesplegue/alias"/>
+        <target xmi:type="ecore:EAttribute" href="taller.ecore#//AmbienteDespliegue/alias"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="taller.ecore#//AmbienteDespliegue/alias"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_u8Dx0U7bEeqca78jf6elwg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -1323,9 +1323,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_u8hr4E7bEeqca78jf6elwg" name="[0..*] ambientesdesplegue" sourceNode="_u7a4oE7bEeqca78jf6elwg" targetNode="_u7cGwE7bEeqca78jf6elwg">
-      <target xmi:type="ecore:EReference" href="taller.ecore#//Proveedor/ambientesdesplegue"/>
-      <semanticElements xmi:type="ecore:EReference" href="taller.ecore#//Proveedor/ambientesdesplegue"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_u8hr4E7bEeqca78jf6elwg" name="[0..*] ambientesdespliegue" sourceNode="_u7a4oE7bEeqca78jf6elwg" targetNode="_u7cGwE7bEeqca78jf6elwg">
+      <target xmi:type="ecore:EReference" href="taller.ecore#//Proveedor/ambientesdespliegue"/>
+      <semanticElements xmi:type="ecore:EReference" href="taller.ecore#//Proveedor/ambientesdespliegue"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_u8hr4U7bEeqca78jf6elwg" description="_u8fPoE7bEeqca78jf6elwg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_u8hr4k7bEeqca78jf6elwg" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -1348,8 +1348,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_u8i6A07bEeqca78jf6elwg" name="[0..*] servidores" sourceNode="_u7cGwE7bEeqca78jf6elwg" targetNode="_u7d78E7bEeqca78jf6elwg">
-      <target xmi:type="ecore:EReference" href="taller.ecore#//AmbienteDesplegue/servidores"/>
-      <semanticElements xmi:type="ecore:EReference" href="taller.ecore#//AmbienteDesplegue/servidores"/>
+      <target xmi:type="ecore:EReference" href="taller.ecore#//AmbienteDespliegue/servidores"/>
+      <semanticElements xmi:type="ecore:EReference" href="taller.ecore#//AmbienteDespliegue/servidores"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_u8jhEE7bEeqca78jf6elwg" description="_u8fPoE7bEeqca78jf6elwg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_u8jhEU7bEeqca78jf6elwg" showIcon="false">
           <customFeatures>labelSize</customFeatures>

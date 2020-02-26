@@ -2,7 +2,7 @@
 <launchConfiguration type="org.epsilon.eol.eclipse.dt.launching.EolLaunchConfigurationDelegate">
 <booleanAttribute key="fine_grained_profiling" value="false"/>
 <listAttribute key="models">
-<listEntry value="#Fri Feb 14 22:16:28 COT 2020&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=proveedor&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=proveedor&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=https\://uniandes.edu.co/cloud_computing&#13;&#10;modelUri=platform\:/resource/taller2/taller_parejas%202/proveedor_db_error.xmi&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;type=EMF&#13;&#10;modelFile=/taller2/taller_parejas 2/proveedor_db_error.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile="/>
+<listEntry value="#Fri Feb 14 22:16:28 COT 2020&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=proveedor&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=proveedor&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=https\://uniandes.edu.co/cloud_computing&#13;&#10;modelUri=platform\:/resource/taller2/taller_parejas%202/az_error.xmi&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;type=EMF&#13;&#10;modelFile=/taller2/taller_parejas 2/az_error.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile="/>
 </listAttribute>
 <listAttribute key="parameters"/>
 <booleanAttribute key="profile_model_loading" value="false"/>

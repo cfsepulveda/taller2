@@ -100,11 +100,14 @@ operation validateRules(){
 			if(rule.type = regla[0]){
 				if (regla[0] == "Custom TCP" or regla[0] == "Custom UDP")
 				{
-					if (rule.portRange.split("to").size() = 2 and rule.portRange.split("to")[0].asInteger() = true and rule.portRange.split("to")[1].asInteger() = true)
+
+					if (rule.portRange.split("to").size() = 2 )
 					{
-						var port1 = rule.portRange.split("to")[0].asInteger();
-						var port2 = rule.portRange.split("to")[1].asInteger();
+						var port1 = rule.portRange.split("to")[0].trim().asInteger();
+						var port2 = rule.portRange.split("to")[1].trim().asInteger();
+						
 						if (port1 >= 1024 and port1 <= 65535 and port2 >= 1024 and port2 <= 65535){
+						
 							result.Add("la regla " + rule.type + " esta correcta");
 						}else{
 							result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
@@ -140,9 +143,10 @@ operation validateDbByProvider() {
 	var isError = false;
 	var serverName = "";
 	if (Proveedor.allInstances().first().nombre.name = "AWS") {
-		for (ambientedesplegue in Proveedor.allInstances().first().ambientedesplegue) {
-			for (ambiente in ambientedesplegue) {
-				for (servidor in ambiente.servidor) {
+	
+		for (ambientedespliegue in Proveedor.allInstances().first().ambientesdespliegue) {
+			for (ambiente in ambientedespliegue) {
+				for (servidor in ambiente.servidores) {
 					if (servidor.isTypeOf(ServidorBaseDeDatos)) {
 						if (servidor.tipo.name = "RELACIONAL") {
 							if (servidor.sistemaManejador.name = "PostgreSQL"
@@ -253,7 +257,7 @@ operation validateAZ(){
 	
 	var proveedor = Proveedor.AllInstances.first();
 	if (proveedor.isTypeOf(Proveedor)) {
-		var azs = proveedor.vpc.collect(i | i.vpc).flatten().collect(v | v.subred).flatten().collect(c | c.az);
+		var azs = proveedor.vpc.collect(i | i.subredes).flatten().collect(c | c.az);
 			
 		for (az in azs){
 			var existe = false;
