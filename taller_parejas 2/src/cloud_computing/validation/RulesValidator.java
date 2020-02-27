@@ -4,6 +4,7 @@
  */
 package cloud_computing.validation;
 
+import cloud_computing.Direccion;
 
 /**
  * A sample validator interface for {@link cloud_computing.Rules}.
@@ -19,4 +20,5 @@ public interface RulesValidator {
 	boolean validatePortRange(String value);
 	boolean validateSource(String value);
 	boolean validateDescription(String value);
+	boolean validateDireccion(Direccion value);
 }

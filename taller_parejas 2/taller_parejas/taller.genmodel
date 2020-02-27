@@ -44,6 +44,10 @@
       <genEnumLiterals ecoreEnumLiteral="taller.ecore#//ProveedorServicio/AWS"/>
       <genEnumLiterals ecoreEnumLiteral="taller.ecore#//ProveedorServicio/GCP"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="taller.ecore#//Direccion">
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//Direccion/ENTRADA"/>
+      <genEnumLiterals ecoreEnumLiteral="taller.ecore#//Direccion/SALIDA"/>
+    </genEnums>
     <genClasses ecoreClass="taller.ecore#//Login">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Login/nombreConexion"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Login/usuario"/>
@@ -52,12 +56,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Login/secret"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//Infraestructura">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/conexiones"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/logins"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/ambientesdesplegue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Infraestructura/tipo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/securitygroups"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/rules"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Infraestructura/nombreProyecto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Infraestructura/gateway"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//AmbienteDesplegue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//AmbienteDesplegue/tipoAmbiente"/>
@@ -69,9 +74,11 @@
     <genClasses image="false" ecoreClass="taller.ecore#//Servidor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Servidor/nombre"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Servidor/TamanoM"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/servidor"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/vpcs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/conexion"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/server2"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/vpc"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/subred"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/server1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Servidor/serversecuritygroup"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//ServidorAplicacion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorAplicacion/sistemaO"/>
@@ -89,6 +96,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/portRange"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/Source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Rules/direccion"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//SecurityGroup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//SecurityGroup/name"/>
@@ -104,8 +112,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//ServidorAlmacenamiento/tamanoInicial"/>
     </genClasses>
     <genClasses ecoreClass="taller.ecore#//Conexion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/recurso1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/recurso2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Conexion/nombre"/>
+    </genClasses>
+    <genClasses ecoreClass="taller.ecore#//Gateway">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller.ecore#//Gateway/nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller.ecore#//Gateway/vpc"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -121,6 +121,15 @@ public interface Cloud_computingFactory extends EFactory {
 	Conexion createConexion();
 
 	/**
+	 * Returns a new object of class '<em>Gateway</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gateway</em>'.
+	 * @generated
+	 */
+	Gateway createGateway();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

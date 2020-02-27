@@ -53,7 +53,7 @@ public interface VPC extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subred</em>' containment reference list.
 	 * @see cloud_computing.Cloud_computingPackage#getVPC_Subred()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Subred> getSubred();

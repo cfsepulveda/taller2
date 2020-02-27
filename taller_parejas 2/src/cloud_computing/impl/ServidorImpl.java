@@ -4,14 +4,15 @@ package cloud_computing.impl;
 
 import cloud_computing.Cloud_computingPackage;
 import cloud_computing.Conexion;
+import cloud_computing.SecurityGroup;
 import cloud_computing.Servidor;
+import cloud_computing.Subred;
 import cloud_computing.TamanoMaquina;
 import cloud_computing.VPC;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -21,9 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,9 +34,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link cloud_computing.impl.ServidorImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link cloud_computing.impl.ServidorImpl#getTamanoM <em>Tamano M</em>}</li>
- *   <li>{@link cloud_computing.impl.ServidorImpl#getServidor <em>Servidor</em>}</li>
- *   <li>{@link cloud_computing.impl.ServidorImpl#getVpcs <em>Vpcs</em>}</li>
- *   <li>{@link cloud_computing.impl.ServidorImpl#getConexion <em>Conexion</em>}</li>
+ *   <li>{@link cloud_computing.impl.ServidorImpl#getServer2 <em>Server2</em>}</li>
+ *   <li>{@link cloud_computing.impl.ServidorImpl#getVpc <em>Vpc</em>}</li>
+ *   <li>{@link cloud_computing.impl.ServidorImpl#getSubred <em>Subred</em>}</li>
+ *   <li>{@link cloud_computing.impl.ServidorImpl#getServer1 <em>Server1</em>}</li>
+ *   <li>{@link cloud_computing.impl.ServidorImpl#getServersecuritygroup <em>Serversecuritygroup</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,34 +85,54 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	protected TamanoMaquina tamanoM = TAMANO_M_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getServidor() <em>Servidor</em>}' reference list.
+	 * The cached value of the '{@link #getServer2() <em>Server2</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServidor()
+	 * @see #getServer2()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Servidor> servidor;
+	protected Conexion server2;
 
 	/**
-	 * The cached value of the '{@link #getVpcs() <em>Vpcs</em>}' containment reference list.
+	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVpcs()
+	 * @see #getVpc()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<VPC> vpcs;
+	protected VPC vpc;
 
 	/**
-	 * The cached value of the '{@link #getConexion() <em>Conexion</em>}' reference.
+	 * The cached value of the '{@link #getSubred() <em>Subred</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConexion()
+	 * @see #getSubred()
 	 * @generated
 	 * @ordered
 	 */
-	protected Conexion conexion;
+	protected Subred subred;
+
+	/**
+	 * The cached value of the '{@link #getServer1() <em>Server1</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServer1()
+	 * @generated
+	 * @ordered
+	 */
+	protected Conexion server1;
+
+	/**
+	 * The cached value of the '{@link #getServersecuritygroup() <em>Serversecuritygroup</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServersecuritygroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SecurityGroup> serversecuritygroup;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,42 +205,16 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public EList<Servidor> getServidor() {
-		if (servidor == null) {
-			servidor = new EObjectResolvingEList<Servidor>(Servidor.class, this, Cloud_computingPackage.SERVIDOR__SERVIDOR);
-		}
-		return servidor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<VPC> getVpcs() {
-		if (vpcs == null) {
-			vpcs = new EObjectContainmentEList<VPC>(VPC.class, this, Cloud_computingPackage.SERVIDOR__VPCS);
-		}
-		return vpcs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Conexion getConexion() {
-		if (conexion != null && conexion.eIsProxy()) {
-			InternalEObject oldConexion = (InternalEObject)conexion;
-			conexion = (Conexion)eResolveProxy(oldConexion);
-			if (conexion != oldConexion) {
+	public Conexion getServer2() {
+		if (server2 != null && server2.eIsProxy()) {
+			InternalEObject oldServer2 = (InternalEObject)server2;
+			server2 = (Conexion)eResolveProxy(oldServer2);
+			if (server2 != oldServer2) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cloud_computingPackage.SERVIDOR__CONEXION, oldConexion, conexion));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cloud_computingPackage.SERVIDOR__SERVER2, oldServer2, server2));
 			}
 		}
-		return conexion;
+		return server2;
 	}
 
 	/**
@@ -227,8 +222,8 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Conexion basicGetConexion() {
-		return conexion;
+	public Conexion basicGetServer2() {
+		return server2;
 	}
 
 	/**
@@ -237,11 +232,11 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public void setConexion(Conexion newConexion) {
-		Conexion oldConexion = conexion;
-		conexion = newConexion;
+	public void setServer2(Conexion newServer2) {
+		Conexion oldServer2 = server2;
+		server2 = newServer2;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR__CONEXION, oldConexion, conexion));
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR__SERVER2, oldServer2, server2));
 	}
 
 	/**
@@ -250,12 +245,131 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR__VPCS:
-				return ((InternalEList<?>)getVpcs()).basicRemove(otherEnd, msgs);
+	public VPC getVpc() {
+		if (vpc != null && vpc.eIsProxy()) {
+			InternalEObject oldVpc = (InternalEObject)vpc;
+			vpc = (VPC)eResolveProxy(oldVpc);
+			if (vpc != oldVpc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cloud_computingPackage.SERVIDOR__VPC, oldVpc, vpc));
+			}
 		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VPC basicGetVpc() {
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVpc(VPC newVpc) {
+		VPC oldVpc = vpc;
+		vpc = newVpc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR__VPC, oldVpc, vpc));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Subred getSubred() {
+		if (subred != null && subred.eIsProxy()) {
+			InternalEObject oldSubred = (InternalEObject)subred;
+			subred = (Subred)eResolveProxy(oldSubred);
+			if (subred != oldSubred) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cloud_computingPackage.SERVIDOR__SUBRED, oldSubred, subred));
+			}
+		}
+		return subred;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Subred basicGetSubred() {
+		return subred;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSubred(Subred newSubred) {
+		Subred oldSubred = subred;
+		subred = newSubred;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR__SUBRED, oldSubred, subred));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Conexion getServer1() {
+		if (server1 != null && server1.eIsProxy()) {
+			InternalEObject oldServer1 = (InternalEObject)server1;
+			server1 = (Conexion)eResolveProxy(oldServer1);
+			if (server1 != oldServer1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cloud_computingPackage.SERVIDOR__SERVER1, oldServer1, server1));
+			}
+		}
+		return server1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Conexion basicGetServer1() {
+		return server1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setServer1(Conexion newServer1) {
+		Conexion oldServer1 = server1;
+		server1 = newServer1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR__SERVER1, oldServer1, server1));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<SecurityGroup> getServersecuritygroup() {
+		if (serversecuritygroup == null) {
+			serversecuritygroup = new EObjectResolvingEList<SecurityGroup>(SecurityGroup.class, this, Cloud_computingPackage.SERVIDOR__SERVERSECURITYGROUP);
+		}
+		return serversecuritygroup;
 	}
 
 	/**
@@ -270,13 +384,20 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 				return getNombre();
 			case Cloud_computingPackage.SERVIDOR__TAMANO_M:
 				return getTamanoM();
-			case Cloud_computingPackage.SERVIDOR__SERVIDOR:
-				return getServidor();
-			case Cloud_computingPackage.SERVIDOR__VPCS:
-				return getVpcs();
-			case Cloud_computingPackage.SERVIDOR__CONEXION:
-				if (resolve) return getConexion();
-				return basicGetConexion();
+			case Cloud_computingPackage.SERVIDOR__SERVER2:
+				if (resolve) return getServer2();
+				return basicGetServer2();
+			case Cloud_computingPackage.SERVIDOR__VPC:
+				if (resolve) return getVpc();
+				return basicGetVpc();
+			case Cloud_computingPackage.SERVIDOR__SUBRED:
+				if (resolve) return getSubred();
+				return basicGetSubred();
+			case Cloud_computingPackage.SERVIDOR__SERVER1:
+				if (resolve) return getServer1();
+				return basicGetServer1();
+			case Cloud_computingPackage.SERVIDOR__SERVERSECURITYGROUP:
+				return getServersecuritygroup();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -296,16 +417,21 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 			case Cloud_computingPackage.SERVIDOR__TAMANO_M:
 				setTamanoM((TamanoMaquina)newValue);
 				return;
-			case Cloud_computingPackage.SERVIDOR__SERVIDOR:
-				getServidor().clear();
-				getServidor().addAll((Collection<? extends Servidor>)newValue);
+			case Cloud_computingPackage.SERVIDOR__SERVER2:
+				setServer2((Conexion)newValue);
 				return;
-			case Cloud_computingPackage.SERVIDOR__VPCS:
-				getVpcs().clear();
-				getVpcs().addAll((Collection<? extends VPC>)newValue);
+			case Cloud_computingPackage.SERVIDOR__VPC:
+				setVpc((VPC)newValue);
 				return;
-			case Cloud_computingPackage.SERVIDOR__CONEXION:
-				setConexion((Conexion)newValue);
+			case Cloud_computingPackage.SERVIDOR__SUBRED:
+				setSubred((Subred)newValue);
+				return;
+			case Cloud_computingPackage.SERVIDOR__SERVER1:
+				setServer1((Conexion)newValue);
+				return;
+			case Cloud_computingPackage.SERVIDOR__SERVERSECURITYGROUP:
+				getServersecuritygroup().clear();
+				getServersecuritygroup().addAll((Collection<? extends SecurityGroup>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,14 +451,20 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 			case Cloud_computingPackage.SERVIDOR__TAMANO_M:
 				setTamanoM(TAMANO_M_EDEFAULT);
 				return;
-			case Cloud_computingPackage.SERVIDOR__SERVIDOR:
-				getServidor().clear();
+			case Cloud_computingPackage.SERVIDOR__SERVER2:
+				setServer2((Conexion)null);
 				return;
-			case Cloud_computingPackage.SERVIDOR__VPCS:
-				getVpcs().clear();
+			case Cloud_computingPackage.SERVIDOR__VPC:
+				setVpc((VPC)null);
 				return;
-			case Cloud_computingPackage.SERVIDOR__CONEXION:
-				setConexion((Conexion)null);
+			case Cloud_computingPackage.SERVIDOR__SUBRED:
+				setSubred((Subred)null);
+				return;
+			case Cloud_computingPackage.SERVIDOR__SERVER1:
+				setServer1((Conexion)null);
+				return;
+			case Cloud_computingPackage.SERVIDOR__SERVERSECURITYGROUP:
+				getServersecuritygroup().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -350,12 +482,16 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
 			case Cloud_computingPackage.SERVIDOR__TAMANO_M:
 				return tamanoM != TAMANO_M_EDEFAULT;
-			case Cloud_computingPackage.SERVIDOR__SERVIDOR:
-				return servidor != null && !servidor.isEmpty();
-			case Cloud_computingPackage.SERVIDOR__VPCS:
-				return vpcs != null && !vpcs.isEmpty();
-			case Cloud_computingPackage.SERVIDOR__CONEXION:
-				return conexion != null;
+			case Cloud_computingPackage.SERVIDOR__SERVER2:
+				return server2 != null;
+			case Cloud_computingPackage.SERVIDOR__VPC:
+				return vpc != null;
+			case Cloud_computingPackage.SERVIDOR__SUBRED:
+				return subred != null;
+			case Cloud_computingPackage.SERVIDOR__SERVER1:
+				return server1 != null;
+			case Cloud_computingPackage.SERVIDOR__SERVERSECURITYGROUP:
+				return serversecuritygroup != null && !serversecuritygroup.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

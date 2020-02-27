@@ -15,12 +15,13 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Attribute secret : EString
 
   Class Infraestructura
-    Reference conexiones : Login<<0..*>>
+    Reference logins : Login
     Reference ambientesdesplegue : AmbienteDesplegue<<0..*>>
     Attribute tipo : ProveedorServicio
     Reference securitygroups : SecurityGroup<<0..*>>
     Reference rules : Rules<<0..*>>
     Attribute nombreProyecto : EString
+    Reference gateway : Gateway<<0..*>>
 
   Class AmbienteDesplegue
     Attribute tipoAmbiente : Ambiente
@@ -32,9 +33,11 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
   Class Servidor
     Attribute nombre : EString
     Attribute TamanoM : TamanoMaquina
-    Reference servidor : Servidor<<0..*>>
-    Reference vpcs : VPC<<0..*>>
-    Reference conexion : Conexion
+    Reference server2 : Conexion
+    Reference vpc : VPC<<1..1>>
+    Reference subred : Subred<<1..1>>
+    Reference server1 : Conexion
+    Reference serversecuritygroup : SecurityGroup<<1..*>>
 
   Class ServidorAplicacion -> Servidor
     Attribute sistemaO : SistemaOperativo
@@ -44,7 +47,7 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
 
   Class VPC
     Attribute name : EString
-    Reference subred : Subred<<0..*>>
+    Reference subred : Subred<<1..*>>
 
   Class Rules
     Attribute type : EString
@@ -52,6 +55,7 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Attribute portRange : EString
     Attribute Source : EString
     Attribute description : EString
+    Attribute direccion : Direccion
 
   Class SecurityGroup
     Attribute name : EString
@@ -67,8 +71,11 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Attribute tamanoInicial : EString
 
   Class Conexion
-    Attribute recurso1 : EString
-    Attribute recurso2 : EString
+    Attribute nombre : EString
+
+  Class Gateway
+    Attribute nombre : EString
+    Reference vpc : VPC
 
   Enum Ambiente
     Literal DESARROLLO = 0
@@ -107,3 +114,7 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
   Enum ProveedorServicio
     Literal AWS = 0
     Literal GCP = 1
+
+  Enum Direccion
+    Literal ENTRADA = 0
+    Literal SALIDA = 1

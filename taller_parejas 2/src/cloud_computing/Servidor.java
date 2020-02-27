@@ -17,9 +17,11 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link cloud_computing.Servidor#getNombre <em>Nombre</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getTamanoM <em>Tamano M</em>}</li>
- *   <li>{@link cloud_computing.Servidor#getServidor <em>Servidor</em>}</li>
- *   <li>{@link cloud_computing.Servidor#getVpcs <em>Vpcs</em>}</li>
- *   <li>{@link cloud_computing.Servidor#getConexion <em>Conexion</em>}</li>
+ *   <li>{@link cloud_computing.Servidor#getServer2 <em>Server2</em>}</li>
+ *   <li>{@link cloud_computing.Servidor#getVpc <em>Vpc</em>}</li>
+ *   <li>{@link cloud_computing.Servidor#getSubred <em>Subred</em>}</li>
+ *   <li>{@link cloud_computing.Servidor#getServer1 <em>Server1</em>}</li>
+ *   <li>{@link cloud_computing.Servidor#getServersecuritygroup <em>Serversecuritygroup</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getServidor()
@@ -75,49 +77,103 @@ public interface Servidor extends EObject {
 	void setTamanoM(TamanoMaquina value);
 
 	/**
-	 * Returns the value of the '<em><b>Servidor</b></em>' reference list.
-	 * The list contents are of type {@link cloud_computing.Servidor}.
+	 * Returns the value of the '<em><b>Server2</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Servidor</em>' reference list.
-	 * @see cloud_computing.Cloud_computingPackage#getServidor_Servidor()
+	 * @return the value of the '<em>Server2</em>' reference.
+	 * @see #setServer2(Conexion)
+	 * @see cloud_computing.Cloud_computingPackage#getServidor_Server2()
 	 * @model
 	 * @generated
 	 */
-	EList<Servidor> getServidor();
+	Conexion getServer2();
 
 	/**
-	 * Returns the value of the '<em><b>Vpcs</b></em>' containment reference list.
-	 * The list contents are of type {@link cloud_computing.VPC}.
+	 * Sets the value of the '{@link cloud_computing.Servidor#getServer2 <em>Server2</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vpcs</em>' containment reference list.
-	 * @see cloud_computing.Cloud_computingPackage#getServidor_Vpcs()
-	 * @model containment="true"
+	 * @param value the new value of the '<em>Server2</em>' reference.
+	 * @see #getServer2()
 	 * @generated
 	 */
-	EList<VPC> getVpcs();
+	void setServer2(Conexion value);
 
 	/**
-	 * Returns the value of the '<em><b>Conexion</b></em>' reference.
+	 * Returns the value of the '<em><b>Vpc</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Conexion</em>' reference.
-	 * @see #setConexion(Conexion)
-	 * @see cloud_computing.Cloud_computingPackage#getServidor_Conexion()
+	 * @return the value of the '<em>Vpc</em>' reference.
+	 * @see #setVpc(VPC)
+	 * @see cloud_computing.Cloud_computingPackage#getServidor_Vpc()
+	 * @model required="true"
+	 * @generated
+	 */
+	VPC getVpc();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Servidor#getVpc <em>Vpc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Vpc</em>' reference.
+	 * @see #getVpc()
+	 * @generated
+	 */
+	void setVpc(VPC value);
+
+	/**
+	 * Returns the value of the '<em><b>Subred</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subred</em>' reference.
+	 * @see #setSubred(Subred)
+	 * @see cloud_computing.Cloud_computingPackage#getServidor_Subred()
+	 * @model required="true"
+	 * @generated
+	 */
+	Subred getSubred();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Servidor#getSubred <em>Subred</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Subred</em>' reference.
+	 * @see #getSubred()
+	 * @generated
+	 */
+	void setSubred(Subred value);
+
+	/**
+	 * Returns the value of the '<em><b>Server1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Server1</em>' reference.
+	 * @see #setServer1(Conexion)
+	 * @see cloud_computing.Cloud_computingPackage#getServidor_Server1()
 	 * @model
 	 * @generated
 	 */
-	Conexion getConexion();
+	Conexion getServer1();
 
 	/**
-	 * Sets the value of the '{@link cloud_computing.Servidor#getConexion <em>Conexion</em>}' reference.
+	 * Sets the value of the '{@link cloud_computing.Servidor#getServer1 <em>Server1</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Conexion</em>' reference.
-	 * @see #getConexion()
+	 * @param value the new value of the '<em>Server1</em>' reference.
+	 * @see #getServer1()
 	 * @generated
 	 */
-	void setConexion(Conexion value);
+	void setServer1(Conexion value);
+
+	/**
+	 * Returns the value of the '<em><b>Serversecuritygroup</b></em>' reference list.
+	 * The list contents are of type {@link cloud_computing.SecurityGroup}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serversecuritygroup</em>' reference list.
+	 * @see cloud_computing.Cloud_computingPackage#getServidor_Serversecuritygroup()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<SecurityGroup> getServersecuritygroup();
 
 } // Servidor

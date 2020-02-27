@@ -3,6 +3,7 @@
 package cloud_computing.impl;
 
 import cloud_computing.Cloud_computingPackage;
+import cloud_computing.Direccion;
 import cloud_computing.Rules;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link cloud_computing.impl.RulesImpl#getPortRange <em>Port Range</em>}</li>
  *   <li>{@link cloud_computing.impl.RulesImpl#getSource <em>Source</em>}</li>
  *   <li>{@link cloud_computing.impl.RulesImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link cloud_computing.impl.RulesImpl#getDireccion <em>Direccion</em>}</li>
  * </ul>
  *
  * @generated
@@ -129,6 +131,26 @@ public class RulesImpl extends MinimalEObjectImpl.Container implements Rules {
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDireccion() <em>Direccion</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDireccion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Direccion DIRECCION_EDEFAULT = Direccion.ENTRADA;
+
+	/**
+	 * The cached value of the '{@link #getDireccion() <em>Direccion</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDireccion()
+	 * @generated
+	 * @ordered
+	 */
+	protected Direccion direccion = DIRECCION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,6 +292,29 @@ public class RulesImpl extends MinimalEObjectImpl.Container implements Rules {
 	 * @generated
 	 */
 	@Override
+	public Direccion getDireccion() {
+		return direccion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDireccion(Direccion newDireccion) {
+		Direccion oldDireccion = direccion;
+		direccion = newDireccion == null ? DIRECCION_EDEFAULT : newDireccion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.RULES__DIRECCION, oldDireccion, direccion));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Cloud_computingPackage.RULES__TYPE:
@@ -282,6 +327,8 @@ public class RulesImpl extends MinimalEObjectImpl.Container implements Rules {
 				return getSource();
 			case Cloud_computingPackage.RULES__DESCRIPTION:
 				return getDescription();
+			case Cloud_computingPackage.RULES__DIRECCION:
+				return getDireccion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,6 +355,9 @@ public class RulesImpl extends MinimalEObjectImpl.Container implements Rules {
 				return;
 			case Cloud_computingPackage.RULES__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case Cloud_computingPackage.RULES__DIRECCION:
+				setDireccion((Direccion)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,6 +386,9 @@ public class RulesImpl extends MinimalEObjectImpl.Container implements Rules {
 			case Cloud_computingPackage.RULES__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case Cloud_computingPackage.RULES__DIRECCION:
+				setDireccion(DIRECCION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -358,6 +411,8 @@ public class RulesImpl extends MinimalEObjectImpl.Container implements Rules {
 				return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
 			case Cloud_computingPackage.RULES__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case Cloud_computingPackage.RULES__DIRECCION:
+				return direccion != DIRECCION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -382,6 +437,8 @@ public class RulesImpl extends MinimalEObjectImpl.Container implements Rules {
 		result.append(source);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", direccion: ");
+		result.append(direccion);
 		result.append(')');
 		return result.toString();
 	}

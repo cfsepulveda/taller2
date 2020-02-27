@@ -68,6 +68,7 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 			case Cloud_computingPackage.SUBRED: return createSubred();
 			case Cloud_computingPackage.SERVIDOR_ALMACENAMIENTO: return createServidorAlmacenamiento();
 			case Cloud_computingPackage.CONEXION: return createConexion();
+			case Cloud_computingPackage.GATEWAY: return createGateway();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,6 +94,8 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 				return createSistemaOperativoFromString(eDataType, initialValue);
 			case Cloud_computingPackage.PROVEEDOR_SERVICIO:
 				return createProveedorServicioFromString(eDataType, initialValue);
+			case Cloud_computingPackage.DIRECCION:
+				return createDireccionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -118,6 +121,8 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 				return convertSistemaOperativoToString(eDataType, instanceValue);
 			case Cloud_computingPackage.PROVEEDOR_SERVICIO:
 				return convertProveedorServicioToString(eDataType, instanceValue);
+			case Cloud_computingPackage.DIRECCION:
+				return convertDireccionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -249,6 +254,17 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Gateway createGateway() {
+		GatewayImpl gateway = new GatewayImpl();
+		return gateway;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Ambiente createAmbienteFromString(EDataType eDataType, String initialValue) {
 		Ambiente result = Ambiente.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -361,6 +377,26 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	 * @generated
 	 */
 	public String convertProveedorServicioToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Direccion createDireccionFromString(EDataType eDataType, String initialValue) {
+		Direccion result = Direccion.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDireccionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -3,29 +3,32 @@
 package cloud_computing.impl;
 
 import cloud_computing.Cloud_computingPackage;
-import cloud_computing.Conexion;
+import cloud_computing.Gateway;
+import cloud_computing.VPC;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Conexion</b></em>'.
+ * An implementation of the model object '<em><b>Gateway</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.impl.ConexionImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link cloud_computing.impl.GatewayImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link cloud_computing.impl.GatewayImpl#getVpc <em>Vpc</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexion {
+public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway {
 	/**
 	 * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,11 +50,21 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	protected String nombre = NOMBRE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVpc()
+	 * @generated
+	 * @ordered
+	 */
+	protected VPC vpc;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConexionImpl() {
+	protected GatewayImpl() {
 		super();
 	}
 
@@ -62,7 +75,7 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Cloud_computingPackage.Literals.CONEXION;
+		return Cloud_computingPackage.Literals.GATEWAY;
 	}
 
 	/**
@@ -85,7 +98,47 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 		String oldNombre = nombre;
 		nombre = newNombre;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__NOMBRE, oldNombre, nombre));
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.GATEWAY__NOMBRE, oldNombre, nombre));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public VPC getVpc() {
+		if (vpc != null && vpc.eIsProxy()) {
+			InternalEObject oldVpc = (InternalEObject)vpc;
+			vpc = (VPC)eResolveProxy(oldVpc);
+			if (vpc != oldVpc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cloud_computingPackage.GATEWAY__VPC, oldVpc, vpc));
+			}
+		}
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VPC basicGetVpc() {
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVpc(VPC newVpc) {
+		VPC oldVpc = vpc;
+		vpc = newVpc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.GATEWAY__VPC, oldVpc, vpc));
 	}
 
 	/**
@@ -96,8 +149,11 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE:
+			case Cloud_computingPackage.GATEWAY__NOMBRE:
 				return getNombre();
+			case Cloud_computingPackage.GATEWAY__VPC:
+				if (resolve) return getVpc();
+				return basicGetVpc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,8 +166,11 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE:
+			case Cloud_computingPackage.GATEWAY__NOMBRE:
 				setNombre((String)newValue);
+				return;
+			case Cloud_computingPackage.GATEWAY__VPC:
+				setVpc((VPC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,8 +184,11 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE:
+			case Cloud_computingPackage.GATEWAY__NOMBRE:
 				setNombre(NOMBRE_EDEFAULT);
+				return;
+			case Cloud_computingPackage.GATEWAY__VPC:
+				setVpc((VPC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,8 +202,10 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE:
+			case Cloud_computingPackage.GATEWAY__NOMBRE:
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
+			case Cloud_computingPackage.GATEWAY__VPC:
+				return vpc != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -162,4 +226,4 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 		return result.toString();
 	}
 
-} //ConexionImpl
+} //GatewayImpl

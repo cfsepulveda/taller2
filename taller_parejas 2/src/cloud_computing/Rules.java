@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cloud_computing.Rules#getPortRange <em>Port Range</em>}</li>
  *   <li>{@link cloud_computing.Rules#getSource <em>Source</em>}</li>
  *   <li>{@link cloud_computing.Rules#getDescription <em>Description</em>}</li>
+ *   <li>{@link cloud_computing.Rules#getDireccion <em>Direccion</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getRules()
@@ -134,5 +135,30 @@ public interface Rules extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Direccion</b></em>' attribute.
+	 * The literals are from the enumeration {@link cloud_computing.Direccion}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Direccion</em>' attribute.
+	 * @see cloud_computing.Direccion
+	 * @see #setDireccion(Direccion)
+	 * @see cloud_computing.Cloud_computingPackage#getRules_Direccion()
+	 * @model
+	 * @generated
+	 */
+	Direccion getDireccion();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Rules#getDireccion <em>Direccion</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Direccion</em>' attribute.
+	 * @see cloud_computing.Direccion
+	 * @see #getDireccion()
+	 * @generated
+	 */
+	void setDireccion(Direccion value);
 
 } // Rules

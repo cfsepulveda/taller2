@@ -15,12 +15,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.Infraestructura#getConexiones <em>Conexiones</em>}</li>
+ *   <li>{@link cloud_computing.Infraestructura#getLogins <em>Logins</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getAmbientesdesplegue <em>Ambientesdesplegue</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getTipo <em>Tipo</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getSecuritygroups <em>Securitygroups</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getRules <em>Rules</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getNombreProyecto <em>Nombre Proyecto</em>}</li>
+ *   <li>{@link cloud_computing.Infraestructura#getGateway <em>Gateway</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getInfraestructura()
@@ -29,16 +30,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Infraestructura extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Conexiones</b></em>' containment reference list.
-	 * The list contents are of type {@link cloud_computing.Login}.
+	 * Returns the value of the '<em><b>Logins</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Conexiones</em>' containment reference list.
-	 * @see cloud_computing.Cloud_computingPackage#getInfraestructura_Conexiones()
+	 * @return the value of the '<em>Logins</em>' containment reference.
+	 * @see #setLogins(Login)
+	 * @see cloud_computing.Cloud_computingPackage#getInfraestructura_Logins()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Login> getConexiones();
+	Login getLogins();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Infraestructura#getLogins <em>Logins</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Logins</em>' containment reference.
+	 * @see #getLogins()
+	 * @generated
+	 */
+	void setLogins(Login value);
 
 	/**
 	 * Returns the value of the '<em><b>Ambientesdesplegue</b></em>' containment reference list.
@@ -122,5 +133,17 @@ public interface Infraestructura extends EObject {
 	 * @generated
 	 */
 	void setNombreProyecto(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Gateway</b></em>' containment reference list.
+	 * The list contents are of type {@link cloud_computing.Gateway}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gateway</em>' containment reference list.
+	 * @see cloud_computing.Cloud_computingPackage#getInfraestructura_Gateway()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Gateway> getGateway();
 
 } // Infraestructura
