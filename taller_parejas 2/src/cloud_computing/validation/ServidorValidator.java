@@ -4,6 +4,7 @@
  */
 package cloud_computing.validation;
 
+import cloud_computing.Conexion;
 import cloud_computing.Servidor;
 import cloud_computing.TamanoMaquina;
 import cloud_computing.VPC;
@@ -23,4 +24,5 @@ public interface ServidorValidator {
 	boolean validateTamanoM(TamanoMaquina value);
 	boolean validateServidor(EList<Servidor> value);
 	boolean validateVpcs(EList<VPC> value);
+	boolean validateConexion(Conexion value);
 }

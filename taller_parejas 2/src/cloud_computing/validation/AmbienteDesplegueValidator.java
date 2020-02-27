@@ -5,7 +5,9 @@
 package cloud_computing.validation;
 
 import cloud_computing.Ambiente;
+import cloud_computing.Conexion;
 import cloud_computing.Servidor;
+import cloud_computing.VPC;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -21,4 +23,6 @@ public interface AmbienteDesplegueValidator {
 	boolean validateTipoAmbiente(Ambiente value);
 	boolean validateAlias(String value);
 	boolean validateServidores(EList<Servidor> value);
+	boolean validateConexion(Conexion value);
+	boolean validateVpc(EList<VPC> value);
 }

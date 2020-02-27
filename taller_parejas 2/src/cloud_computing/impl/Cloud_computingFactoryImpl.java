@@ -57,7 +57,7 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case Cloud_computingPackage.CONEXION: return createConexion();
+			case Cloud_computingPackage.LOGIN: return createLogin();
 			case Cloud_computingPackage.INFRAESTRUCTURA: return createInfraestructura();
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE: return createAmbienteDesplegue();
 			case Cloud_computingPackage.SERVIDOR_APLICACION: return createServidorAplicacion();
@@ -67,6 +67,7 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 			case Cloud_computingPackage.SECURITY_GROUP: return createSecurityGroup();
 			case Cloud_computingPackage.SUBRED: return createSubred();
 			case Cloud_computingPackage.SERVIDOR_ALMACENAMIENTO: return createServidorAlmacenamiento();
+			case Cloud_computingPackage.CONEXION: return createConexion();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -128,9 +129,9 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public Conexion createConexion() {
-		ConexionImpl conexion = new ConexionImpl();
-		return conexion;
+	public Login createLogin() {
+		LoginImpl login = new LoginImpl();
+		return login;
 	}
 
 	/**
@@ -230,6 +231,17 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	public ServidorAlmacenamiento createServidorAlmacenamiento() {
 		ServidorAlmacenamientoImpl servidorAlmacenamiento = new ServidorAlmacenamientoImpl();
 		return servidorAlmacenamiento;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Conexion createConexion() {
+		ConexionImpl conexion = new ConexionImpl();
+		return conexion;
 	}
 
 	/**

@@ -7,7 +7,7 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 
 Package cloud_computing <https://uniandes.edu.co/cloud_computing>
 
-  Class Conexion
+  Class Login
     Attribute nombreConexion : EString
     Attribute usuario : EString
     Attribute contrasena : EString
@@ -15,25 +15,26 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Attribute secret : EString
 
   Class Infraestructura
-    Reference conexiones : Conexion<<0..*>>
+    Reference conexiones : Login<<0..*>>
     Reference ambientesdesplegue : AmbienteDesplegue<<0..*>>
     Attribute tipo : ProveedorServicio
     Reference securitygroups : SecurityGroup<<0..*>>
-    Reference subredes : Subred<<0..*>>
     Reference rules : Rules<<0..*>>
     Attribute nombreProyecto : EString
-    Reference vpc : VPC<<0..*>>
 
   Class AmbienteDesplegue
     Attribute tipoAmbiente : Ambiente
     Attribute alias : EString
     Reference servidores : Servidor<<0..*>>
+    Reference conexion : Conexion
+    Reference vpc : VPC<<0..*>>
 
   Class Servidor
     Attribute nombre : EString
     Attribute TamanoM : TamanoMaquina
     Reference servidor : Servidor<<0..*>>
     Reference vpcs : VPC<<0..*>>
+    Reference conexion : Conexion
 
   Class ServidorAplicacion -> Servidor
     Attribute sistemaO : SistemaOperativo
@@ -43,6 +44,7 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
 
   Class VPC
     Attribute name : EString
+    Reference subred : Subred<<0..*>>
 
   Class Rules
     Attribute type : EString
@@ -63,6 +65,10 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
 
   Class ServidorAlmacenamiento -> Servidor
     Attribute tamanoInicial : EString
+
+  Class Conexion
+    Attribute recurso1 : EString
+    Attribute recurso2 : EString
 
   Enum Ambiente
     Literal DESARROLLO = 0

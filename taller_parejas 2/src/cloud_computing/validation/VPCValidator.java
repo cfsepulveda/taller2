@@ -4,6 +4,9 @@
  */
 package cloud_computing.validation;
 
+import cloud_computing.Subred;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * A sample validator interface for {@link cloud_computing.VPC}.
@@ -15,4 +18,5 @@ public interface VPCValidator {
 	boolean validate();
 
 	boolean validateName(String value);
+	boolean validateSubred(EList<Subred> value);
 }

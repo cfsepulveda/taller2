@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cloud_computing.Servidor#getTamanoM <em>Tamano M</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getServidor <em>Servidor</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getVpcs <em>Vpcs</em>}</li>
+ *   <li>{@link cloud_computing.Servidor#getConexion <em>Conexion</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getServidor()
@@ -96,5 +97,27 @@ public interface Servidor extends EObject {
 	 * @generated
 	 */
 	EList<VPC> getVpcs();
+
+	/**
+	 * Returns the value of the '<em><b>Conexion</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Conexion</em>' reference.
+	 * @see #setConexion(Conexion)
+	 * @see cloud_computing.Cloud_computingPackage#getServidor_Conexion()
+	 * @model
+	 * @generated
+	 */
+	Conexion getConexion();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.Servidor#getConexion <em>Conexion</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Conexion</em>' reference.
+	 * @see #getConexion()
+	 * @generated
+	 */
+	void setConexion(Conexion value);
 
 } // Servidor

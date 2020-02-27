@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cloud_computing.AmbienteDesplegue#getTipoAmbiente <em>Tipo Ambiente</em>}</li>
  *   <li>{@link cloud_computing.AmbienteDesplegue#getAlias <em>Alias</em>}</li>
  *   <li>{@link cloud_computing.AmbienteDesplegue#getServidores <em>Servidores</em>}</li>
+ *   <li>{@link cloud_computing.AmbienteDesplegue#getConexion <em>Conexion</em>}</li>
+ *   <li>{@link cloud_computing.AmbienteDesplegue#getVpc <em>Vpc</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getAmbienteDesplegue()
@@ -83,5 +85,39 @@ public interface AmbienteDesplegue extends EObject {
 	 * @generated
 	 */
 	EList<Servidor> getServidores();
+
+	/**
+	 * Returns the value of the '<em><b>Conexion</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Conexion</em>' reference.
+	 * @see #setConexion(Conexion)
+	 * @see cloud_computing.Cloud_computingPackage#getAmbienteDesplegue_Conexion()
+	 * @model
+	 * @generated
+	 */
+	Conexion getConexion();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.AmbienteDesplegue#getConexion <em>Conexion</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Conexion</em>' reference.
+	 * @see #getConexion()
+	 * @generated
+	 */
+	void setConexion(Conexion value);
+
+	/**
+	 * Returns the value of the '<em><b>Vpc</b></em>' containment reference list.
+	 * The list contents are of type {@link cloud_computing.VPC}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vpc</em>' containment reference list.
+	 * @see cloud_computing.Cloud_computingPackage#getAmbienteDesplegue_Vpc()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<VPC> getVpc();
 
 } // AmbienteDesplegue

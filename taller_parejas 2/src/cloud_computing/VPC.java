@@ -2,6 +2,8 @@
  */
 package cloud_computing;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link cloud_computing.VPC#getName <em>Name</em>}</li>
+ *   <li>{@link cloud_computing.VPC#getSubred <em>Subred</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getVPC()
@@ -42,5 +45,17 @@ public interface VPC extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Subred</b></em>' containment reference list.
+	 * The list contents are of type {@link cloud_computing.Subred}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subred</em>' containment reference list.
+	 * @see cloud_computing.Cloud_computingPackage#getVPC_Subred()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Subred> getSubred();
 
 } // VPC

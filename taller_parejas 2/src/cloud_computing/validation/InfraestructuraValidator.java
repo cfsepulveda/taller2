@@ -5,12 +5,10 @@
 package cloud_computing.validation;
 
 import cloud_computing.AmbienteDesplegue;
-import cloud_computing.Conexion;
+import cloud_computing.Login;
 import cloud_computing.ProveedorServicio;
 import cloud_computing.Rules;
 import cloud_computing.SecurityGroup;
-import cloud_computing.Subred;
-import cloud_computing.VPC;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -23,12 +21,10 @@ import org.eclipse.emf.common.util.EList;
 public interface InfraestructuraValidator {
 	boolean validate();
 
-	boolean validateConexiones(EList<Conexion> value);
+	boolean validateConexiones(EList<Login> value);
 	boolean validateAmbientesdesplegue(EList<AmbienteDesplegue> value);
 	boolean validateTipo(ProveedorServicio value);
 	boolean validateSecuritygroups(EList<SecurityGroup> value);
-	boolean validateSubredes(EList<Subred> value);
 	boolean validateRules(EList<Rules> value);
 	boolean validateNombreProyecto(String value);
-	boolean validateVpc(EList<VPC> value);
 }

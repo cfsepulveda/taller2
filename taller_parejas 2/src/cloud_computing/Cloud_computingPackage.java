@@ -58,14 +58,14 @@ public interface Cloud_computingPackage extends EPackage {
 	Cloud_computingPackage eINSTANCE = cloud_computing.impl.Cloud_computingPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link cloud_computing.impl.ConexionImpl <em>Conexion</em>}' class.
+	 * The meta object id for the '{@link cloud_computing.impl.LoginImpl <em>Login</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see cloud_computing.impl.ConexionImpl
-	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getConexion()
+	 * @see cloud_computing.impl.LoginImpl
+	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getLogin()
 	 * @generated
 	 */
-	int CONEXION = 0;
+	int LOGIN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Nombre Conexion</b></em>' attribute.
@@ -74,7 +74,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION__NOMBRE_CONEXION = 0;
+	int LOGIN__NOMBRE_CONEXION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Usuario</b></em>' attribute.
@@ -83,7 +83,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION__USUARIO = 1;
+	int LOGIN__USUARIO = 1;
 
 	/**
 	 * The feature id for the '<em><b>Contrasena</b></em>' attribute.
@@ -92,7 +92,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION__CONTRASENA = 2;
+	int LOGIN__CONTRASENA = 2;
 
 	/**
 	 * The feature id for the '<em><b>Access Id</b></em>' attribute.
@@ -101,7 +101,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION__ACCESS_ID = 3;
+	int LOGIN__ACCESS_ID = 3;
 
 	/**
 	 * The feature id for the '<em><b>Secret</b></em>' attribute.
@@ -110,25 +110,25 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION__SECRET = 4;
+	int LOGIN__SECRET = 4;
 
 	/**
-	 * The number of structural features of the '<em>Conexion</em>' class.
+	 * The number of structural features of the '<em>Login</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION_FEATURE_COUNT = 5;
+	int LOGIN_FEATURE_COUNT = 5;
 
 	/**
-	 * The number of operations of the '<em>Conexion</em>' class.
+	 * The number of operations of the '<em>Login</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION_OPERATION_COUNT = 0;
+	int LOGIN_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.impl.InfraestructuraImpl <em>Infraestructura</em>}' class.
@@ -177,22 +177,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int INFRAESTRUCTURA__SECURITYGROUPS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Subredes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFRAESTRUCTURA__SUBREDES = 4;
-
-	/**
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INFRAESTRUCTURA__RULES = 5;
+	int INFRAESTRUCTURA__RULES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Nombre Proyecto</b></em>' attribute.
@@ -201,16 +192,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFRAESTRUCTURA__NOMBRE_PROYECTO = 6;
-
-	/**
-	 * The feature id for the '<em><b>Vpc</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFRAESTRUCTURA__VPC = 7;
+	int INFRAESTRUCTURA__NOMBRE_PROYECTO = 5;
 
 	/**
 	 * The number of structural features of the '<em>Infraestructura</em>' class.
@@ -219,7 +201,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFRAESTRUCTURA_FEATURE_COUNT = 8;
+	int INFRAESTRUCTURA_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Infraestructura</em>' class.
@@ -268,13 +250,31 @@ public interface Cloud_computingPackage extends EPackage {
 	int AMBIENTE_DESPLEGUE__SERVIDORES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Conexion</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMBIENTE_DESPLEGUE__CONEXION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Vpc</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMBIENTE_DESPLEGUE__VPC = 4;
+
+	/**
 	 * The number of structural features of the '<em>Ambiente Desplegue</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AMBIENTE_DESPLEGUE_FEATURE_COUNT = 3;
+	int AMBIENTE_DESPLEGUE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Ambiente Desplegue</em>' class.
@@ -332,13 +332,22 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR__VPCS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Conexion</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVIDOR__CONEXION = 4;
+
+	/**
 	 * The number of structural features of the '<em>Servidor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_FEATURE_COUNT = 4;
+	int SERVIDOR_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Servidor</em>' class.
@@ -394,6 +403,15 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVIDOR_APLICACION__VPCS = SERVIDOR__VPCS;
+
+	/**
+	 * The feature id for the '<em><b>Conexion</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVIDOR_APLICACION__CONEXION = SERVIDOR__CONEXION;
 
 	/**
 	 * The feature id for the '<em><b>Sistema O</b></em>' attribute.
@@ -469,6 +487,15 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_BASE_DE_DATOS__VPCS = SERVIDOR__VPCS;
 
 	/**
+	 * The feature id for the '<em><b>Conexion</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVIDOR_BASE_DE_DATOS__CONEXION = SERVIDOR__CONEXION;
+
+	/**
 	 * The feature id for the '<em><b>Sistema Manejador</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -515,13 +542,22 @@ public interface Cloud_computingPackage extends EPackage {
 	int VPC__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Subred</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VPC__SUBRED = 1;
+
+	/**
 	 * The number of structural features of the '<em>VPC</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VPC_FEATURE_COUNT = 1;
+	int VPC_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>VPC</em>' class.
@@ -762,6 +798,15 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_ALMACENAMIENTO__VPCS = SERVIDOR__VPCS;
 
 	/**
+	 * The feature id for the '<em><b>Conexion</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVIDOR_ALMACENAMIENTO__CONEXION = SERVIDOR__CONEXION;
+
+	/**
 	 * The feature id for the '<em><b>Tamano Inicial</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -789,6 +834,52 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_ALMACENAMIENTO_OPERATION_COUNT = SERVIDOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link cloud_computing.impl.ConexionImpl <em>Conexion</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloud_computing.impl.ConexionImpl
+	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getConexion()
+	 * @generated
+	 */
+	int CONEXION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Recurso1</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__RECURSO1 = 0;
+
+	/**
+	 * The feature id for the '<em><b>Recurso2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__RECURSO2 = 1;
+
+	/**
+	 * The number of structural features of the '<em>Conexion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Conexion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link cloud_computing.Ambiente <em>Ambiente</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -796,7 +887,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getAmbiente()
 	 * @generated
 	 */
-	int AMBIENTE = 11;
+	int AMBIENTE = 12;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.TamanoMaquina <em>Tamano Maquina</em>}' enum.
@@ -806,7 +897,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getTamanoMaquina()
 	 * @generated
 	 */
-	int TAMANO_MAQUINA = 12;
+	int TAMANO_MAQUINA = 13;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.TipoBaseDeDatos <em>Tipo Base De Datos</em>}' enum.
@@ -816,7 +907,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getTipoBaseDeDatos()
 	 * @generated
 	 */
-	int TIPO_BASE_DE_DATOS = 13;
+	int TIPO_BASE_DE_DATOS = 14;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.SistemaManejador <em>Sistema Manejador</em>}' enum.
@@ -826,7 +917,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getSistemaManejador()
 	 * @generated
 	 */
-	int SISTEMA_MANEJADOR = 14;
+	int SISTEMA_MANEJADOR = 15;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.SistemaOperativo <em>Sistema Operativo</em>}' enum.
@@ -836,7 +927,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getSistemaOperativo()
 	 * @generated
 	 */
-	int SISTEMA_OPERATIVO = 15;
+	int SISTEMA_OPERATIVO = 16;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.ProveedorServicio <em>Proveedor Servicio</em>}' enum.
@@ -846,73 +937,73 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getProveedorServicio()
 	 * @generated
 	 */
-	int PROVEEDOR_SERVICIO = 16;
+	int PROVEEDOR_SERVICIO = 17;
 
 
 	/**
-	 * Returns the meta object for class '{@link cloud_computing.Conexion <em>Conexion</em>}'.
+	 * Returns the meta object for class '{@link cloud_computing.Login <em>Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Conexion</em>'.
-	 * @see cloud_computing.Conexion
+	 * @return the meta object for class '<em>Login</em>'.
+	 * @see cloud_computing.Login
 	 * @generated
 	 */
-	EClass getConexion();
+	EClass getLogin();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getNombreConexion <em>Nombre Conexion</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Login#getNombreConexion <em>Nombre Conexion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Nombre Conexion</em>'.
-	 * @see cloud_computing.Conexion#getNombreConexion()
-	 * @see #getConexion()
+	 * @see cloud_computing.Login#getNombreConexion()
+	 * @see #getLogin()
 	 * @generated
 	 */
-	EAttribute getConexion_NombreConexion();
+	EAttribute getLogin_NombreConexion();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getUsuario <em>Usuario</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Login#getUsuario <em>Usuario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Usuario</em>'.
-	 * @see cloud_computing.Conexion#getUsuario()
-	 * @see #getConexion()
+	 * @see cloud_computing.Login#getUsuario()
+	 * @see #getLogin()
 	 * @generated
 	 */
-	EAttribute getConexion_Usuario();
+	EAttribute getLogin_Usuario();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getContrasena <em>Contrasena</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Login#getContrasena <em>Contrasena</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Contrasena</em>'.
-	 * @see cloud_computing.Conexion#getContrasena()
-	 * @see #getConexion()
+	 * @see cloud_computing.Login#getContrasena()
+	 * @see #getLogin()
 	 * @generated
 	 */
-	EAttribute getConexion_Contrasena();
+	EAttribute getLogin_Contrasena();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getAccessId <em>Access Id</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Login#getAccessId <em>Access Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Access Id</em>'.
-	 * @see cloud_computing.Conexion#getAccessId()
-	 * @see #getConexion()
+	 * @see cloud_computing.Login#getAccessId()
+	 * @see #getLogin()
 	 * @generated
 	 */
-	EAttribute getConexion_AccessId();
+	EAttribute getLogin_AccessId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getSecret <em>Secret</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Login#getSecret <em>Secret</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Secret</em>'.
-	 * @see cloud_computing.Conexion#getSecret()
-	 * @see #getConexion()
+	 * @see cloud_computing.Login#getSecret()
+	 * @see #getLogin()
 	 * @generated
 	 */
-	EAttribute getConexion_Secret();
+	EAttribute getLogin_Secret();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.Infraestructura <em>Infraestructura</em>}'.
@@ -969,17 +1060,6 @@ public interface Cloud_computingPackage extends EPackage {
 	EReference getInfraestructura_Securitygroups();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link cloud_computing.Infraestructura#getSubredes <em>Subredes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Subredes</em>'.
-	 * @see cloud_computing.Infraestructura#getSubredes()
-	 * @see #getInfraestructura()
-	 * @generated
-	 */
-	EReference getInfraestructura_Subredes();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link cloud_computing.Infraestructura#getRules <em>Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1000,17 +1080,6 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInfraestructura_NombreProyecto();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link cloud_computing.Infraestructura#getVpc <em>Vpc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Vpc</em>'.
-	 * @see cloud_computing.Infraestructura#getVpc()
-	 * @see #getInfraestructura()
-	 * @generated
-	 */
-	EReference getInfraestructura_Vpc();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.AmbienteDesplegue <em>Ambiente Desplegue</em>}'.
@@ -1054,6 +1123,28 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAmbienteDesplegue_Servidores();
+
+	/**
+	 * Returns the meta object for the reference '{@link cloud_computing.AmbienteDesplegue#getConexion <em>Conexion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Conexion</em>'.
+	 * @see cloud_computing.AmbienteDesplegue#getConexion()
+	 * @see #getAmbienteDesplegue()
+	 * @generated
+	 */
+	EReference getAmbienteDesplegue_Conexion();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link cloud_computing.AmbienteDesplegue#getVpc <em>Vpc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Vpc</em>'.
+	 * @see cloud_computing.AmbienteDesplegue#getVpc()
+	 * @see #getAmbienteDesplegue()
+	 * @generated
+	 */
+	EReference getAmbienteDesplegue_Vpc();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.Servidor <em>Servidor</em>}'.
@@ -1108,6 +1199,17 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getServidor_Vpcs();
+
+	/**
+	 * Returns the meta object for the reference '{@link cloud_computing.Servidor#getConexion <em>Conexion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Conexion</em>'.
+	 * @see cloud_computing.Servidor#getConexion()
+	 * @see #getServidor()
+	 * @generated
+	 */
+	EReference getServidor_Conexion();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.ServidorAplicacion <em>Servidor Aplicacion</em>}'.
@@ -1171,6 +1273,17 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVPC_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link cloud_computing.VPC#getSubred <em>Subred</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Subred</em>'.
+	 * @see cloud_computing.VPC#getSubred()
+	 * @see #getVPC()
+	 * @generated
+	 */
+	EReference getVPC_Subred();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.Rules <em>Rules</em>}'.
@@ -1345,6 +1458,38 @@ public interface Cloud_computingPackage extends EPackage {
 	EAttribute getServidorAlmacenamiento_TamanoInicial();
 
 	/**
+	 * Returns the meta object for class '{@link cloud_computing.Conexion <em>Conexion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conexion</em>'.
+	 * @see cloud_computing.Conexion
+	 * @generated
+	 */
+	EClass getConexion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getRecurso1 <em>Recurso1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recurso1</em>'.
+	 * @see cloud_computing.Conexion#getRecurso1()
+	 * @see #getConexion()
+	 * @generated
+	 */
+	EAttribute getConexion_Recurso1();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cloud_computing.Conexion#getRecurso2 <em>Recurso2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recurso2</em>'.
+	 * @see cloud_computing.Conexion#getRecurso2()
+	 * @see #getConexion()
+	 * @generated
+	 */
+	EAttribute getConexion_Recurso2();
+
+	/**
 	 * Returns the meta object for enum '{@link cloud_computing.Ambiente <em>Ambiente</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1428,14 +1573,14 @@ public interface Cloud_computingPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link cloud_computing.impl.ConexionImpl <em>Conexion</em>}' class.
+		 * The meta object literal for the '{@link cloud_computing.impl.LoginImpl <em>Login</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see cloud_computing.impl.ConexionImpl
-		 * @see cloud_computing.impl.Cloud_computingPackageImpl#getConexion()
+		 * @see cloud_computing.impl.LoginImpl
+		 * @see cloud_computing.impl.Cloud_computingPackageImpl#getLogin()
 		 * @generated
 		 */
-		EClass CONEXION = eINSTANCE.getConexion();
+		EClass LOGIN = eINSTANCE.getLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Nombre Conexion</b></em>' attribute feature.
@@ -1443,7 +1588,7 @@ public interface Cloud_computingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONEXION__NOMBRE_CONEXION = eINSTANCE.getConexion_NombreConexion();
+		EAttribute LOGIN__NOMBRE_CONEXION = eINSTANCE.getLogin_NombreConexion();
 
 		/**
 		 * The meta object literal for the '<em><b>Usuario</b></em>' attribute feature.
@@ -1451,7 +1596,7 @@ public interface Cloud_computingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONEXION__USUARIO = eINSTANCE.getConexion_Usuario();
+		EAttribute LOGIN__USUARIO = eINSTANCE.getLogin_Usuario();
 
 		/**
 		 * The meta object literal for the '<em><b>Contrasena</b></em>' attribute feature.
@@ -1459,7 +1604,7 @@ public interface Cloud_computingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONEXION__CONTRASENA = eINSTANCE.getConexion_Contrasena();
+		EAttribute LOGIN__CONTRASENA = eINSTANCE.getLogin_Contrasena();
 
 		/**
 		 * The meta object literal for the '<em><b>Access Id</b></em>' attribute feature.
@@ -1467,7 +1612,7 @@ public interface Cloud_computingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONEXION__ACCESS_ID = eINSTANCE.getConexion_AccessId();
+		EAttribute LOGIN__ACCESS_ID = eINSTANCE.getLogin_AccessId();
 
 		/**
 		 * The meta object literal for the '<em><b>Secret</b></em>' attribute feature.
@@ -1475,7 +1620,7 @@ public interface Cloud_computingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONEXION__SECRET = eINSTANCE.getConexion_Secret();
+		EAttribute LOGIN__SECRET = eINSTANCE.getLogin_Secret();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.InfraestructuraImpl <em>Infraestructura</em>}' class.
@@ -1520,14 +1665,6 @@ public interface Cloud_computingPackage extends EPackage {
 		EReference INFRAESTRUCTURA__SECURITYGROUPS = eINSTANCE.getInfraestructura_Securitygroups();
 
 		/**
-		 * The meta object literal for the '<em><b>Subredes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INFRAESTRUCTURA__SUBREDES = eINSTANCE.getInfraestructura_Subredes();
-
-		/**
 		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1542,14 +1679,6 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INFRAESTRUCTURA__NOMBRE_PROYECTO = eINSTANCE.getInfraestructura_NombreProyecto();
-
-		/**
-		 * The meta object literal for the '<em><b>Vpc</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INFRAESTRUCTURA__VPC = eINSTANCE.getInfraestructura_Vpc();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.AmbienteDesplegueImpl <em>Ambiente Desplegue</em>}' class.
@@ -1584,6 +1713,22 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference AMBIENTE_DESPLEGUE__SERVIDORES = eINSTANCE.getAmbienteDesplegue_Servidores();
+
+		/**
+		 * The meta object literal for the '<em><b>Conexion</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AMBIENTE_DESPLEGUE__CONEXION = eINSTANCE.getAmbienteDesplegue_Conexion();
+
+		/**
+		 * The meta object literal for the '<em><b>Vpc</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AMBIENTE_DESPLEGUE__VPC = eINSTANCE.getAmbienteDesplegue_Vpc();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.ServidorImpl <em>Servidor</em>}' class.
@@ -1626,6 +1771,14 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVIDOR__VPCS = eINSTANCE.getServidor_Vpcs();
+
+		/**
+		 * The meta object literal for the '<em><b>Conexion</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVIDOR__CONEXION = eINSTANCE.getServidor_Conexion();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.ServidorAplicacionImpl <em>Servidor Aplicacion</em>}' class.
@@ -1680,6 +1833,14 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VPC__NAME = eINSTANCE.getVPC_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Subred</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VPC__SUBRED = eINSTANCE.getVPC_Subred();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.RulesImpl <em>Rules</em>}' class.
@@ -1816,6 +1977,32 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVIDOR_ALMACENAMIENTO__TAMANO_INICIAL = eINSTANCE.getServidorAlmacenamiento_TamanoInicial();
+
+		/**
+		 * The meta object literal for the '{@link cloud_computing.impl.ConexionImpl <em>Conexion</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cloud_computing.impl.ConexionImpl
+		 * @see cloud_computing.impl.Cloud_computingPackageImpl#getConexion()
+		 * @generated
+		 */
+		EClass CONEXION = eINSTANCE.getConexion();
+
+		/**
+		 * The meta object literal for the '<em><b>Recurso1</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONEXION__RECURSO1 = eINSTANCE.getConexion_Recurso1();
+
+		/**
+		 * The meta object literal for the '<em><b>Recurso2</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONEXION__RECURSO2 = eINSTANCE.getConexion_Recurso2();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.Ambiente <em>Ambiente</em>}' enum.

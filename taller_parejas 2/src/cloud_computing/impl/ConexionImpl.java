@@ -20,115 +20,52 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.impl.ConexionImpl#getNombreConexion <em>Nombre Conexion</em>}</li>
- *   <li>{@link cloud_computing.impl.ConexionImpl#getUsuario <em>Usuario</em>}</li>
- *   <li>{@link cloud_computing.impl.ConexionImpl#getContrasena <em>Contrasena</em>}</li>
- *   <li>{@link cloud_computing.impl.ConexionImpl#getAccessId <em>Access Id</em>}</li>
- *   <li>{@link cloud_computing.impl.ConexionImpl#getSecret <em>Secret</em>}</li>
+ *   <li>{@link cloud_computing.impl.ConexionImpl#getRecurso1 <em>Recurso1</em>}</li>
+ *   <li>{@link cloud_computing.impl.ConexionImpl#getRecurso2 <em>Recurso2</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexion {
 	/**
-	 * The default value of the '{@link #getNombreConexion() <em>Nombre Conexion</em>}' attribute.
+	 * The default value of the '{@link #getRecurso1() <em>Recurso1</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNombreConexion()
+	 * @see #getRecurso1()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOMBRE_CONEXION_EDEFAULT = null;
+	protected static final String RECURSO1_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNombreConexion() <em>Nombre Conexion</em>}' attribute.
+	 * The cached value of the '{@link #getRecurso1() <em>Recurso1</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNombreConexion()
+	 * @see #getRecurso1()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nombreConexion = NOMBRE_CONEXION_EDEFAULT;
+	protected String recurso1 = RECURSO1_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUsuario() <em>Usuario</em>}' attribute.
+	 * The default value of the '{@link #getRecurso2() <em>Recurso2</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUsuario()
+	 * @see #getRecurso2()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USUARIO_EDEFAULT = null;
+	protected static final String RECURSO2_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUsuario() <em>Usuario</em>}' attribute.
+	 * The cached value of the '{@link #getRecurso2() <em>Recurso2</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUsuario()
+	 * @see #getRecurso2()
 	 * @generated
 	 * @ordered
 	 */
-	protected String usuario = USUARIO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContrasena() <em>Contrasena</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContrasena()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTRASENA_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContrasena() <em>Contrasena</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContrasena()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contrasena = CONTRASENA_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAccessId() <em>Access Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccessId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCESS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAccessId() <em>Access Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccessId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accessId = ACCESS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSecret() <em>Secret</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecret()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SECRET_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSecret() <em>Secret</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecret()
-	 * @generated
-	 * @ordered
-	 */
-	protected String secret = SECRET_EDEFAULT;
+	protected String recurso2 = RECURSO2_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,8 +92,8 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	 * @generated
 	 */
 	@Override
-	public String getNombreConexion() {
-		return nombreConexion;
+	public String getRecurso1() {
+		return recurso1;
 	}
 
 	/**
@@ -165,11 +102,11 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	 * @generated
 	 */
 	@Override
-	public void setNombreConexion(String newNombreConexion) {
-		String oldNombreConexion = nombreConexion;
-		nombreConexion = newNombreConexion;
+	public void setRecurso1(String newRecurso1) {
+		String oldRecurso1 = recurso1;
+		recurso1 = newRecurso1;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__NOMBRE_CONEXION, oldNombreConexion, nombreConexion));
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__RECURSO1, oldRecurso1, recurso1));
 	}
 
 	/**
@@ -178,8 +115,8 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	 * @generated
 	 */
 	@Override
-	public String getUsuario() {
-		return usuario;
+	public String getRecurso2() {
+		return recurso2;
 	}
 
 	/**
@@ -188,80 +125,11 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	 * @generated
 	 */
 	@Override
-	public void setUsuario(String newUsuario) {
-		String oldUsuario = usuario;
-		usuario = newUsuario;
+	public void setRecurso2(String newRecurso2) {
+		String oldRecurso2 = recurso2;
+		recurso2 = newRecurso2;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__USUARIO, oldUsuario, usuario));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getContrasena() {
-		return contrasena;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setContrasena(String newContrasena) {
-		String oldContrasena = contrasena;
-		contrasena = newContrasena;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__CONTRASENA, oldContrasena, contrasena));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getAccessId() {
-		return accessId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAccessId(String newAccessId) {
-		String oldAccessId = accessId;
-		accessId = newAccessId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__ACCESS_ID, oldAccessId, accessId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getSecret() {
-		return secret;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSecret(String newSecret) {
-		String oldSecret = secret;
-		secret = newSecret;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__SECRET, oldSecret, secret));
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__RECURSO2, oldRecurso2, recurso2));
 	}
 
 	/**
@@ -272,16 +140,10 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE_CONEXION:
-				return getNombreConexion();
-			case Cloud_computingPackage.CONEXION__USUARIO:
-				return getUsuario();
-			case Cloud_computingPackage.CONEXION__CONTRASENA:
-				return getContrasena();
-			case Cloud_computingPackage.CONEXION__ACCESS_ID:
-				return getAccessId();
-			case Cloud_computingPackage.CONEXION__SECRET:
-				return getSecret();
+			case Cloud_computingPackage.CONEXION__RECURSO1:
+				return getRecurso1();
+			case Cloud_computingPackage.CONEXION__RECURSO2:
+				return getRecurso2();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -294,20 +156,11 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE_CONEXION:
-				setNombreConexion((String)newValue);
+			case Cloud_computingPackage.CONEXION__RECURSO1:
+				setRecurso1((String)newValue);
 				return;
-			case Cloud_computingPackage.CONEXION__USUARIO:
-				setUsuario((String)newValue);
-				return;
-			case Cloud_computingPackage.CONEXION__CONTRASENA:
-				setContrasena((String)newValue);
-				return;
-			case Cloud_computingPackage.CONEXION__ACCESS_ID:
-				setAccessId((String)newValue);
-				return;
-			case Cloud_computingPackage.CONEXION__SECRET:
-				setSecret((String)newValue);
+			case Cloud_computingPackage.CONEXION__RECURSO2:
+				setRecurso2((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -321,20 +174,11 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE_CONEXION:
-				setNombreConexion(NOMBRE_CONEXION_EDEFAULT);
+			case Cloud_computingPackage.CONEXION__RECURSO1:
+				setRecurso1(RECURSO1_EDEFAULT);
 				return;
-			case Cloud_computingPackage.CONEXION__USUARIO:
-				setUsuario(USUARIO_EDEFAULT);
-				return;
-			case Cloud_computingPackage.CONEXION__CONTRASENA:
-				setContrasena(CONTRASENA_EDEFAULT);
-				return;
-			case Cloud_computingPackage.CONEXION__ACCESS_ID:
-				setAccessId(ACCESS_ID_EDEFAULT);
-				return;
-			case Cloud_computingPackage.CONEXION__SECRET:
-				setSecret(SECRET_EDEFAULT);
+			case Cloud_computingPackage.CONEXION__RECURSO2:
+				setRecurso2(RECURSO2_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -348,16 +192,10 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE_CONEXION:
-				return NOMBRE_CONEXION_EDEFAULT == null ? nombreConexion != null : !NOMBRE_CONEXION_EDEFAULT.equals(nombreConexion);
-			case Cloud_computingPackage.CONEXION__USUARIO:
-				return USUARIO_EDEFAULT == null ? usuario != null : !USUARIO_EDEFAULT.equals(usuario);
-			case Cloud_computingPackage.CONEXION__CONTRASENA:
-				return CONTRASENA_EDEFAULT == null ? contrasena != null : !CONTRASENA_EDEFAULT.equals(contrasena);
-			case Cloud_computingPackage.CONEXION__ACCESS_ID:
-				return ACCESS_ID_EDEFAULT == null ? accessId != null : !ACCESS_ID_EDEFAULT.equals(accessId);
-			case Cloud_computingPackage.CONEXION__SECRET:
-				return SECRET_EDEFAULT == null ? secret != null : !SECRET_EDEFAULT.equals(secret);
+			case Cloud_computingPackage.CONEXION__RECURSO1:
+				return RECURSO1_EDEFAULT == null ? recurso1 != null : !RECURSO1_EDEFAULT.equals(recurso1);
+			case Cloud_computingPackage.CONEXION__RECURSO2:
+				return RECURSO2_EDEFAULT == null ? recurso2 != null : !RECURSO2_EDEFAULT.equals(recurso2);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -372,16 +210,10 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nombreConexion: ");
-		result.append(nombreConexion);
-		result.append(", usuario: ");
-		result.append(usuario);
-		result.append(", contrasena: ");
-		result.append(contrasena);
-		result.append(", accessId: ");
-		result.append(accessId);
-		result.append(", secret: ");
-		result.append(secret);
+		result.append(" (recurso1: ");
+		result.append(recurso1);
+		result.append(", recurso2: ");
+		result.append(recurso2);
 		result.append(')');
 		return result.toString();
 	}

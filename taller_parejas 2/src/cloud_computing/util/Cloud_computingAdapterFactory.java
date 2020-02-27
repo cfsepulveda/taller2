@@ -68,8 +68,8 @@ public class Cloud_computingAdapterFactory extends AdapterFactoryImpl {
 	protected Cloud_computingSwitch<Adapter> modelSwitch =
 		new Cloud_computingSwitch<Adapter>() {
 			@Override
-			public Adapter caseConexion(Conexion object) {
-				return createConexionAdapter();
+			public Adapter caseLogin(Login object) {
+				return createLoginAdapter();
 			}
 			@Override
 			public Adapter caseInfraestructura(Infraestructura object) {
@@ -112,6 +112,10 @@ public class Cloud_computingAdapterFactory extends AdapterFactoryImpl {
 				return createServidorAlmacenamientoAdapter();
 			}
 			@Override
+			public Adapter caseConexion(Conexion object) {
+				return createConexionAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -132,16 +136,16 @@ public class Cloud_computingAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cloud_computing.Conexion <em>Conexion</em>}'.
+	 * Creates a new adapter for an object of class '{@link cloud_computing.Login <em>Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cloud_computing.Conexion
+	 * @see cloud_computing.Login
 	 * @generated
 	 */
-	public Adapter createConexionAdapter() {
+	public Adapter createLoginAdapter() {
 		return null;
 	}
 
@@ -282,6 +286,20 @@ public class Cloud_computingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServidorAlmacenamientoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cloud_computing.Conexion <em>Conexion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cloud_computing.Conexion
+	 * @generated
+	 */
+	public Adapter createConexionAdapter() {
 		return null;
 	}
 

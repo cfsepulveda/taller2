@@ -13,11 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.Conexion#getNombreConexion <em>Nombre Conexion</em>}</li>
- *   <li>{@link cloud_computing.Conexion#getUsuario <em>Usuario</em>}</li>
- *   <li>{@link cloud_computing.Conexion#getContrasena <em>Contrasena</em>}</li>
- *   <li>{@link cloud_computing.Conexion#getAccessId <em>Access Id</em>}</li>
- *   <li>{@link cloud_computing.Conexion#getSecret <em>Secret</em>}</li>
+ *   <li>{@link cloud_computing.Conexion#getRecurso1 <em>Recurso1</em>}</li>
+ *   <li>{@link cloud_computing.Conexion#getRecurso2 <em>Recurso2</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getConexion()
@@ -26,113 +23,47 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Conexion extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Nombre Conexion</b></em>' attribute.
+	 * Returns the value of the '<em><b>Recurso1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nombre Conexion</em>' attribute.
-	 * @see #setNombreConexion(String)
-	 * @see cloud_computing.Cloud_computingPackage#getConexion_NombreConexion()
+	 * @return the value of the '<em>Recurso1</em>' attribute.
+	 * @see #setRecurso1(String)
+	 * @see cloud_computing.Cloud_computingPackage#getConexion_Recurso1()
 	 * @model
 	 * @generated
 	 */
-	String getNombreConexion();
+	String getRecurso1();
 
 	/**
-	 * Sets the value of the '{@link cloud_computing.Conexion#getNombreConexion <em>Nombre Conexion</em>}' attribute.
+	 * Sets the value of the '{@link cloud_computing.Conexion#getRecurso1 <em>Recurso1</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nombre Conexion</em>' attribute.
-	 * @see #getNombreConexion()
+	 * @param value the new value of the '<em>Recurso1</em>' attribute.
+	 * @see #getRecurso1()
 	 * @generated
 	 */
-	void setNombreConexion(String value);
+	void setRecurso1(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Usuario</b></em>' attribute.
+	 * Returns the value of the '<em><b>Recurso2</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Usuario</em>' attribute.
-	 * @see #setUsuario(String)
-	 * @see cloud_computing.Cloud_computingPackage#getConexion_Usuario()
+	 * @return the value of the '<em>Recurso2</em>' attribute.
+	 * @see #setRecurso2(String)
+	 * @see cloud_computing.Cloud_computingPackage#getConexion_Recurso2()
 	 * @model
 	 * @generated
 	 */
-	String getUsuario();
+	String getRecurso2();
 
 	/**
-	 * Sets the value of the '{@link cloud_computing.Conexion#getUsuario <em>Usuario</em>}' attribute.
+	 * Sets the value of the '{@link cloud_computing.Conexion#getRecurso2 <em>Recurso2</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Usuario</em>' attribute.
-	 * @see #getUsuario()
+	 * @param value the new value of the '<em>Recurso2</em>' attribute.
+	 * @see #getRecurso2()
 	 * @generated
 	 */
-	void setUsuario(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Contrasena</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contrasena</em>' attribute.
-	 * @see #setContrasena(String)
-	 * @see cloud_computing.Cloud_computingPackage#getConexion_Contrasena()
-	 * @model
-	 * @generated
-	 */
-	String getContrasena();
-
-	/**
-	 * Sets the value of the '{@link cloud_computing.Conexion#getContrasena <em>Contrasena</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contrasena</em>' attribute.
-	 * @see #getContrasena()
-	 * @generated
-	 */
-	void setContrasena(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Access Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Access Id</em>' attribute.
-	 * @see #setAccessId(String)
-	 * @see cloud_computing.Cloud_computingPackage#getConexion_AccessId()
-	 * @model
-	 * @generated
-	 */
-	String getAccessId();
-
-	/**
-	 * Sets the value of the '{@link cloud_computing.Conexion#getAccessId <em>Access Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Access Id</em>' attribute.
-	 * @see #getAccessId()
-	 * @generated
-	 */
-	void setAccessId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Secret</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Secret</em>' attribute.
-	 * @see #setSecret(String)
-	 * @see cloud_computing.Cloud_computingPackage#getConexion_Secret()
-	 * @model
-	 * @generated
-	 */
-	String getSecret();
-
-	/**
-	 * Sets the value of the '{@link cloud_computing.Conexion#getSecret <em>Secret</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Secret</em>' attribute.
-	 * @see #getSecret()
-	 * @generated
-	 */
-	void setSecret(String value);
+	void setRecurso2(String value);
 
 } // Conexion

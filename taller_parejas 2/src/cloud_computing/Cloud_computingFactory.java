@@ -22,13 +22,13 @@ public interface Cloud_computingFactory extends EFactory {
 	Cloud_computingFactory eINSTANCE = cloud_computing.impl.Cloud_computingFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Conexion</em>'.
+	 * Returns a new object of class '<em>Login</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Conexion</em>'.
+	 * @return a new object of class '<em>Login</em>'.
 	 * @generated
 	 */
-	Conexion createConexion();
+	Login createLogin();
 
 	/**
 	 * Returns a new object of class '<em>Infraestructura</em>'.
@@ -110,6 +110,15 @@ public interface Cloud_computingFactory extends EFactory {
 	 * @generated
 	 */
 	ServidorAlmacenamiento createServidorAlmacenamiento();
+
+	/**
+	 * Returns a new object of class '<em>Conexion</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conexion</em>'.
+	 * @generated
+	 */
+	Conexion createConexion();
 
 	/**
 	 * Returns the package supported by this factory.

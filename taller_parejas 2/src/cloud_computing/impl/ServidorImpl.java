@@ -3,6 +3,7 @@
 package cloud_computing.impl;
 
 import cloud_computing.Cloud_computingPackage;
+import cloud_computing.Conexion;
 import cloud_computing.Servidor;
 import cloud_computing.TamanoMaquina;
 import cloud_computing.VPC;
@@ -36,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link cloud_computing.impl.ServidorImpl#getTamanoM <em>Tamano M</em>}</li>
  *   <li>{@link cloud_computing.impl.ServidorImpl#getServidor <em>Servidor</em>}</li>
  *   <li>{@link cloud_computing.impl.ServidorImpl#getVpcs <em>Vpcs</em>}</li>
+ *   <li>{@link cloud_computing.impl.ServidorImpl#getConexion <em>Conexion</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +102,16 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<VPC> vpcs;
+
+	/**
+	 * The cached value of the '{@link #getConexion() <em>Conexion</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConexion()
+	 * @generated
+	 * @ordered
+	 */
+	protected Conexion conexion;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,6 +210,46 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public Conexion getConexion() {
+		if (conexion != null && conexion.eIsProxy()) {
+			InternalEObject oldConexion = (InternalEObject)conexion;
+			conexion = (Conexion)eResolveProxy(oldConexion);
+			if (conexion != oldConexion) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cloud_computingPackage.SERVIDOR__CONEXION, oldConexion, conexion));
+			}
+		}
+		return conexion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Conexion basicGetConexion() {
+		return conexion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setConexion(Conexion newConexion) {
+		Conexion oldConexion = conexion;
+		conexion = newConexion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR__CONEXION, oldConexion, conexion));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Cloud_computingPackage.SERVIDOR__VPCS:
@@ -222,6 +274,9 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 				return getServidor();
 			case Cloud_computingPackage.SERVIDOR__VPCS:
 				return getVpcs();
+			case Cloud_computingPackage.SERVIDOR__CONEXION:
+				if (resolve) return getConexion();
+				return basicGetConexion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -249,6 +304,9 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 				getVpcs().clear();
 				getVpcs().addAll((Collection<? extends VPC>)newValue);
 				return;
+			case Cloud_computingPackage.SERVIDOR__CONEXION:
+				setConexion((Conexion)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -273,6 +331,9 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 			case Cloud_computingPackage.SERVIDOR__VPCS:
 				getVpcs().clear();
 				return;
+			case Cloud_computingPackage.SERVIDOR__CONEXION:
+				setConexion((Conexion)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -293,6 +354,8 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 				return servidor != null && !servidor.isEmpty();
 			case Cloud_computingPackage.SERVIDOR__VPCS:
 				return vpcs != null && !vpcs.isEmpty();
+			case Cloud_computingPackage.SERVIDOR__CONEXION:
+				return conexion != null;
 		}
 		return super.eIsSet(featureID);
 	}

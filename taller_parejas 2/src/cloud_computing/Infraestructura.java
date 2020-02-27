@@ -19,10 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cloud_computing.Infraestructura#getAmbientesdesplegue <em>Ambientesdesplegue</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getTipo <em>Tipo</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getSecuritygroups <em>Securitygroups</em>}</li>
- *   <li>{@link cloud_computing.Infraestructura#getSubredes <em>Subredes</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getRules <em>Rules</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getNombreProyecto <em>Nombre Proyecto</em>}</li>
- *   <li>{@link cloud_computing.Infraestructura#getVpc <em>Vpc</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getInfraestructura()
@@ -32,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Infraestructura extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Conexiones</b></em>' containment reference list.
-	 * The list contents are of type {@link cloud_computing.Conexion}.
+	 * The list contents are of type {@link cloud_computing.Login}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Conexiones</em>' containment reference list.
@@ -40,7 +38,7 @@ public interface Infraestructura extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Conexion> getConexiones();
+	EList<Login> getConexiones();
 
 	/**
 	 * Returns the value of the '<em><b>Ambientesdesplegue</b></em>' containment reference list.
@@ -92,18 +90,6 @@ public interface Infraestructura extends EObject {
 	EList<SecurityGroup> getSecuritygroups();
 
 	/**
-	 * Returns the value of the '<em><b>Subredes</b></em>' containment reference list.
-	 * The list contents are of type {@link cloud_computing.Subred}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subredes</em>' containment reference list.
-	 * @see cloud_computing.Cloud_computingPackage#getInfraestructura_Subredes()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Subred> getSubredes();
-
-	/**
 	 * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
 	 * The list contents are of type {@link cloud_computing.Rules}.
 	 * <!-- begin-user-doc -->
@@ -136,17 +122,5 @@ public interface Infraestructura extends EObject {
 	 * @generated
 	 */
 	void setNombreProyecto(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Vpc</b></em>' containment reference list.
-	 * The list contents are of type {@link cloud_computing.VPC}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vpc</em>' containment reference list.
-	 * @see cloud_computing.Cloud_computingPackage#getInfraestructura_Vpc()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<VPC> getVpc();
 
 } // Infraestructura
