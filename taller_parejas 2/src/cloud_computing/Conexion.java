@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.Conexion#getNombre <em>Nombre</em>}</li>
  *   <li>{@link cloud_computing.Conexion#getServidor2 <em>Servidor2</em>}</li>
  *   <li>{@link cloud_computing.Conexion#getServidor1 <em>Servidor1</em>}</li>
  * </ul>
@@ -23,28 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Conexion extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Nombre</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nombre</em>' attribute.
-	 * @see #setNombre(String)
-	 * @see cloud_computing.Cloud_computingPackage#getConexion_Nombre()
-	 * @model
-	 * @generated
-	 */
-	String getNombre();
-
-	/**
-	 * Sets the value of the '{@link cloud_computing.Conexion#getNombre <em>Nombre</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nombre</em>' attribute.
-	 * @see #getNombre()
-	 * @generated
-	 */
-	void setNombre(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Servidor2</b></em>' reference.
 	 * <!-- begin-user-doc -->

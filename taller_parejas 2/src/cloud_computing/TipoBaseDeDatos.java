@@ -19,14 +19,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum TipoBaseDeDatos implements Enumerator {
 	/**
-	 * The '<em><b>RELACIONAL</b></em>' literal object.
+	 * The '<em><b>Relacional</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #RELACIONAL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RELACIONAL(0, "RELACIONAL", "RELACIONAL"),
+	RELACIONAL(0, "Relacional", "Relacional"),
 
 	/**
 	 * The '<em><b>No SQL</b></em>' literal object.
@@ -39,11 +39,11 @@ public enum TipoBaseDeDatos implements Enumerator {
 	NO_SQL(2, "NoSQL", "NoSQL");
 
 	/**
-	 * The '<em><b>RELACIONAL</b></em>' literal value.
+	 * The '<em><b>Relacional</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #RELACIONAL
-	 * @model
+	 * @model name="Relacional"
 	 * @generated
 	 * @ordered
 	 */

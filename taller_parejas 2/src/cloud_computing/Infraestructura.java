@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cloud_computing.Infraestructura#getAmbientesdesplegue <em>Ambientesdesplegue</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getTipo <em>Tipo</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getSecuritygroups <em>Securitygroups</em>}</li>
- *   <li>{@link cloud_computing.Infraestructura#getRules <em>Rules</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getNombreProyecto <em>Nombre Proyecto</em>}</li>
  *   <li>{@link cloud_computing.Infraestructura#getGateway <em>Gateway</em>}</li>
  * </ul>
@@ -99,18 +98,6 @@ public interface Infraestructura extends EObject {
 	 * @generated
 	 */
 	EList<SecurityGroup> getSecuritygroups();
-
-	/**
-	 * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
-	 * The list contents are of type {@link cloud_computing.Rules}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rules</em>' containment reference list.
-	 * @see cloud_computing.Cloud_computingPackage#getInfraestructura_Rules()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Rules> getRules();
 
 	/**
 	 * Returns the value of the '<em><b>Nombre Proyecto</b></em>' attribute.

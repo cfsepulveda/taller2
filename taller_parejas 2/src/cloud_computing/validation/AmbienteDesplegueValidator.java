@@ -23,6 +23,6 @@ public interface AmbienteDesplegueValidator {
 	boolean validateTipoAmbiente(Ambiente value);
 	boolean validateAlias(String value);
 	boolean validateServidores(EList<Servidor> value);
-	boolean validateConexion(Conexion value);
 	boolean validateVpc(EList<VPC> value);
+	boolean validateConexion(EList<Conexion> value);
 }

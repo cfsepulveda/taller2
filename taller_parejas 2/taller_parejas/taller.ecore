@@ -75,10 +75,7 @@
     <eLiterals name="Dynamo" value="8"/>
     <eLiterals name="Cassandra" value="9"/>
     <eLiterals name="Redis" value="10"/>
-    <eLiterals name="Cloud Big table" value="11"/>
-    <eLiterals name="Cloud memory store (Redis)" value="12"/>
-    <eLiterals name="Cloud firestore" value="13"/>
-    <eLiterals name="Firebase realtime database" value="14"/>
+    <eLiterals name="Firebase_realtime_database" value="14"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SistemaOperativo">
     <eLiterals name="WINDOWS"/>
@@ -117,9 +114,10 @@
     <eLiterals name="GCP" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conexion">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="servidor2" eType="#//Servidor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="servidor1" eType="#//Servidor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servidor2" lowerBound="1"
+        eType="#//Servidor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servidor1" lowerBound="1"
+        eType="#//Servidor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gateway">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -356,18 +356,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EReference getInfraestructura_Rules() {
-		return (EReference)infraestructuraEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getInfraestructura_NombreProyecto() {
-		return (EAttribute)infraestructuraEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)infraestructuraEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -377,7 +367,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 */
 	@Override
 	public EReference getInfraestructura_Gateway() {
-		return (EReference)infraestructuraEClass.getEStructuralFeatures().get(6);
+		return (EReference)infraestructuraEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -426,7 +416,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EReference getAmbienteDesplegue_Conexion() {
+	public EReference getAmbienteDesplegue_Vpc() {
 		return (EReference)ambienteDesplegueEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -436,7 +426,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EReference getAmbienteDesplegue_Vpc() {
+	public EReference getAmbienteDesplegue_Conexion() {
 		return (EReference)ambienteDesplegueEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -538,6 +528,16 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	@Override
 	public EAttribute getServidorBaseDeDatos_SistemaManejador() {
 		return (EAttribute)servidorBaseDeDatosEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServidorBaseDeDatos_Tipo() {
+		return (EAttribute)servidorBaseDeDatosEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -756,18 +756,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConexion_Nombre() {
-		return (EAttribute)conexionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getConexion_Servidor2() {
-		return (EReference)conexionEClass.getEStructuralFeatures().get(1);
+		return (EReference)conexionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -777,7 +767,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 */
 	@Override
 	public EReference getConexion_Servidor1() {
-		return (EReference)conexionEClass.getEStructuralFeatures().get(2);
+		return (EReference)conexionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -921,7 +911,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		createEReference(infraestructuraEClass, INFRAESTRUCTURA__AMBIENTESDESPLEGUE);
 		createEAttribute(infraestructuraEClass, INFRAESTRUCTURA__TIPO);
 		createEReference(infraestructuraEClass, INFRAESTRUCTURA__SECURITYGROUPS);
-		createEReference(infraestructuraEClass, INFRAESTRUCTURA__RULES);
 		createEAttribute(infraestructuraEClass, INFRAESTRUCTURA__NOMBRE_PROYECTO);
 		createEReference(infraestructuraEClass, INFRAESTRUCTURA__GATEWAY);
 
@@ -929,8 +918,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		createEAttribute(ambienteDesplegueEClass, AMBIENTE_DESPLEGUE__TIPO_AMBIENTE);
 		createEAttribute(ambienteDesplegueEClass, AMBIENTE_DESPLEGUE__ALIAS);
 		createEReference(ambienteDesplegueEClass, AMBIENTE_DESPLEGUE__SERVIDORES);
-		createEReference(ambienteDesplegueEClass, AMBIENTE_DESPLEGUE__CONEXION);
 		createEReference(ambienteDesplegueEClass, AMBIENTE_DESPLEGUE__VPC);
+		createEReference(ambienteDesplegueEClass, AMBIENTE_DESPLEGUE__CONEXION);
 
 		servidorEClass = createEClass(SERVIDOR);
 		createEAttribute(servidorEClass, SERVIDOR__NOMBRE);
@@ -944,6 +933,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 
 		servidorBaseDeDatosEClass = createEClass(SERVIDOR_BASE_DE_DATOS);
 		createEAttribute(servidorBaseDeDatosEClass, SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR);
+		createEAttribute(servidorBaseDeDatosEClass, SERVIDOR_BASE_DE_DATOS__TIPO);
 
 		vpcEClass = createEClass(VPC);
 		createEAttribute(vpcEClass, VPC__NAME);
@@ -971,7 +961,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		createEAttribute(servidorAlmacenamientoEClass, SERVIDOR_ALMACENAMIENTO__TAMANO_INICIAL);
 
 		conexionEClass = createEClass(CONEXION);
-		createEAttribute(conexionEClass, CONEXION__NOMBRE);
 		createEReference(conexionEClass, CONEXION__SERVIDOR2);
 		createEReference(conexionEClass, CONEXION__SERVIDOR1);
 
@@ -1034,7 +1023,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		initEReference(getInfraestructura_Ambientesdesplegue(), this.getAmbienteDesplegue(), null, "ambientesdesplegue", null, 0, -1, Infraestructura.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInfraestructura_Tipo(), this.getProveedorServicio(), "tipo", null, 0, 1, Infraestructura.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInfraestructura_Securitygroups(), this.getSecurityGroup(), null, "securitygroups", null, 0, -1, Infraestructura.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInfraestructura_Rules(), this.getRules(), null, "rules", null, 0, -1, Infraestructura.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInfraestructura_NombreProyecto(), ecorePackage.getEString(), "nombreProyecto", null, 0, 1, Infraestructura.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInfraestructura_Gateway(), this.getGateway(), null, "gateway", null, 0, -1, Infraestructura.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1042,8 +1030,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		initEAttribute(getAmbienteDesplegue_TipoAmbiente(), this.getAmbiente(), "tipoAmbiente", null, 0, 1, AmbienteDesplegue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAmbienteDesplegue_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, AmbienteDesplegue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAmbienteDesplegue_Servidores(), this.getServidor(), null, "servidores", null, 0, -1, AmbienteDesplegue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAmbienteDesplegue_Conexion(), this.getConexion(), null, "conexion", null, 0, 1, AmbienteDesplegue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAmbienteDesplegue_Vpc(), this.getVPC(), null, "vpc", null, 0, -1, AmbienteDesplegue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAmbienteDesplegue_Conexion(), this.getConexion(), null, "conexion", null, 0, -1, AmbienteDesplegue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(servidorEClass, Servidor.class, "Servidor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServidor_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1057,6 +1045,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 
 		initEClass(servidorBaseDeDatosEClass, ServidorBaseDeDatos.class, "ServidorBaseDeDatos", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServidorBaseDeDatos_SistemaManejador(), this.getSistemaManejador(), "sistemaManejador", null, 0, 1, ServidorBaseDeDatos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServidorBaseDeDatos_Tipo(), this.getTipoBaseDeDatos(), "tipo", null, 1, 1, ServidorBaseDeDatos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vpcEClass, cloud_computing.VPC.class, "VPC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVPC_Name(), ecorePackage.getEString(), "name", null, 0, 1, cloud_computing.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1084,7 +1073,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		initEAttribute(getServidorAlmacenamiento_TamanoInicial(), ecorePackage.getEString(), "tamanoInicial", null, 0, 1, ServidorAlmacenamiento.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conexionEClass, Conexion.class, "Conexion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConexion_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Conexion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConexion_Servidor2(), this.getServidor(), null, "servidor2", null, 0, 1, Conexion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConexion_Servidor1(), this.getServidor(), null, "servidor1", null, 0, 1, Conexion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1121,6 +1109,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		addEEnumLiteral(sistemaManejadorEEnum, SistemaManejador.DYNAMO);
 		addEEnumLiteral(sistemaManejadorEEnum, SistemaManejador.CASSANDRA);
 		addEEnumLiteral(sistemaManejadorEEnum, SistemaManejador.REDIS);
+		addEEnumLiteral(sistemaManejadorEEnum, SistemaManejador.FIREBASE_REALTIME_DATABASE);
 
 		initEEnum(sistemaOperativoEEnum, SistemaOperativo.class, "SistemaOperativo");
 		addEEnumLiteral(sistemaOperativoEEnum, SistemaOperativo.WINDOWS);

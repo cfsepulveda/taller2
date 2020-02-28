@@ -11,7 +11,7 @@
       <package
             uri="https://uniandes.edu.co/cloud_computing"
             class="cloud_computing.Cloud_computingPackage"
-            genModel="taller_parejas/taller.genmodel"/>
+            genModel="text/taller.genmodel"/>
    </extension>
 
 </plugin>

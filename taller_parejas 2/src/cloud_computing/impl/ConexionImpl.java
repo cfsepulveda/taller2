@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.impl.ConexionImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link cloud_computing.impl.ConexionImpl#getServidor2 <em>Servidor2</em>}</li>
  *   <li>{@link cloud_computing.impl.ConexionImpl#getServidor1 <em>Servidor1</em>}</li>
  * </ul>
@@ -30,26 +29,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexion {
-	/**
-	 * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNombre()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOMBRE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNombre()
-	 * @generated
-	 * @ordered
-	 */
-	protected String nombre = NOMBRE_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getServidor2() <em>Servidor2</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -87,29 +66,6 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	protected EClass eStaticClass() {
 		return Cloud_computingPackage.Literals.CONEXION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getNombre() {
-		return nombre;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setNombre(String newNombre) {
-		String oldNombre = nombre;
-		nombre = newNombre;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.CONEXION__NOMBRE, oldNombre, nombre));
 	}
 
 	/**
@@ -200,8 +156,6 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE:
-				return getNombre();
 			case Cloud_computingPackage.CONEXION__SERVIDOR2:
 				if (resolve) return getServidor2();
 				return basicGetServidor2();
@@ -220,9 +174,6 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE:
-				setNombre((String)newValue);
-				return;
 			case Cloud_computingPackage.CONEXION__SERVIDOR2:
 				setServidor2((Servidor)newValue);
 				return;
@@ -241,9 +192,6 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE:
-				setNombre(NOMBRE_EDEFAULT);
-				return;
 			case Cloud_computingPackage.CONEXION__SERVIDOR2:
 				setServidor2((Servidor)null);
 				return;
@@ -262,30 +210,12 @@ public class ConexionImpl extends MinimalEObjectImpl.Container implements Conexi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.CONEXION__NOMBRE:
-				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
 			case Cloud_computingPackage.CONEXION__SERVIDOR2:
 				return servidor2 != null;
 			case Cloud_computingPackage.CONEXION__SERVIDOR1:
 				return servidor1 != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nombre: ");
-		result.append(nombre);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ConexionImpl

@@ -19,7 +19,6 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Reference ambientesdesplegue : AmbienteDesplegue<<0..*>>
     Attribute tipo : ProveedorServicio
     Reference securitygroups : SecurityGroup<<0..*>>
-    Reference rules : Rules<<0..*>>
     Attribute nombreProyecto : EString
     Reference gateway : Gateway<<0..*>>
 
@@ -27,8 +26,8 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Attribute tipoAmbiente : Ambiente
     Attribute alias : EString
     Reference servidores : Servidor<<0..*>>
-    Reference conexion : Conexion
     Reference vpc : VPC<<0..*>>
+    Reference conexion : Conexion<<0..*>>
 
   Class Servidor
     Attribute nombre : EString
@@ -42,6 +41,7 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
 
   Class ServidorBaseDeDatos -> Servidor
     Attribute sistemaManejador : SistemaManejador
+    Attribute tipo : TipoBaseDeDatos<<1..1>>
 
   Class VPC
     Attribute name : EString
@@ -69,7 +69,6 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Attribute tamanoInicial : EString
 
   Class Conexion
-    Attribute nombre : EString
     Reference servidor2 : Servidor
     Reference servidor1 : Servidor
 
@@ -90,7 +89,7 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Literal LARGE = 3
 
   Enum TipoBaseDeDatos
-    Literal RELACIONAL = 0
+    Literal Relacional = 0
     Literal NoSQL = 2
 
   Enum SistemaManejador
@@ -105,6 +104,7 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Literal Dynamo = 8
     Literal Cassandra = 9
     Literal Redis = 10
+    Literal Firebase_realtime_database = 14
 
   Enum SistemaOperativo
     Literal WINDOWS = 0

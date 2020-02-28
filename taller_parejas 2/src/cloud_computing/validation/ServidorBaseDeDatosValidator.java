@@ -5,6 +5,7 @@
 package cloud_computing.validation;
 
 import cloud_computing.SistemaManejador;
+import cloud_computing.TipoBaseDeDatos;
 
 /**
  * A sample validator interface for {@link cloud_computing.ServidorBaseDeDatos}.
@@ -16,4 +17,5 @@ public interface ServidorBaseDeDatosValidator {
 	boolean validate();
 
 	boolean validateSistemaManejador(SistemaManejador value);
+	boolean validateTipo(TipoBaseDeDatos value);
 }

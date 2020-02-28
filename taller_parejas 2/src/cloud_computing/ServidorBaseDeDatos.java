@@ -13,6 +13,7 @@ package cloud_computing;
  * </p>
  * <ul>
  *   <li>{@link cloud_computing.ServidorBaseDeDatos#getSistemaManejador <em>Sistema Manejador</em>}</li>
+ *   <li>{@link cloud_computing.ServidorBaseDeDatos#getTipo <em>Tipo</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getServidorBaseDeDatos()
@@ -44,5 +45,30 @@ public interface ServidorBaseDeDatos extends Servidor {
 	 * @generated
 	 */
 	void setSistemaManejador(SistemaManejador value);
+
+	/**
+	 * Returns the value of the '<em><b>Tipo</b></em>' attribute.
+	 * The literals are from the enumeration {@link cloud_computing.TipoBaseDeDatos}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tipo</em>' attribute.
+	 * @see cloud_computing.TipoBaseDeDatos
+	 * @see #setTipo(TipoBaseDeDatos)
+	 * @see cloud_computing.Cloud_computingPackage#getServidorBaseDeDatos_Tipo()
+	 * @model required="true"
+	 * @generated
+	 */
+	TipoBaseDeDatos getTipo();
+
+	/**
+	 * Sets the value of the '{@link cloud_computing.ServidorBaseDeDatos#getTipo <em>Tipo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tipo</em>' attribute.
+	 * @see cloud_computing.TipoBaseDeDatos
+	 * @see #getTipo()
+	 * @generated
+	 */
+	void setTipo(TipoBaseDeDatos value);
 
 } // ServidorBaseDeDatos

@@ -36,8 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link cloud_computing.impl.AmbienteDesplegueImpl#getTipoAmbiente <em>Tipo Ambiente</em>}</li>
  *   <li>{@link cloud_computing.impl.AmbienteDesplegueImpl#getAlias <em>Alias</em>}</li>
  *   <li>{@link cloud_computing.impl.AmbienteDesplegueImpl#getServidores <em>Servidores</em>}</li>
- *   <li>{@link cloud_computing.impl.AmbienteDesplegueImpl#getConexion <em>Conexion</em>}</li>
  *   <li>{@link cloud_computing.impl.AmbienteDesplegueImpl#getVpc <em>Vpc</em>}</li>
+ *   <li>{@link cloud_computing.impl.AmbienteDesplegueImpl#getConexion <em>Conexion</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,16 +94,6 @@ public class AmbienteDesplegueImpl extends MinimalEObjectImpl.Container implemen
 	protected EList<Servidor> servidores;
 
 	/**
-	 * The cached value of the '{@link #getConexion() <em>Conexion</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConexion()
-	 * @generated
-	 * @ordered
-	 */
-	protected Conexion conexion;
-
-	/**
 	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,6 +102,16 @@ public class AmbienteDesplegueImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<VPC> vpc;
+
+	/**
+	 * The cached value of the '{@link #getConexion() <em>Conexion</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConexion()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Conexion> conexion;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,51 +197,24 @@ public class AmbienteDesplegueImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public Conexion getConexion() {
-		if (conexion != null && conexion.eIsProxy()) {
-			InternalEObject oldConexion = (InternalEObject)conexion;
-			conexion = (Conexion)eResolveProxy(oldConexion);
-			if (conexion != oldConexion) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION, oldConexion, conexion));
-			}
-		}
-		return conexion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Conexion basicGetConexion() {
-		return conexion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setConexion(Conexion newConexion) {
-		Conexion oldConexion = conexion;
-		conexion = newConexion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION, oldConexion, conexion));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<VPC> getVpc() {
 		if (vpc == null) {
 			vpc = new EObjectContainmentEList<VPC>(VPC.class, this, Cloud_computingPackage.AMBIENTE_DESPLEGUE__VPC);
 		}
 		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Conexion> getConexion() {
+		if (conexion == null) {
+			conexion = new EObjectContainmentEList<Conexion>(Conexion.class, this, Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION);
+		}
+		return conexion;
 	}
 
 	/**
@@ -256,6 +229,8 @@ public class AmbienteDesplegueImpl extends MinimalEObjectImpl.Container implemen
 				return ((InternalEList<?>)getServidores()).basicRemove(otherEnd, msgs);
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__VPC:
 				return ((InternalEList<?>)getVpc()).basicRemove(otherEnd, msgs);
+			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
+				return ((InternalEList<?>)getConexion()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -274,11 +249,10 @@ public class AmbienteDesplegueImpl extends MinimalEObjectImpl.Container implemen
 				return getAlias();
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__SERVIDORES:
 				return getServidores();
-			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
-				if (resolve) return getConexion();
-				return basicGetConexion();
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__VPC:
 				return getVpc();
+			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
+				return getConexion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,12 +276,13 @@ public class AmbienteDesplegueImpl extends MinimalEObjectImpl.Container implemen
 				getServidores().clear();
 				getServidores().addAll((Collection<? extends Servidor>)newValue);
 				return;
-			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
-				setConexion((Conexion)newValue);
-				return;
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__VPC:
 				getVpc().clear();
 				getVpc().addAll((Collection<? extends VPC>)newValue);
+				return;
+			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
+				getConexion().clear();
+				getConexion().addAll((Collection<? extends Conexion>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -330,11 +305,11 @@ public class AmbienteDesplegueImpl extends MinimalEObjectImpl.Container implemen
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__SERVIDORES:
 				getServidores().clear();
 				return;
-			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
-				setConexion((Conexion)null);
-				return;
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__VPC:
 				getVpc().clear();
+				return;
+			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
+				getConexion().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -354,10 +329,10 @@ public class AmbienteDesplegueImpl extends MinimalEObjectImpl.Container implemen
 				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__SERVIDORES:
 				return servidores != null && !servidores.isEmpty();
-			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
-				return conexion != null;
 			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__VPC:
 				return vpc != null && !vpc.isEmpty();
+			case Cloud_computingPackage.AMBIENTE_DESPLEGUE__CONEXION:
+				return conexion != null && !conexion.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

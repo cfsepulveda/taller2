@@ -15,7 +15,6 @@ import cloud_computing.Servidor;
 public interface ConexionValidator {
 	boolean validate();
 
-	boolean validateNombre(String value);
 	boolean validateServidor2(Servidor value);
 	boolean validateServidor1(Servidor value);
 }

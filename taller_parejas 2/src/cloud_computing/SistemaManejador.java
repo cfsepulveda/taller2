@@ -126,7 +126,17 @@ public enum SistemaManejador implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REDIS(10, "Redis", "Redis");
+	REDIS(10, "Redis", "Redis"),
+
+	/**
+	 * The '<em><b>Firebase realtime database</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FIREBASE_REALTIME_DATABASE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	FIREBASE_REALTIME_DATABASE(14, "Firebase_realtime_database", "Firebase_realtime_database");
 
 	/**
 	 * The '<em><b>Postgre SQL</b></em>' literal value.
@@ -250,6 +260,17 @@ public enum SistemaManejador implements Enumerator {
 	public static final int REDIS_VALUE = 10;
 
 	/**
+	 * The '<em><b>Firebase realtime database</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FIREBASE_REALTIME_DATABASE
+	 * @model name="Firebase_realtime_database"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FIREBASE_REALTIME_DATABASE_VALUE = 14;
+
+	/**
 	 * An array of all the '<em><b>Sistema Manejador</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -268,6 +289,7 @@ public enum SistemaManejador implements Enumerator {
 			DYNAMO,
 			CASSANDRA,
 			REDIS,
+			FIREBASE_REALTIME_DATABASE,
 		};
 
 	/**
@@ -335,6 +357,7 @@ public enum SistemaManejador implements Enumerator {
 			case DYNAMO_VALUE: return DYNAMO;
 			case CASSANDRA_VALUE: return CASSANDRA;
 			case REDIS_VALUE: return REDIS;
+			case FIREBASE_REALTIME_DATABASE_VALUE: return FIREBASE_REALTIME_DATABASE;
 		}
 		return null;
 	}

@@ -8,7 +8,6 @@ import cloud_computing.Gateway;
 import cloud_computing.Infraestructura;
 import cloud_computing.Login;
 import cloud_computing.ProveedorServicio;
-import cloud_computing.Rules;
 import cloud_computing.SecurityGroup;
 
 import java.util.Collection;
@@ -39,7 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getAmbientesdesplegue <em>Ambientesdesplegue</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getTipo <em>Tipo</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getSecuritygroups <em>Securitygroups</em>}</li>
- *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getNombreProyecto <em>Nombre Proyecto</em>}</li>
  *   <li>{@link cloud_computing.impl.InfraestructuraImpl#getGateway <em>Gateway</em>}</li>
  * </ul>
@@ -96,16 +94,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<SecurityGroup> securitygroups;
-
-	/**
-	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRules()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Rules> rules;
 
 	/**
 	 * The default value of the '{@link #getNombreProyecto() <em>Nombre Proyecto</em>}' attribute.
@@ -256,19 +244,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public EList<Rules> getRules() {
-		if (rules == null) {
-			rules = new EObjectContainmentEList<Rules>(Rules.class, this, Cloud_computingPackage.INFRAESTRUCTURA__RULES);
-		}
-		return rules;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getNombreProyecto() {
 		return nombreProyecto;
 	}
@@ -313,8 +288,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return ((InternalEList<?>)getAmbientesdesplegue()).basicRemove(otherEnd, msgs);
 			case Cloud_computingPackage.INFRAESTRUCTURA__SECURITYGROUPS:
 				return ((InternalEList<?>)getSecuritygroups()).basicRemove(otherEnd, msgs);
-			case Cloud_computingPackage.INFRAESTRUCTURA__RULES:
-				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
 			case Cloud_computingPackage.INFRAESTRUCTURA__GATEWAY:
 				return ((InternalEList<?>)getGateway()).basicRemove(otherEnd, msgs);
 		}
@@ -337,8 +310,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return getTipo();
 			case Cloud_computingPackage.INFRAESTRUCTURA__SECURITYGROUPS:
 				return getSecuritygroups();
-			case Cloud_computingPackage.INFRAESTRUCTURA__RULES:
-				return getRules();
 			case Cloud_computingPackage.INFRAESTRUCTURA__NOMBRE_PROYECTO:
 				return getNombreProyecto();
 			case Cloud_computingPackage.INFRAESTRUCTURA__GATEWAY:
@@ -369,10 +340,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 			case Cloud_computingPackage.INFRAESTRUCTURA__SECURITYGROUPS:
 				getSecuritygroups().clear();
 				getSecuritygroups().addAll((Collection<? extends SecurityGroup>)newValue);
-				return;
-			case Cloud_computingPackage.INFRAESTRUCTURA__RULES:
-				getRules().clear();
-				getRules().addAll((Collection<? extends Rules>)newValue);
 				return;
 			case Cloud_computingPackage.INFRAESTRUCTURA__NOMBRE_PROYECTO:
 				setNombreProyecto((String)newValue);
@@ -405,9 +372,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 			case Cloud_computingPackage.INFRAESTRUCTURA__SECURITYGROUPS:
 				getSecuritygroups().clear();
 				return;
-			case Cloud_computingPackage.INFRAESTRUCTURA__RULES:
-				getRules().clear();
-				return;
 			case Cloud_computingPackage.INFRAESTRUCTURA__NOMBRE_PROYECTO:
 				setNombreProyecto(NOMBRE_PROYECTO_EDEFAULT);
 				return;
@@ -434,8 +398,6 @@ public class InfraestructuraImpl extends MinimalEObjectImpl.Container implements
 				return tipo != TIPO_EDEFAULT;
 			case Cloud_computingPackage.INFRAESTRUCTURA__SECURITYGROUPS:
 				return securitygroups != null && !securitygroups.isEmpty();
-			case Cloud_computingPackage.INFRAESTRUCTURA__RULES:
-				return rules != null && !rules.isEmpty();
 			case Cloud_computingPackage.INFRAESTRUCTURA__NOMBRE_PROYECTO:
 				return NOMBRE_PROYECTO_EDEFAULT == null ? nombreProyecto != null : !NOMBRE_PROYECTO_EDEFAULT.equals(nombreProyecto);
 			case Cloud_computingPackage.INFRAESTRUCTURA__GATEWAY:
