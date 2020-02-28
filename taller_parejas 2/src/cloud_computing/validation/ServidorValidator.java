@@ -4,7 +4,6 @@
  */
 package cloud_computing.validation;
 
-import cloud_computing.Conexion;
 import cloud_computing.SecurityGroup;
 import cloud_computing.Subred;
 import cloud_computing.TamanoMaquina;
@@ -23,9 +22,7 @@ public interface ServidorValidator {
 
 	boolean validateNombre(String value);
 	boolean validateTamanoM(TamanoMaquina value);
-	boolean validateServer2(Conexion value);
 	boolean validateVpc(VPC value);
 	boolean validateSubred(Subred value);
-	boolean validateServer1(Conexion value);
 	boolean validateServersecuritygroup(EList<SecurityGroup> value);
 }

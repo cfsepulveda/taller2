@@ -323,22 +323,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR__TAMANO_M = 1;
 
 	/**
-	 * The feature id for the '<em><b>Server2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR__SERVER2 = 2;
-
-	/**
 	 * The feature id for the '<em><b>Vpc</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR__VPC = 3;
+	int SERVIDOR__VPC = 2;
 
 	/**
 	 * The feature id for the '<em><b>Subred</b></em>' reference.
@@ -347,16 +338,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR__SUBRED = 4;
-
-	/**
-	 * The feature id for the '<em><b>Server1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR__SERVER1 = 5;
+	int SERVIDOR__SUBRED = 3;
 
 	/**
 	 * The feature id for the '<em><b>Serversecuritygroup</b></em>' reference list.
@@ -365,7 +347,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR__SERVERSECURITYGROUP = 6;
+	int SERVIDOR__SERVERSECURITYGROUP = 4;
 
 	/**
 	 * The number of structural features of the '<em>Servidor</em>' class.
@@ -374,7 +356,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_FEATURE_COUNT = 7;
+	int SERVIDOR_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Servidor</em>' class.
@@ -414,15 +396,6 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_APLICACION__TAMANO_M = SERVIDOR__TAMANO_M;
 
 	/**
-	 * The feature id for the '<em><b>Server2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_APLICACION__SERVER2 = SERVIDOR__SERVER2;
-
-	/**
 	 * The feature id for the '<em><b>Vpc</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -439,15 +412,6 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVIDOR_APLICACION__SUBRED = SERVIDOR__SUBRED;
-
-	/**
-	 * The feature id for the '<em><b>Server1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_APLICACION__SERVER1 = SERVIDOR__SERVER1;
 
 	/**
 	 * The feature id for the '<em><b>Serversecuritygroup</b></em>' reference list.
@@ -514,15 +478,6 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_BASE_DE_DATOS__TAMANO_M = SERVIDOR__TAMANO_M;
 
 	/**
-	 * The feature id for the '<em><b>Server2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_BASE_DE_DATOS__SERVER2 = SERVIDOR__SERVER2;
-
-	/**
 	 * The feature id for the '<em><b>Vpc</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -539,15 +494,6 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVIDOR_BASE_DE_DATOS__SUBRED = SERVIDOR__SUBRED;
-
-	/**
-	 * The feature id for the '<em><b>Server1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_BASE_DE_DATOS__SERVER1 = SERVIDOR__SERVER1;
 
 	/**
 	 * The feature id for the '<em><b>Serversecuritygroup</b></em>' reference list.
@@ -852,15 +798,6 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_ALMACENAMIENTO__TAMANO_M = SERVIDOR__TAMANO_M;
 
 	/**
-	 * The feature id for the '<em><b>Server2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_ALMACENAMIENTO__SERVER2 = SERVIDOR__SERVER2;
-
-	/**
 	 * The feature id for the '<em><b>Vpc</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -877,15 +814,6 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVIDOR_ALMACENAMIENTO__SUBRED = SERVIDOR__SUBRED;
-
-	/**
-	 * The feature id for the '<em><b>Server1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_ALMACENAMIENTO__SERVER1 = SERVIDOR__SERVER1;
 
 	/**
 	 * The feature id for the '<em><b>Serversecuritygroup</b></em>' reference list.
@@ -943,13 +871,31 @@ public interface Cloud_computingPackage extends EPackage {
 	int CONEXION__NOMBRE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Servidor2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__SERVIDOR2 = 1;
+
+	/**
+	 * The feature id for the '<em><b>Servidor1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__SERVIDOR1 = 2;
+
+	/**
 	 * The number of structural features of the '<em>Conexion</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONEXION_FEATURE_COUNT = 1;
+	int CONEXION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Conexion</em>' class.
@@ -1327,17 +1273,6 @@ public interface Cloud_computingPackage extends EPackage {
 	EAttribute getServidor_TamanoM();
 
 	/**
-	 * Returns the meta object for the reference '{@link cloud_computing.Servidor#getServer2 <em>Server2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Server2</em>'.
-	 * @see cloud_computing.Servidor#getServer2()
-	 * @see #getServidor()
-	 * @generated
-	 */
-	EReference getServidor_Server2();
-
-	/**
 	 * Returns the meta object for the reference '{@link cloud_computing.Servidor#getVpc <em>Vpc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1358,17 +1293,6 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getServidor_Subred();
-
-	/**
-	 * Returns the meta object for the reference '{@link cloud_computing.Servidor#getServer1 <em>Server1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Server1</em>'.
-	 * @see cloud_computing.Servidor#getServer1()
-	 * @see #getServidor()
-	 * @generated
-	 */
-	EReference getServidor_Server1();
 
 	/**
 	 * Returns the meta object for the reference list '{@link cloud_computing.Servidor#getServersecuritygroup <em>Serversecuritygroup</em>}'.
@@ -1658,6 +1582,28 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConexion_Nombre();
+
+	/**
+	 * Returns the meta object for the reference '{@link cloud_computing.Conexion#getServidor2 <em>Servidor2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Servidor2</em>'.
+	 * @see cloud_computing.Conexion#getServidor2()
+	 * @see #getConexion()
+	 * @generated
+	 */
+	EReference getConexion_Servidor2();
+
+	/**
+	 * Returns the meta object for the reference '{@link cloud_computing.Conexion#getServidor1 <em>Servidor1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Servidor1</em>'.
+	 * @see cloud_computing.Conexion#getServidor1()
+	 * @see #getConexion()
+	 * @generated
+	 */
+	EReference getConexion_Servidor1();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.Gateway <em>Gateway</em>}'.
@@ -1977,14 +1923,6 @@ public interface Cloud_computingPackage extends EPackage {
 		EAttribute SERVIDOR__TAMANO_M = eINSTANCE.getServidor_TamanoM();
 
 		/**
-		 * The meta object literal for the '<em><b>Server2</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVIDOR__SERVER2 = eINSTANCE.getServidor_Server2();
-
-		/**
 		 * The meta object literal for the '<em><b>Vpc</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1999,14 +1937,6 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVIDOR__SUBRED = eINSTANCE.getServidor_Subred();
-
-		/**
-		 * The meta object literal for the '<em><b>Server1</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVIDOR__SERVER1 = eINSTANCE.getServidor_Server1();
 
 		/**
 		 * The meta object literal for the '<em><b>Serversecuritygroup</b></em>' reference list feature.
@@ -2239,6 +2169,22 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONEXION__NOMBRE = eINSTANCE.getConexion_Nombre();
+
+		/**
+		 * The meta object literal for the '<em><b>Servidor2</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONEXION__SERVIDOR2 = eINSTANCE.getConexion_Servidor2();
+
+		/**
+		 * The meta object literal for the '<em><b>Servidor1</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONEXION__SERVIDOR1 = eINSTANCE.getConexion_Servidor1();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.GatewayImpl <em>Gateway</em>}' class.

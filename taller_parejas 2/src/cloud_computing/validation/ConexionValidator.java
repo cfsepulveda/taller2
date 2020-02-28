@@ -4,6 +4,7 @@
  */
 package cloud_computing.validation;
 
+import cloud_computing.Servidor;
 
 /**
  * A sample validator interface for {@link cloud_computing.Conexion}.
@@ -15,4 +16,6 @@ public interface ConexionValidator {
 	boolean validate();
 
 	boolean validateNombre(String value);
+	boolean validateServidor2(Servidor value);
+	boolean validateServidor1(Servidor value);
 }
