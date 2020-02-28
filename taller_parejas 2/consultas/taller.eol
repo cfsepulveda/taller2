@@ -52,24 +52,15 @@ operation validateCIDR(): String {
 //Punto 2
 operation validateDB(): String {
 var isError = false;
-var serverName = "";
-		for (servidor in ServidorBaseDeDatos.allInstances()) {
-		isError = false;
-			for (servidor in servidor.servidor) {
-				if (servidor.isTypeOf(ServidorAlmacenamiento)) {
-					isError = true;
-				}
-			}
-			if(isError){
-			serverName = serverName + servidor.nombre + " ";
-			}
-		}
-		
-		if(serverName.isEmpty()){
-			return "Los servidores de bases de datos no se conectan a ningun servidor de almacenamiento OK";
-		}else{
-			return "Error Los servidores de bases de datos: "+serverName+"se conectan a servidores de almacenamiento";
-		}
+
+if (Conexion.allInstances().select(c|c.servidor1.isKindOf(ServidorBaseDeDatos) and c.servidor2.isKindOf(ServidorAlmacenamiento)).size() = 0)
+{
+	return "Los servidores de bases de datos no se conectan a ningun servidor de almacenamiento OK";
+}
+else{
+	return "Error Los servidores de bases de datos: se conectan a servidores de almacenamiento";
+}
+
 }
 
 
@@ -140,73 +131,53 @@ operation validateRules(){
 }
 //punto 4
 operation validateDbByProvider() {
-	var isError = false;
 	var serverName = "";
-	if (Proveedor.allInstances().first().nombre.name = "AWS") {
 	
-		for (ambientedespliegue in Proveedor.allInstances().first().ambientesdespliegue) {
-			for (ambiente in ambientedespliegue) {
-				for (servidor in ambiente.servidores) {
-					if (servidor.isTypeOf(ServidorBaseDeDatos)) {
-						if (servidor.tipo.name = "RELACIONAL") {
-							if (servidor.sistemaManejador.name = "PostgreSQL"
-								or servidor.sistemaManejador.name = "Oracle"
-								or servidor.sistemaManejador.name = "Aurora"
-								or servidor.sistemaManejador.name = "MariaDB"
-								or servidor.sistemaManejador.name = "SQLServer"
-								or servidor.sistemaManejador.name = "MySQL") {} else {
-								isError = true;
-							}
-						} else {
-							if (servidor.sistemaManejador.name = "DocumentDB"
-								or servidor.sistemaManejador.name = "Dynamo"
-								or servidor.sistemaManejador.name = "Cassandra"
-								or servidor.sistemaManejador.name = "Redis") {} else {
-								isError = true;
-							}
-						}
-						if (isError) {
-							serverName = serverName + servidor.nombre + " ";
-						}
+	var result = new List<String>();
+	var reglas = new List<String>(); 
+	reglas.Add(List{"AWS", "Relacional", "PostgreSQL"});
+	reglas.Add(List{"AWS", "Relacional", "Oracle"});
+	reglas.Add(List{"AWS", "Relacional", "Aurora"});
+	reglas.Add(List{"AWS", "Relacional", "MariaDB"});
+	reglas.Add(List{"AWS", "Relacional", "MySQL"});
+	reglas.Add(List{"AWS", "Relacional", "SQLServer"});
+	reglas.Add(List{"AWS", "NoSQL", "DocumentDB"});
+	reglas.Add(List{"AWS", "NoSQL", "Dynamo"});
+	reglas.Add(List{"AWS", "NoSQL", "Cassandra"});
+	reglas.Add(List{"AWS", "NoSQL", "Redis"});
+	
+	reglas.Add(List{"GCP", "Relacional", "MySQL"});
+	reglas.Add(List{"GCP", "Relacional", "PostgreSQL"});
+	reglas.Add(List{"GCP", "Relacional", "SQLServer"});
+	reglas.Add(List{"GCP", "NoSQL", "Cloud Big table"});
+	reglas.Add(List{"GCP", "NoSQL", "Cloud memory store (Redis)"});
+	reglas.Add(List{"GCP", "NoSQL", "Cloud firestore"});
+	reglas.Add(List{"GCP", "NoSQL", "Firebase realtime database"});
+	
+	
+	for (proveedor in Infraestructura.allInstances) {
+		
+		var p = proveedor.tipo.name;
+		for (servidor in proveedor.ambientesdesplegue.servidores.flatten()){
+			
+			if(servidor.isTypeOf(ServidorBaseDeDatos)){
+				
+				var sm = servidor.sistemaManejador.name;
+				var t = servidor.tipo.name;
+				var existe = false;
+				for (regla in reglas){
+					if(p = regla[0] and t = regla[1] and sm = regla[2]){
+						existe = true;
+						break;
 					}
+				}
+				if (existe = false){
+					return "Error en " + servidor.nombre + " " + t + " " + sm;	
 				}
 			}
 		}
-	} else {
-
-		for (ambientedesplegue in Proveedor.allInstances().first().ambientedesplegue) {
-			for (ambiente in ambientedesplegue) {
-				for (servidor in ambiente.servidor) {
-					if (servidor.isTypeOf(ServidorBaseDeDatos)) {
-						if (servidor.tipo.name = "RELACIONAL") {
-							if (servidor.sistemaManejador.name = "PostgreSQL"
-								or servidor.sistemaManejador.name = "SQLServer"
-								or servidor.sistemaManejador.name = "MySQL") {} else {
-								isError = true;
-							}
-						} else {
-							if (servidor.sistemaManejador.name = "PostgreSQL"
-								or servidor.sistemaManejador.name = "SQLServer"
-								or servidor.sistemaManejador.name = "MySQL") {
-								isError = true;
-							} else {}
-						}
-						if (isError) {
-							serverName = serverName + servidor.nombre + " ";
-						}
-					}
-				}
-			}
-		}
-
 	}
-
-	if (serverName.isEmpty()) {
-		return "todos los servidores de bases de datos cumplen las condiciones OK";
-	} else {
-		return "Los servidores de bases de datos : " + serverName + "No cumplen las condiciones";
-	}
-	
+	return "OK";
 }
 
 //punto 5
@@ -255,22 +226,22 @@ operation validateAZ(){
 	reglas.Add(List{"GCP", "us-west2", "Los Ángeles, California, EE.UU."});
 	
 	
-	var proveedor = Proveedor.AllInstances.first();
-	if (proveedor.isTypeOf(Proveedor)) {
-		var azs = proveedor.vpc.collect(i | i.subredes).flatten().collect(c | c.az);
+	var proveedor = Infraestructura.AllInstances.first();
+	if (proveedor.isTypeOf(Infraestructura)) {
+		var azs = proveedor.ambientesdesplegue.flatten().vpc.flatten().collect(i | i.subred).flatten().collect(c | c.az);
 			
 		for (az in azs){
 			var existe = false;
 			for (regla in reglas){
-				if(proveedor.nombre.name = regla[0] and az = regla[1]){
+				if(proveedor.tipo.name = regla[0] and az = regla[1]){
 					existe = true;
 					break;
 				}
 			}
 			if (existe) {
-			result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.nombre.name + " - " + az  + " esta correcta");	
+			result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.tipo.name + " - " + az  + " esta correcta");	
 			}else{
-				result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.nombre.name + " - " + az  + " no es válida");
+				result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.tipo.name + " - " + az  + " no es válida");
 			}
 		}
 		

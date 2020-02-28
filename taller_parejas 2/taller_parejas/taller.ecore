@@ -17,8 +17,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//ProveedorServicio"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="securitygroups" upperBound="-1"
         eType="#//SecurityGroup" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
-        eType="#//Rules" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreProyecto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gateway" upperBound="-1"
         eType="#//Gateway" containment="true"/>
@@ -59,9 +57,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServidorBaseDeDatos" eSuperTypes="#//Servidor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sistemaManejador" eType="#//SistemaManejador"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" lowerBound="1" eType="#//TipoBaseDeDatos"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TipoBaseDeDatos">
-    <eLiterals name="RELACIONAL"/>
+    <eLiterals name="Relacional" literal="Relacional"/>
     <eLiterals name="NoSQL" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SistemaManejador">
@@ -76,6 +75,10 @@
     <eLiterals name="Dynamo" value="8"/>
     <eLiterals name="Cassandra" value="9"/>
     <eLiterals name="Redis" value="10"/>
+    <eLiterals name="Cloud Big table" value="11"/>
+    <eLiterals name="Cloud memory store (Redis)" value="12"/>
+    <eLiterals name="Cloud firestore" value="13"/>
+    <eLiterals name="Firebase realtime database" value="14"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SistemaOperativo">
     <eLiterals name="WINDOWS"/>
