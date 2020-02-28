@@ -19,6 +19,6 @@
     <rulesSG type="DNS UDP" protocol="UDP" portRange="53" Source="lcoalhost" description="DNS UDP 53"/>
   </securitygroups>
   <vpc name="vpcDefault">
-    <subredes name="dev" cidr="192.168.0.1/50" az="us-east-2"/>
+    <subredes name="dev" cidr="192.168.0.1/24" az="us-east-"/>
   </vpc>
 </cloud_computing:Proveedor>
