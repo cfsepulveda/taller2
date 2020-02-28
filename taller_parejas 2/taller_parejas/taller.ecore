@@ -41,11 +41,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Servidor" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TamanoM" eType="#//TamanoMaquina"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="server2" eType="#//Conexion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" lowerBound="1" eType="#//VPC"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subred" lowerBound="1"
         eType="#//Subred"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="server1" eType="#//Conexion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serversecuritygroup" lowerBound="1"
         upperBound="-1" eType="#//SecurityGroup"/>
   </eClassifiers>
@@ -116,6 +114,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conexion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servidor2" eType="#//Servidor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servidor1" eType="#//Servidor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gateway">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -17,10 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link cloud_computing.Servidor#getNombre <em>Nombre</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getTamanoM <em>Tamano M</em>}</li>
- *   <li>{@link cloud_computing.Servidor#getServer2 <em>Server2</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getVpc <em>Vpc</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getSubred <em>Subred</em>}</li>
- *   <li>{@link cloud_computing.Servidor#getServer1 <em>Server1</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getServersecuritygroup <em>Serversecuritygroup</em>}</li>
  * </ul>
  *
@@ -77,28 +75,6 @@ public interface Servidor extends EObject {
 	void setTamanoM(TamanoMaquina value);
 
 	/**
-	 * Returns the value of the '<em><b>Server2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Server2</em>' reference.
-	 * @see #setServer2(Conexion)
-	 * @see cloud_computing.Cloud_computingPackage#getServidor_Server2()
-	 * @model
-	 * @generated
-	 */
-	Conexion getServer2();
-
-	/**
-	 * Sets the value of the '{@link cloud_computing.Servidor#getServer2 <em>Server2</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Server2</em>' reference.
-	 * @see #getServer2()
-	 * @generated
-	 */
-	void setServer2(Conexion value);
-
-	/**
 	 * Returns the value of the '<em><b>Vpc</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,28 +117,6 @@ public interface Servidor extends EObject {
 	 * @generated
 	 */
 	void setSubred(Subred value);
-
-	/**
-	 * Returns the value of the '<em><b>Server1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Server1</em>' reference.
-	 * @see #setServer1(Conexion)
-	 * @see cloud_computing.Cloud_computingPackage#getServidor_Server1()
-	 * @model
-	 * @generated
-	 */
-	Conexion getServer1();
-
-	/**
-	 * Sets the value of the '{@link cloud_computing.Servidor#getServer1 <em>Server1</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Server1</em>' reference.
-	 * @see #getServer1()
-	 * @generated
-	 */
-	void setServer1(Conexion value);
 
 	/**
 	 * Returns the value of the '<em><b>Serversecuritygroup</b></em>' reference list.

@@ -476,7 +476,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EReference getServidor_Server2() {
+	public EReference getServidor_Vpc() {
 		return (EReference)servidorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -486,7 +486,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EReference getServidor_Vpc() {
+	public EReference getServidor_Subred() {
 		return (EReference)servidorEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -496,28 +496,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EReference getServidor_Subred() {
-		return (EReference)servidorEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getServidor_Server1() {
-		return (EReference)servidorEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getServidor_Serversecuritygroup() {
-		return (EReference)servidorEClass.getEStructuralFeatures().get(6);
+		return (EReference)servidorEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -786,6 +766,26 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
+	public EReference getConexion_Servidor2() {
+		return (EReference)conexionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getConexion_Servidor1() {
+		return (EReference)conexionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getGateway() {
 		return gatewayEClass;
 	}
@@ -935,10 +935,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		servidorEClass = createEClass(SERVIDOR);
 		createEAttribute(servidorEClass, SERVIDOR__NOMBRE);
 		createEAttribute(servidorEClass, SERVIDOR__TAMANO_M);
-		createEReference(servidorEClass, SERVIDOR__SERVER2);
 		createEReference(servidorEClass, SERVIDOR__VPC);
 		createEReference(servidorEClass, SERVIDOR__SUBRED);
-		createEReference(servidorEClass, SERVIDOR__SERVER1);
 		createEReference(servidorEClass, SERVIDOR__SERVERSECURITYGROUP);
 
 		servidorAplicacionEClass = createEClass(SERVIDOR_APLICACION);
@@ -974,6 +972,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 
 		conexionEClass = createEClass(CONEXION);
 		createEAttribute(conexionEClass, CONEXION__NOMBRE);
+		createEReference(conexionEClass, CONEXION__SERVIDOR2);
+		createEReference(conexionEClass, CONEXION__SERVIDOR1);
 
 		gatewayEClass = createEClass(GATEWAY);
 		createEAttribute(gatewayEClass, GATEWAY__NOMBRE);
@@ -1048,10 +1048,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		initEClass(servidorEClass, Servidor.class, "Servidor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServidor_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServidor_TamanoM(), this.getTamanoMaquina(), "TamanoM", null, 0, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServidor_Server2(), this.getConexion(), null, "server2", null, 0, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServidor_Vpc(), this.getVPC(), null, "vpc", null, 1, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServidor_Subred(), this.getSubred(), null, "subred", null, 1, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServidor_Server1(), this.getConexion(), null, "server1", null, 0, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServidor_Serversecuritygroup(), this.getSecurityGroup(), null, "serversecuritygroup", null, 1, -1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(servidorAplicacionEClass, ServidorAplicacion.class, "ServidorAplicacion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1087,6 +1085,8 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 
 		initEClass(conexionEClass, Conexion.class, "Conexion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConexion_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Conexion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConexion_Servidor2(), this.getServidor(), null, "servidor2", null, 0, 1, Conexion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConexion_Servidor1(), this.getServidor(), null, "servidor1", null, 0, 1, Conexion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gatewayEClass, Gateway.class, "Gateway", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGateway_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
