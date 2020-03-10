@@ -2,7 +2,7 @@
 <launchConfiguration type="org.epsilon.eol.eclipse.dt.launching.EolLaunchConfigurationDelegate">
 <booleanAttribute key="fine_grained_profiling" value="false"/>
 <listAttribute key="models">
-<listEntry value="#Thu Feb 27 23:47:19 COT 2020&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=infraestructura&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=infraestructura&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=https\://uniandes.edu.co/cloud_computing&#13;&#10;modelUri=platform\:/resource/taller_parejas_2/m_Ok_Infraestructura.xmi&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;type=EMF&#13;&#10;modelFile=/taller_parejas_2/m_Ok_Infraestructura.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile="/>
+<listEntry value="#Fri Mar 06 19:10:18 COT 2020&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=i&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=i&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=https\://uniandes.edu.co/cloud_computing&#13;&#10;modelUri=platform\:/resource/taller_parejas_2/taller_parejas/Infraestructura.xmi&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;type=EMF&#13;&#10;modelFile=/taller_parejas_2/taller_parejas/Infraestructura.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile="/>
 </listAttribute>
 <listAttribute key="parameters"/>
 <booleanAttribute key="profile_model_loading" value="false"/>

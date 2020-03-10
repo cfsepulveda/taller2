@@ -1,12 +1,15 @@
-validateCIDR().println();
+//validateCIDR().println();
 
-validateDB().println();
+//validateDB().println();
 
-validateAZ().println();
+//validateAZ().println();
 
-validateRules().println();
+//validateRules().println();
 
-validateDbByProvider().println();
+//validateDbByProvider().println();
+
+Infraestructura.allInstances.ambientesdesplegue.first().flatten().select(s | s.servidores.nombre="SO").println();
+
 
 
 //Punto 1
