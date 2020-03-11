@@ -30,18 +30,17 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Reference conexion : Conexion<<0..*>>
 
   Class Servidor
-    Attribute nombre : EString
+    Attribute name : EString
     Attribute TamanoM : TamanoMaquina
     Reference vpc : VPC<<1..1>>
     Reference subred : Subred<<1..1>>
     Reference serversecuritygroup : SecurityGroup<<1..*>>
 
   Class ServidorAplicacion -> Servidor
-    Attribute sistemaO : SistemaOperativo
+    Attribute sistemaOperativo : SistemaOperativo
 
   Class ServidorBaseDeDatos -> Servidor
     Attribute sistemaManejador : SistemaManejador
-    Attribute tipo : TipoBaseDeDatos<<1..1>>
 
   Class VPC
     Attribute name : EString
@@ -87,10 +86,6 @@ Package cloud_computing <https://uniandes.edu.co/cloud_computing>
     Literal SMALL = 1
     Literal MEDIUM = 2
     Literal LARGE = 3
-
-  Enum TipoBaseDeDatos
-    Literal Relacional = 0
-    Literal NoSQL = 2
 
   Enum SistemaManejador
     Literal PostgreSQL = 0

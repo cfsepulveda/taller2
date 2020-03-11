@@ -86,8 +86,6 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 				return createAmbienteFromString(eDataType, initialValue);
 			case Cloud_computingPackage.TAMANO_MAQUINA:
 				return createTamanoMaquinaFromString(eDataType, initialValue);
-			case Cloud_computingPackage.TIPO_BASE_DE_DATOS:
-				return createTipoBaseDeDatosFromString(eDataType, initialValue);
 			case Cloud_computingPackage.SISTEMA_MANEJADOR:
 				return createSistemaManejadorFromString(eDataType, initialValue);
 			case Cloud_computingPackage.SISTEMA_OPERATIVO:
@@ -113,8 +111,6 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 				return convertAmbienteToString(eDataType, instanceValue);
 			case Cloud_computingPackage.TAMANO_MAQUINA:
 				return convertTamanoMaquinaToString(eDataType, instanceValue);
-			case Cloud_computingPackage.TIPO_BASE_DE_DATOS:
-				return convertTipoBaseDeDatosToString(eDataType, instanceValue);
 			case Cloud_computingPackage.SISTEMA_MANEJADOR:
 				return convertSistemaManejadorToString(eDataType, instanceValue);
 			case Cloud_computingPackage.SISTEMA_OPERATIVO:
@@ -297,26 +293,6 @@ public class Cloud_computingFactoryImpl extends EFactoryImpl implements Cloud_co
 	 * @generated
 	 */
 	public String convertTamanoMaquinaToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TipoBaseDeDatos createTipoBaseDeDatosFromString(EDataType eDataType, String initialValue) {
-		TipoBaseDeDatos result = TipoBaseDeDatos.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertTipoBaseDeDatosToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -296,13 +296,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR = 3;
 
 	/**
-	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR__NOMBRE = 0;
+	int SERVIDOR__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Tamano M</b></em>' attribute.
@@ -369,13 +369,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_APLICACION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_APLICACION__NOMBRE = SERVIDOR__NOMBRE;
+	int SERVIDOR_APLICACION__NAME = SERVIDOR__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Tamano M</b></em>' attribute.
@@ -414,13 +414,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_APLICACION__SERVERSECURITYGROUP = SERVIDOR__SERVERSECURITYGROUP;
 
 	/**
-	 * The feature id for the '<em><b>Sistema O</b></em>' attribute.
+	 * The feature id for the '<em><b>Sistema Operativo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_APLICACION__SISTEMA_O = SERVIDOR_FEATURE_COUNT + 0;
+	int SERVIDOR_APLICACION__SISTEMA_OPERATIVO = SERVIDOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Servidor Aplicacion</em>' class.
@@ -451,13 +451,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_BASE_DE_DATOS = 5;
 
 	/**
-	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_BASE_DE_DATOS__NOMBRE = SERVIDOR__NOMBRE;
+	int SERVIDOR_BASE_DE_DATOS__NAME = SERVIDOR__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Tamano M</b></em>' attribute.
@@ -505,22 +505,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR = SERVIDOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Tipo</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_BASE_DE_DATOS__TIPO = SERVIDOR_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Servidor Base De Datos</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_BASE_DE_DATOS_FEATURE_COUNT = SERVIDOR_FEATURE_COUNT + 2;
+	int SERVIDOR_BASE_DE_DATOS_FEATURE_COUNT = SERVIDOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Servidor Base De Datos</em>' class.
@@ -780,13 +771,13 @@ public interface Cloud_computingPackage extends EPackage {
 	int SERVIDOR_ALMACENAMIENTO = 10;
 
 	/**
-	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVIDOR_ALMACENAMIENTO__NOMBRE = SERVIDOR__NOMBRE;
+	int SERVIDOR_ALMACENAMIENTO__NAME = SERVIDOR__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Tamano M</b></em>' attribute.
@@ -964,16 +955,6 @@ public interface Cloud_computingPackage extends EPackage {
 	int TAMANO_MAQUINA = 14;
 
 	/**
-	 * The meta object id for the '{@link cloud_computing.TipoBaseDeDatos <em>Tipo Base De Datos</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloud_computing.TipoBaseDeDatos
-	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getTipoBaseDeDatos()
-	 * @generated
-	 */
-	int TIPO_BASE_DE_DATOS = 15;
-
-	/**
 	 * The meta object id for the '{@link cloud_computing.SistemaManejador <em>Sistema Manejador</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -981,7 +962,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getSistemaManejador()
 	 * @generated
 	 */
-	int SISTEMA_MANEJADOR = 16;
+	int SISTEMA_MANEJADOR = 15;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.SistemaOperativo <em>Sistema Operativo</em>}' enum.
@@ -991,7 +972,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getSistemaOperativo()
 	 * @generated
 	 */
-	int SISTEMA_OPERATIVO = 17;
+	int SISTEMA_OPERATIVO = 16;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.ProveedorServicio <em>Proveedor Servicio</em>}' enum.
@@ -1001,7 +982,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getProveedorServicio()
 	 * @generated
 	 */
-	int PROVEEDOR_SERVICIO = 18;
+	int PROVEEDOR_SERVICIO = 17;
 
 	/**
 	 * The meta object id for the '{@link cloud_computing.Direccion <em>Direccion</em>}' enum.
@@ -1011,7 +992,7 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @see cloud_computing.impl.Cloud_computingPackageImpl#getDireccion()
 	 * @generated
 	 */
-	int DIRECCION = 19;
+	int DIRECCION = 18;
 
 
 	/**
@@ -1231,15 +1212,15 @@ public interface Cloud_computingPackage extends EPackage {
 	EClass getServidor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.Servidor#getNombre <em>Nombre</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.Servidor#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nombre</em>'.
-	 * @see cloud_computing.Servidor#getNombre()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see cloud_computing.Servidor#getName()
 	 * @see #getServidor()
 	 * @generated
 	 */
-	EAttribute getServidor_Nombre();
+	EAttribute getServidor_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link cloud_computing.Servidor#getTamanoM <em>Tamano M</em>}'.
@@ -1296,15 +1277,15 @@ public interface Cloud_computingPackage extends EPackage {
 	EClass getServidorAplicacion();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.ServidorAplicacion#getSistemaO <em>Sistema O</em>}'.
+	 * Returns the meta object for the attribute '{@link cloud_computing.ServidorAplicacion#getSistemaOperativo <em>Sistema Operativo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sistema O</em>'.
-	 * @see cloud_computing.ServidorAplicacion#getSistemaO()
+	 * @return the meta object for the attribute '<em>Sistema Operativo</em>'.
+	 * @see cloud_computing.ServidorAplicacion#getSistemaOperativo()
 	 * @see #getServidorAplicacion()
 	 * @generated
 	 */
-	EAttribute getServidorAplicacion_SistemaO();
+	EAttribute getServidorAplicacion_SistemaOperativo();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.ServidorBaseDeDatos <em>Servidor Base De Datos</em>}'.
@@ -1326,17 +1307,6 @@ public interface Cloud_computingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getServidorBaseDeDatos_SistemaManejador();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloud_computing.ServidorBaseDeDatos#getTipo <em>Tipo</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tipo</em>'.
-	 * @see cloud_computing.ServidorBaseDeDatos#getTipo()
-	 * @see #getServidorBaseDeDatos()
-	 * @generated
-	 */
-	EAttribute getServidorBaseDeDatos_Tipo();
 
 	/**
 	 * Returns the meta object for class '{@link cloud_computing.VPC <em>VPC</em>}'.
@@ -1638,16 +1608,6 @@ public interface Cloud_computingPackage extends EPackage {
 	EEnum getTamanoMaquina();
 
 	/**
-	 * Returns the meta object for enum '{@link cloud_computing.TipoBaseDeDatos <em>Tipo Base De Datos</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Tipo Base De Datos</em>'.
-	 * @see cloud_computing.TipoBaseDeDatos
-	 * @generated
-	 */
-	EEnum getTipoBaseDeDatos();
-
-	/**
 	 * Returns the meta object for enum '{@link cloud_computing.SistemaManejador <em>Sistema Manejador</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1879,12 +1839,12 @@ public interface Cloud_computingPackage extends EPackage {
 		EClass SERVIDOR = eINSTANCE.getServidor();
 
 		/**
-		 * The meta object literal for the '<em><b>Nombre</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVIDOR__NOMBRE = eINSTANCE.getServidor_Nombre();
+		EAttribute SERVIDOR__NAME = eINSTANCE.getServidor_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Tamano M</b></em>' attribute feature.
@@ -1929,12 +1889,12 @@ public interface Cloud_computingPackage extends EPackage {
 		EClass SERVIDOR_APLICACION = eINSTANCE.getServidorAplicacion();
 
 		/**
-		 * The meta object literal for the '<em><b>Sistema O</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Sistema Operativo</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVIDOR_APLICACION__SISTEMA_O = eINSTANCE.getServidorAplicacion_SistemaO();
+		EAttribute SERVIDOR_APLICACION__SISTEMA_OPERATIVO = eINSTANCE.getServidorAplicacion_SistemaOperativo();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.ServidorBaseDeDatosImpl <em>Servidor Base De Datos</em>}' class.
@@ -1953,14 +1913,6 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR = eINSTANCE.getServidorBaseDeDatos_SistemaManejador();
-
-		/**
-		 * The meta object literal for the '<em><b>Tipo</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVIDOR_BASE_DE_DATOS__TIPO = eINSTANCE.getServidorBaseDeDatos_Tipo();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.impl.VPCImpl <em>VPC</em>}' class.
@@ -2203,16 +2155,6 @@ public interface Cloud_computingPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TAMANO_MAQUINA = eINSTANCE.getTamanoMaquina();
-
-		/**
-		 * The meta object literal for the '{@link cloud_computing.TipoBaseDeDatos <em>Tipo Base De Datos</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloud_computing.TipoBaseDeDatos
-		 * @see cloud_computing.impl.Cloud_computingPackageImpl#getTipoBaseDeDatos()
-		 * @generated
-		 */
-		EEnum TIPO_BASE_DE_DATOS = eINSTANCE.getTipoBaseDeDatos();
 
 		/**
 		 * The meta object literal for the '{@link cloud_computing.SistemaManejador <em>Sistema Manejador</em>}' enum.

@@ -5,8 +5,6 @@ package cloud_computing.impl;
 import cloud_computing.Cloud_computingPackage;
 import cloud_computing.ServidorBaseDeDatos;
 import cloud_computing.SistemaManejador;
-import cloud_computing.TipoBaseDeDatos;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,7 +20,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link cloud_computing.impl.ServidorBaseDeDatosImpl#getSistemaManejador <em>Sistema Manejador</em>}</li>
- *   <li>{@link cloud_computing.impl.ServidorBaseDeDatosImpl#getTipo <em>Tipo</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,26 +44,6 @@ public class ServidorBaseDeDatosImpl extends ServidorImpl implements ServidorBas
 	 * @ordered
 	 */
 	protected SistemaManejador sistemaManejador = SISTEMA_MANEJADOR_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTipo() <em>Tipo</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTipo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final TipoBaseDeDatos TIPO_EDEFAULT = TipoBaseDeDatos.RELACIONAL;
-
-	/**
-	 * The cached value of the '{@link #getTipo() <em>Tipo</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTipo()
-	 * @generated
-	 * @ordered
-	 */
-	protected TipoBaseDeDatos tipo = TIPO_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,35 +93,10 @@ public class ServidorBaseDeDatosImpl extends ServidorImpl implements ServidorBas
 	 * @generated
 	 */
 	@Override
-	public TipoBaseDeDatos getTipo() {
-		return tipo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTipo(TipoBaseDeDatos newTipo) {
-		TipoBaseDeDatos oldTipo = tipo;
-		tipo = newTipo == null ? TIPO_EDEFAULT : newTipo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__TIPO, oldTipo, tipo));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR:
 				return getSistemaManejador();
-			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__TIPO:
-				return getTipo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,9 +111,6 @@ public class ServidorBaseDeDatosImpl extends ServidorImpl implements ServidorBas
 		switch (featureID) {
 			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR:
 				setSistemaManejador((SistemaManejador)newValue);
-				return;
-			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__TIPO:
-				setTipo((TipoBaseDeDatos)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -178,9 +127,6 @@ public class ServidorBaseDeDatosImpl extends ServidorImpl implements ServidorBas
 			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR:
 				setSistemaManejador(SISTEMA_MANEJADOR_EDEFAULT);
 				return;
-			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__TIPO:
-				setTipo(TIPO_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -195,8 +141,6 @@ public class ServidorBaseDeDatosImpl extends ServidorImpl implements ServidorBas
 		switch (featureID) {
 			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR:
 				return sistemaManejador != SISTEMA_MANEJADOR_EDEFAULT;
-			case Cloud_computingPackage.SERVIDOR_BASE_DE_DATOS__TIPO:
-				return tipo != TIPO_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,8 +157,6 @@ public class ServidorBaseDeDatosImpl extends ServidorImpl implements ServidorBas
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (sistemaManejador: ");
 		result.append(sistemaManejador);
-		result.append(", tipo: ");
-		result.append(tipo);
 		result.append(')');
 		return result.toString();
 	}

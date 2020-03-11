@@ -12,7 +12,7 @@ package cloud_computing;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.ServidorAplicacion#getSistemaO <em>Sistema O</em>}</li>
+ *   <li>{@link cloud_computing.ServidorAplicacion#getSistemaOperativo <em>Sistema Operativo</em>}</li>
  * </ul>
  *
  * @see cloud_computing.Cloud_computingPackage#getServidorAplicacion()
@@ -21,28 +21,28 @@ package cloud_computing;
  */
 public interface ServidorAplicacion extends Servidor {
 	/**
-	 * Returns the value of the '<em><b>Sistema O</b></em>' attribute.
+	 * Returns the value of the '<em><b>Sistema Operativo</b></em>' attribute.
 	 * The literals are from the enumeration {@link cloud_computing.SistemaOperativo}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sistema O</em>' attribute.
+	 * @return the value of the '<em>Sistema Operativo</em>' attribute.
 	 * @see cloud_computing.SistemaOperativo
-	 * @see #setSistemaO(SistemaOperativo)
-	 * @see cloud_computing.Cloud_computingPackage#getServidorAplicacion_SistemaO()
+	 * @see #setSistemaOperativo(SistemaOperativo)
+	 * @see cloud_computing.Cloud_computingPackage#getServidorAplicacion_SistemaOperativo()
 	 * @model
 	 * @generated
 	 */
-	SistemaOperativo getSistemaO();
+	SistemaOperativo getSistemaOperativo();
 
 	/**
-	 * Sets the value of the '{@link cloud_computing.ServidorAplicacion#getSistemaO <em>Sistema O</em>}' attribute.
+	 * Sets the value of the '{@link cloud_computing.ServidorAplicacion#getSistemaOperativo <em>Sistema Operativo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sistema O</em>' attribute.
+	 * @param value the new value of the '<em>Sistema Operativo</em>' attribute.
 	 * @see cloud_computing.SistemaOperativo
-	 * @see #getSistemaO()
+	 * @see #getSistemaOperativo()
 	 * @generated
 	 */
-	void setSistemaO(SistemaOperativo value);
+	void setSistemaOperativo(SistemaOperativo value);
 
 } // ServidorAplicacion

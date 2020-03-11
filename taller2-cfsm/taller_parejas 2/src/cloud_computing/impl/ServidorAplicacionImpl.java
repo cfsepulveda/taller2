@@ -20,31 +20,31 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.impl.ServidorAplicacionImpl#getSistemaO <em>Sistema O</em>}</li>
+ *   <li>{@link cloud_computing.impl.ServidorAplicacionImpl#getSistemaOperativo <em>Sistema Operativo</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ServidorAplicacionImpl extends ServidorImpl implements ServidorAplicacion {
 	/**
-	 * The default value of the '{@link #getSistemaO() <em>Sistema O</em>}' attribute.
+	 * The default value of the '{@link #getSistemaOperativo() <em>Sistema Operativo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSistemaO()
+	 * @see #getSistemaOperativo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SistemaOperativo SISTEMA_O_EDEFAULT = SistemaOperativo.WINDOWS;
+	protected static final SistemaOperativo SISTEMA_OPERATIVO_EDEFAULT = SistemaOperativo.WINDOWS;
 
 	/**
-	 * The cached value of the '{@link #getSistemaO() <em>Sistema O</em>}' attribute.
+	 * The cached value of the '{@link #getSistemaOperativo() <em>Sistema Operativo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSistemaO()
+	 * @see #getSistemaOperativo()
 	 * @generated
 	 * @ordered
 	 */
-	protected SistemaOperativo sistemaO = SISTEMA_O_EDEFAULT;
+	protected SistemaOperativo sistemaOperativo = SISTEMA_OPERATIVO_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,8 +71,8 @@ public class ServidorAplicacionImpl extends ServidorImpl implements ServidorApli
 	 * @generated
 	 */
 	@Override
-	public SistemaOperativo getSistemaO() {
-		return sistemaO;
+	public SistemaOperativo getSistemaOperativo() {
+		return sistemaOperativo;
 	}
 
 	/**
@@ -81,11 +81,11 @@ public class ServidorAplicacionImpl extends ServidorImpl implements ServidorApli
 	 * @generated
 	 */
 	@Override
-	public void setSistemaO(SistemaOperativo newSistemaO) {
-		SistemaOperativo oldSistemaO = sistemaO;
-		sistemaO = newSistemaO == null ? SISTEMA_O_EDEFAULT : newSistemaO;
+	public void setSistemaOperativo(SistemaOperativo newSistemaOperativo) {
+		SistemaOperativo oldSistemaOperativo = sistemaOperativo;
+		sistemaOperativo = newSistemaOperativo == null ? SISTEMA_OPERATIVO_EDEFAULT : newSistemaOperativo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_O, oldSistemaO, sistemaO));
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_OPERATIVO, oldSistemaOperativo, sistemaOperativo));
 	}
 
 	/**
@@ -96,8 +96,8 @@ public class ServidorAplicacionImpl extends ServidorImpl implements ServidorApli
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_O:
-				return getSistemaO();
+			case Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_OPERATIVO:
+				return getSistemaOperativo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,8 +110,8 @@ public class ServidorAplicacionImpl extends ServidorImpl implements ServidorApli
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_O:
-				setSistemaO((SistemaOperativo)newValue);
+			case Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_OPERATIVO:
+				setSistemaOperativo((SistemaOperativo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,8 +125,8 @@ public class ServidorAplicacionImpl extends ServidorImpl implements ServidorApli
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_O:
-				setSistemaO(SISTEMA_O_EDEFAULT);
+			case Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_OPERATIVO:
+				setSistemaOperativo(SISTEMA_OPERATIVO_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,8 +140,8 @@ public class ServidorAplicacionImpl extends ServidorImpl implements ServidorApli
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_O:
-				return sistemaO != SISTEMA_O_EDEFAULT;
+			case Cloud_computingPackage.SERVIDOR_APLICACION__SISTEMA_OPERATIVO:
+				return sistemaOperativo != SISTEMA_OPERATIVO_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,8 +156,8 @@ public class ServidorAplicacionImpl extends ServidorImpl implements ServidorApli
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (sistemaO: ");
-		result.append(sistemaO);
+		result.append(" (sistemaOperativo: ");
+		result.append(sistemaOperativo);
 		result.append(')');
 		return result.toString();
 	}

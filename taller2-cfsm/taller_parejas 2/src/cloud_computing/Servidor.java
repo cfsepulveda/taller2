@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.Servidor#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link cloud_computing.Servidor#getName <em>Name</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getTamanoM <em>Tamano M</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getVpc <em>Vpc</em>}</li>
  *   <li>{@link cloud_computing.Servidor#getSubred <em>Subred</em>}</li>
@@ -28,26 +28,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Servidor extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Nombre</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nombre</em>' attribute.
-	 * @see #setNombre(String)
-	 * @see cloud_computing.Cloud_computingPackage#getServidor_Nombre()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see cloud_computing.Cloud_computingPackage#getServidor_Name()
 	 * @model
 	 * @generated
 	 */
-	String getNombre();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link cloud_computing.Servidor#getNombre <em>Nombre</em>}' attribute.
+	 * Sets the value of the '{@link cloud_computing.Servidor#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nombre</em>' attribute.
-	 * @see #getNombre()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setNombre(String value);
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Tamano M</b></em>' attribute.

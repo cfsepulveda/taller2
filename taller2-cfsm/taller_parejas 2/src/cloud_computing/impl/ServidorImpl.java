@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloud_computing.impl.ServidorImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link cloud_computing.impl.ServidorImpl#getName <em>Name</em>}</li>
  *   <li>{@link cloud_computing.impl.ServidorImpl#getTamanoM <em>Tamano M</em>}</li>
  *   <li>{@link cloud_computing.impl.ServidorImpl#getVpc <em>Vpc</em>}</li>
  *   <li>{@link cloud_computing.impl.ServidorImpl#getSubred <em>Subred</em>}</li>
@@ -42,24 +42,24 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public abstract class ServidorImpl extends MinimalEObjectImpl.Container implements Servidor {
 	/**
-	 * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNombre()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOMBRE_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNombre()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nombre = NOMBRE_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTamanoM() <em>Tamano M</em>}' attribute.
@@ -136,8 +136,8 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public String getNombre() {
-		return nombre;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -146,11 +146,11 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public void setNombre(String newNombre) {
-		String oldNombre = nombre;
-		nombre = newNombre;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR__NOMBRE, oldNombre, nombre));
+			eNotify(new ENotificationImpl(this, Notification.SET, Cloud_computingPackage.SERVIDOR__NAME, oldName, name));
 	}
 
 	/**
@@ -277,8 +277,8 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR__NOMBRE:
-				return getNombre();
+			case Cloud_computingPackage.SERVIDOR__NAME:
+				return getName();
 			case Cloud_computingPackage.SERVIDOR__TAMANO_M:
 				return getTamanoM();
 			case Cloud_computingPackage.SERVIDOR__VPC:
@@ -302,8 +302,8 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR__NOMBRE:
-				setNombre((String)newValue);
+			case Cloud_computingPackage.SERVIDOR__NAME:
+				setName((String)newValue);
 				return;
 			case Cloud_computingPackage.SERVIDOR__TAMANO_M:
 				setTamanoM((TamanoMaquina)newValue);
@@ -330,8 +330,8 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR__NOMBRE:
-				setNombre(NOMBRE_EDEFAULT);
+			case Cloud_computingPackage.SERVIDOR__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case Cloud_computingPackage.SERVIDOR__TAMANO_M:
 				setTamanoM(TAMANO_M_EDEFAULT);
@@ -357,8 +357,8 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Cloud_computingPackage.SERVIDOR__NOMBRE:
-				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
+			case Cloud_computingPackage.SERVIDOR__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Cloud_computingPackage.SERVIDOR__TAMANO_M:
 				return tamanoM != TAMANO_M_EDEFAULT;
 			case Cloud_computingPackage.SERVIDOR__VPC:
@@ -381,8 +381,8 @@ public abstract class ServidorImpl extends MinimalEObjectImpl.Container implemen
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nombre: ");
-		result.append(nombre);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", TamanoM: ");
 		result.append(tamanoM);
 		result.append(')');

@@ -22,8 +22,6 @@ import cloud_computing.SistemaManejador;
 import cloud_computing.SistemaOperativo;
 import cloud_computing.Subred;
 import cloud_computing.TamanoMaquina;
-import cloud_computing.TipoBaseDeDatos;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -143,13 +141,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	private EEnum tamanoMaquinaEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum tipoBaseDeDatosEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -446,7 +437,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServidor_Nombre() {
+	public EAttribute getServidor_Name() {
 		return (EAttribute)servidorEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -506,7 +497,7 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServidorAplicacion_SistemaO() {
+	public EAttribute getServidorAplicacion_SistemaOperativo() {
 		return (EAttribute)servidorAplicacionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -528,16 +519,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	@Override
 	public EAttribute getServidorBaseDeDatos_SistemaManejador() {
 		return (EAttribute)servidorBaseDeDatosEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getServidorBaseDeDatos_Tipo() {
-		return (EAttribute)servidorBaseDeDatosEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -826,16 +807,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 	 * @generated
 	 */
 	@Override
-	public EEnum getTipoBaseDeDatos() {
-		return tipoBaseDeDatosEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getSistemaManejador() {
 		return sistemaManejadorEEnum;
 	}
@@ -922,18 +893,17 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		createEReference(ambienteDesplegueEClass, AMBIENTE_DESPLEGUE__CONEXION);
 
 		servidorEClass = createEClass(SERVIDOR);
-		createEAttribute(servidorEClass, SERVIDOR__NOMBRE);
+		createEAttribute(servidorEClass, SERVIDOR__NAME);
 		createEAttribute(servidorEClass, SERVIDOR__TAMANO_M);
 		createEReference(servidorEClass, SERVIDOR__VPC);
 		createEReference(servidorEClass, SERVIDOR__SUBRED);
 		createEReference(servidorEClass, SERVIDOR__SERVERSECURITYGROUP);
 
 		servidorAplicacionEClass = createEClass(SERVIDOR_APLICACION);
-		createEAttribute(servidorAplicacionEClass, SERVIDOR_APLICACION__SISTEMA_O);
+		createEAttribute(servidorAplicacionEClass, SERVIDOR_APLICACION__SISTEMA_OPERATIVO);
 
 		servidorBaseDeDatosEClass = createEClass(SERVIDOR_BASE_DE_DATOS);
 		createEAttribute(servidorBaseDeDatosEClass, SERVIDOR_BASE_DE_DATOS__SISTEMA_MANEJADOR);
-		createEAttribute(servidorBaseDeDatosEClass, SERVIDOR_BASE_DE_DATOS__TIPO);
 
 		vpcEClass = createEClass(VPC);
 		createEAttribute(vpcEClass, VPC__NAME);
@@ -971,7 +941,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		// Create enums
 		ambienteEEnum = createEEnum(AMBIENTE);
 		tamanoMaquinaEEnum = createEEnum(TAMANO_MAQUINA);
-		tipoBaseDeDatosEEnum = createEEnum(TIPO_BASE_DE_DATOS);
 		sistemaManejadorEEnum = createEEnum(SISTEMA_MANEJADOR);
 		sistemaOperativoEEnum = createEEnum(SISTEMA_OPERATIVO);
 		proveedorServicioEEnum = createEEnum(PROVEEDOR_SERVICIO);
@@ -1034,18 +1003,17 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		initEReference(getAmbienteDesplegue_Conexion(), this.getConexion(), null, "conexion", null, 0, -1, AmbienteDesplegue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(servidorEClass, Servidor.class, "Servidor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServidor_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServidor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServidor_TamanoM(), this.getTamanoMaquina(), "TamanoM", null, 0, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServidor_Vpc(), this.getVPC(), null, "vpc", null, 1, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServidor_Subred(), this.getSubred(), null, "subred", null, 1, 1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServidor_Serversecuritygroup(), this.getSecurityGroup(), null, "serversecuritygroup", null, 1, -1, Servidor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(servidorAplicacionEClass, ServidorAplicacion.class, "ServidorAplicacion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServidorAplicacion_SistemaO(), this.getSistemaOperativo(), "sistemaO", null, 0, 1, ServidorAplicacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServidorAplicacion_SistemaOperativo(), this.getSistemaOperativo(), "sistemaOperativo", null, 0, 1, ServidorAplicacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(servidorBaseDeDatosEClass, ServidorBaseDeDatos.class, "ServidorBaseDeDatos", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServidorBaseDeDatos_SistemaManejador(), this.getSistemaManejador(), "sistemaManejador", null, 0, 1, ServidorBaseDeDatos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServidorBaseDeDatos_Tipo(), this.getTipoBaseDeDatos(), "tipo", null, 1, 1, ServidorBaseDeDatos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vpcEClass, cloud_computing.VPC.class, "VPC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVPC_Name(), ecorePackage.getEString(), "name", null, 0, 1, cloud_computing.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1092,10 +1060,6 @@ public class Cloud_computingPackageImpl extends EPackageImpl implements Cloud_co
 		addEEnumLiteral(tamanoMaquinaEEnum, TamanoMaquina.SMALL);
 		addEEnumLiteral(tamanoMaquinaEEnum, TamanoMaquina.MEDIUM);
 		addEEnumLiteral(tamanoMaquinaEEnum, TamanoMaquina.LARGE);
-
-		initEEnum(tipoBaseDeDatosEEnum, TipoBaseDeDatos.class, "TipoBaseDeDatos");
-		addEEnumLiteral(tipoBaseDeDatosEEnum, TipoBaseDeDatos.RELACIONAL);
-		addEEnumLiteral(tipoBaseDeDatosEEnum, TipoBaseDeDatos.NO_SQL);
 
 		initEEnum(sistemaManejadorEEnum, SistemaManejador.class, "SistemaManejador");
 		addEEnumLiteral(sistemaManejadorEEnum, SistemaManejador.POSTGRE_SQL);

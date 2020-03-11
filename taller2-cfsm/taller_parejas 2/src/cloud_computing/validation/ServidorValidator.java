@@ -20,6 +20,8 @@ import org.eclipse.emf.common.util.EList;
 public interface ServidorValidator {
 	boolean validate();
 
+	boolean validateName(String value);
+
 	boolean validateNombre(String value);
 	boolean validateTamanoM(TamanoMaquina value);
 	boolean validateVpc(VPC value);

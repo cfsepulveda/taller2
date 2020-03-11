@@ -15,5 +15,7 @@ import cloud_computing.SistemaOperativo;
 public interface ServidorAplicacionValidator {
 	boolean validate();
 
+	boolean validateSistemaOperativo(SistemaOperativo value);
+
 	boolean validateSistemaO(SistemaOperativo value);
 }
