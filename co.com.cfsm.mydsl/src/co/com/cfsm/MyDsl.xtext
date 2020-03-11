@@ -1,0 +1,144 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+import "https://uniandes.edu.co/cloud_computing"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Infraestructura returns Infraestructura:
+	{Infraestructura}
+	'Infraestructura' nombreProyecto=EString
+	OPEN_BRACE
+	('tipo' EQUALS tipo=ProveedorServicio) SEMI_COLON
+	('login' EQUALS logins=Login) SEMI_COLON
+	('securityGroup' EQUALS OPEN_BRACKET securitygroups+=SecurityGroup (COMMA securitygroups+=SecurityGroup)*
+	CLOSE_BRACKET)? SEMI_COLON
+	('ambientesdespliegue' EQUALS OPEN_BRACKET ambientesdesplegue+=AmbienteDesplegue (COMMA
+	ambientesdesplegue+=AmbienteDesplegue)* SEMI_COLON CLOSE_BRACKET)?
+	CLOSE_BRACE;
+
+EString returns ecore::EString:
+	STRING | ID;
+
+Login returns Login:
+	{Login}
+	OPEN_BRACE
+	('nombreConexion' EQUALS nombreConexion=EString SEMI_COLON)?
+	('usuario' EQUALS usuario=EString SEMI_COLON)?
+	('contrasena' EQUALS contrasena=EString SEMI_COLON)?
+	('accessId' EQUALS accessId=EString SEMI_COLON)?
+	('secret' EQUALS secret=EString SEMI_COLON)?
+	CLOSE_BRACE;
+
+AmbienteDesplegue returns AmbienteDesplegue:
+	{AmbienteDesplegue}
+	OPEN_BRACE
+	('alias' EQUALS alias=EString)? SEMI_COLON
+	('nombre' EQUALS tipoAmbiente=Ambiente) SEMI_COLON
+	('vpc' EQUALS OPEN_BRACKET vpc+=VPC (COMMA vpc+=VPC)* CLOSE_BRACKET) SEMI_COLON
+	'ambientes' EQUALS OPEN_BRACKET servidores+=Servidor (COMMA servidores+=Servidor)* CLOSE_BRACKET SEMI_COLON
+	('conexion' EQUALS OPEN_BRACKET conexion+=Conexion (COMMA conexion+=Conexion)* CLOSE_BRACKET SEMI_COLON)?
+	CLOSE_BRACE;
+
+enum ProveedorServicio returns ProveedorServicio:
+	AWS='AWS' | GCP='GCP';
+
+SecurityGroup returns SecurityGroup:
+	{SecurityGroup}
+	OPEN_BRACE
+	('nombre' EQUALS name=EString)? SEMI_COLON
+	('description' EQUALS description=EString)? SEMI_COLON
+	CLOSE_BRACE;
+
+Subred returns Subred:
+	{Subred}
+	OPEN_BRACE
+	('name' EQUALS name=EString)? SEMI_COLON
+	('cidr' EQUALS cidr=EString)? SEMI_COLON
+	('az' EQUALS az=EString)? SEMI_COLON
+	CLOSE_BRACE;
+
+VPC returns VPC:
+	{VPC}
+	OPEN_BRACE
+	('name' EQUALS name=EString)? SEMI_COLON
+	('subred' EQUALS subred+=Subred) SEMI_COLON
+	CLOSE_BRACE;
+
+Servidor returns Servidor:
+	ServidorAplicacion | ServidorBaseDeDatos | ServidorAlmacenamiento;
+
+ServidorAplicacion returns ServidorAplicacion:
+	{ServidorAplicacion}
+	OPEN_BRACE
+	'tipo' EQUALS 'Server' SEMI_COLON
+	('nombre' EQUALS name=EString) SEMI_COLON
+	('dimension' EQUALS TamanoM=TamanoMaquina) SEMI_COLON
+	('os' EQUALS sistemaOperativo=SistemaOperativo) SEMI_COLON
+	'vpc' EQUALS vpc=[VPC|EString] SEMI_COLON
+	'subred' EQUALS subred=[Subred|EString] SEMI_COLON
+	'securityGroup' EQUALS serversecuritygroup+=[SecurityGroup|EString] SEMI_COLON
+	CLOSE_BRACE;
+
+ServidorBaseDeDatos returns ServidorBaseDeDatos:
+	{ServidorBaseDeDatos}
+	OPEN_BRACE
+	'tipo' EQUALS 'Database' SEMI_COLON
+	('nombre' EQUALS name=EString)? SEMI_COLON
+	('dimension' EQUALS TamanoM=TamanoMaquina) SEMI_COLON
+	('tipo' EQUALS sistemaManejador=SistemaManejador) SEMI_COLON
+	'vpc' EQUALS vpc=[VPC|EString] SEMI_COLON
+	'subred' EQUALS subred=[Subred|EString] SEMI_COLON
+	'securityGroup' EQUALS serversecuritygroup+=[SecurityGroup|EString] SEMI_COLON
+	CLOSE_BRACE;
+
+ServidorAlmacenamiento returns ServidorAlmacenamiento:
+	{ServidorAlmacenamiento}
+	OPEN_BRACE
+	'tipo' EQUALS 'STORAGE' SEMI_COLON
+	('nombre' EQUALS name=EString)? SEMI_COLON
+	('dimension' EQUALS TamanoM=TamanoMaquina)? SEMI_COLON
+	('gigas' EQUALS tamanoInicial=EString)? SEMI_COLON
+	'vpc' EQUALS vpc=[VPC|EString] SEMI_COLON
+	'subred' EQUALS subred=[Subred|EString] SEMI_COLON
+	'securityGroup' EQUALS serversecuritygroup+=[SecurityGroup|EString] SEMI_COLON
+	CLOSE_BRACE;
+
+Conexion returns Conexion:
+	{Conexion}
+	OPEN_BRACE
+	'servidorUno' EQUALS servidor1=[Servidor|EString] SEMI_COLON
+	'servidorDos' EQUALS servidor2=[Servidor|EString] SEMI_COLON
+	CLOSE_BRACE;
+
+enum Ambiente returns Ambiente:
+	DESARROLLO='DESARROLLO' | PRUEBAS='PRUEBAS' | QA='QA' | PRODUCCION='PRODUCCION';
+
+enum TamanoMaquina returns TamanoMaquina:
+	MICRO='MICRO' | SMALL='SMALL' | MEDIUM='MEDIUM' | LARGE='LARGE';
+
+enum SistemaOperativo returns SistemaOperativo:
+	WINDOWS='WINDOWS' | lINUX='lINUX' | MAC='MAC';
+
+enum SistemaManejador returns SistemaManejador:
+	PostgreSQL='PostgreSQL' | MySQL='MySQL' | Oracle='Oracle' | SQLServer='SQLServer' | NoSql='NoSql' | Aurora='Aurora' |
+	MariaDB='MariaDB' | DocumentDB='DocumentDB' | Dynamo='Dynamo' | Cassandra='Cassandra' | Redis='Redis';
+
+terminal EQUALS:
+	"=";
+
+terminal SEMI_COLON:
+	";";
+
+terminal OPEN_BRACE:
+	"{";
+
+terminal CLOSE_BRACE:
+	"}";
+
+terminal OPEN_BRACKET:
+	"[";
+
+terminal CLOSE_BRACKET:
+	"]";
+
+terminal COMMA:
+	",";
