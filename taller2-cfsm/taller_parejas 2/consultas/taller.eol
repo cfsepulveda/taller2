@@ -1,0 +1,259 @@
+validateCIDR().println();
+
+validateDB().println();
+
+validateAZ().println();
+
+validateRules().println();
+
+validateDbByProvider().println();
+
+
+//Punto 1
+operation validateCIDR(): String {
+	var isError = false;
+	var subredName = "";
+	for (subred in Subred.allInstances) {
+		var count = 0;
+
+		for (number in subred.cidr.split("\\.")) {
+			if (count < 3) {
+				if (subred.cidr.split("\\.").size() <> 4 or (number.asInteger() >= 255 or number.asInteger() < 0)) {
+					"error".println();
+					isError = true;
+				}
+			}
+			count = count++;
+		}
+
+		if (subred.cidr.split("\\/").size() <> 2) {
+			isError = true;
+		} else if (subred.cidr.split("\\/")[1].isInteger() = false) {
+			isError = true;
+		} else if (subred.cidr.split("\\/")[1].asInteger() > 32 or subred.cidr.split("\\/")[1].asInteger() < 0 ) {
+			isError = true;
+		}
+		
+		if(isError){
+		subredName = subredName + subred.name +" ";
+		}
+
+	}
+
+	if (isError) {
+		return "la subred CIDR: "+ subredName + "no cumple el estandar";
+	} else {
+		return "No hay errores en CIDR OK";
+	}
+
+}
+
+
+//Punto 2
+operation validateDB(): String {
+var isError = false;
+
+if (Conexion.allInstances().select(c|c.servidor1.isKindOf(ServidorBaseDeDatos) and c.servidor2.isKindOf(ServidorAlmacenamiento)).size() = 0)
+{
+	return "Los servidores de bases de datos no se conectan a ningun servidor de almacenamiento OK";
+}
+else{
+	return "Error Los servidores de bases de datos: se conectan a servidores de almacenamiento";
+}
+
+}
+
+
+//punto 3
+
+operation validateRules(){
+	var result = new List<String>();
+	var reglas = new List<String>(); 
+	reglas.Add(List{"Custom TCP", "TCP", "1024 to 65535"});
+	reglas.Add(List{"Custom UDP", "UDP", "1024 to 65535"});
+	reglas.Add(List{"DNS UDP", "UDP", "53"});
+	reglas.Add(List{"DNS TCP", "TCP", "53"});
+	reglas.Add(List{"HTTP", "TCP", "80"});
+	reglas.Add(List{"HTTPS", "TCP", "443"});
+	reglas.Add(List{"SSH", "TCP", "22"});
+	reglas.Add(List{"NFS", "TCP", "2049"});
+	reglas.Add(List{"PostgresSQL", "TCP", "5432"});
+	reglas.Add(List{"MySQL/Aurora/MariaDB", "TCP", "3306"});
+	reglas.Add(List{"POP3", "TCP", "110"});
+	reglas.Add(List{"IMAP", "TCP", "143"});
+	reglas.Add(List{"LDAP", "TCP", "389"});
+	reglas.Add(List{"SMTP", "TCP", "25"});
+	reglas.Add(List{"Oracle", "TCP", "1521"});
+	
+	
+	for (rule in Rules.allInstances) {
+		for (regla in reglas){
+			if(rule.type = regla[0]){
+				if (regla[0] == "Custom TCP" or regla[0] == "Custom UDP")
+				{
+
+					if (rule.portRange.split("to").size() = 2 )
+					{
+						var port1 = rule.portRange.split("to")[0].trim().asInteger();
+						var port2 = rule.portRange.split("to")[1].trim().asInteger();
+						
+						if (port1 >= 1024 and port1 <= 65535 and port2 >= 1024 and port2 <= 65535){
+						
+							result.Add("la regla " + rule.type + " esta correcta");
+						}else{
+							result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
+						}
+					}
+					else{
+						result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
+					}
+					
+				}else{
+					if(rule.protocol = regla[1] and rule.portRange = regla[2]){
+						result.Add("la regla " + rule.type + " esta correcta");
+					}
+					else{
+						result.Add("la regla " + rule.type + " no cumple con la tabla correcta");
+					}
+				}
+				
+				
+			}
+		}
+	}
+	if (result.size() > 0){
+		return result;	
+	}
+	else{
+		return "No se evaluaron reglas";
+	}
+	
+}
+//punto 4
+operation validateDbByProvider() {
+	var serverName = "";
+	
+	var result = new List<String>();
+	var reglas = new List<String>(); 
+	reglas.Add(List{"AWS", "Relacional", "PostgreSQL"});
+	reglas.Add(List{"AWS", "Relacional", "Oracle"});
+	reglas.Add(List{"AWS", "Relacional", "Aurora"});
+	reglas.Add(List{"AWS", "Relacional", "MariaDB"});
+	reglas.Add(List{"AWS", "Relacional", "MySQL"});
+	reglas.Add(List{"AWS", "Relacional", "SQLServer"});
+	reglas.Add(List{"AWS", "NoSQL", "DocumentDB"});
+	reglas.Add(List{"AWS", "NoSQL", "Dynamo"});
+	reglas.Add(List{"AWS", "NoSQL", "Cassandra"});
+	reglas.Add(List{"AWS", "NoSQL", "Redis"});
+	
+	reglas.Add(List{"GCP", "Relacional", "MySQL"});
+	reglas.Add(List{"GCP", "Relacional", "PostgreSQL"});
+	reglas.Add(List{"GCP", "Relacional", "SQLServer"});
+	reglas.Add(List{"GCP", "NoSQL", "Cloud Big table"});
+	reglas.Add(List{"GCP", "NoSQL", "Cloud memory store (Redis)"});
+	reglas.Add(List{"GCP", "NoSQL", "Cloud firestore"});
+	reglas.Add(List{"GCP", "NoSQL", "Firebase realtime database"});
+	
+	
+	for (proveedor in Infraestructura.allInstances) {
+		
+		var p = proveedor.tipo.name;
+		for (servidor in proveedor.ambientesdesplegue.servidores.flatten()){
+			
+			if(servidor.isTypeOf(ServidorBaseDeDatos)){
+				
+				var sm = servidor.sistemaManejador.name;
+				var t = servidor.tipo.name;
+				var existe = false;
+				for (regla in reglas){
+					if(p = regla[0] and t = regla[1] and sm = regla[2]){
+						existe = true;
+						break;
+					}
+				}
+				if (existe = false){
+					return "Error en " + servidor.nombre + " " + t + " " + sm;	
+				}
+			}
+		}
+	}
+	return "OK";
+}
+
+//punto 5
+
+operation validateAZ(){
+	var result = new List<String>();
+	var reglas = new List<String>(); 
+	reglas.Add(List{"AWS", "us-east-2", "EE.UU. Este (Ohio)"});
+	reglas.Add(List{"AWS", "us-east-1", "US East (N. Virginia)"});
+	reglas.Add(List{"AWS", "us-west-1", "EE.UU. Oeste (Norte de California)"});
+	reglas.Add(List{"AWS", "us-west-2", "EE.UU. Oeste (Oregón)"});
+	reglas.Add(List{"AWS", "ap-east-1", "Asia Pacífico (Hong Kong)"});
+	reglas.Add(List{"AWS", "ap-south-1", "Asia Pacífico (Mumbai)"});
+	reglas.Add(List{"AWS", "ap-northeast-3", "Asia Pacífico (Osaka-local)"});
+	reglas.Add(List{"AWS", "ap-northeast-2", "Asia Pacífico (Seúl)"});
+	reglas.Add(List{"AWS", "ap-southeast-1", "Asia Pacífico (Singapur)"});
+	reglas.Add(List{"AWS", "ap-southeast-2", "Asia Pacífico (Sídney)"});
+	reglas.Add(List{"AWS", "ap-northeast-1", "Asia Pacífico (Tokio)"});
+	reglas.Add(List{"AWS", "ca-central-1", "Canadá (Central)"});
+	reglas.Add(List{"AWS", "eu-central-1", "Europa (Fráncfort)"});
+	reglas.Add(List{"AWS", "eu-west-1", "Europa (Irlanda)"});
+	reglas.Add(List{"AWS", "eu-west-2", "Europa (Londres)"});
+	reglas.Add(List{"AWS", "eu-west-3", "Europa (París)"});
+	reglas.Add(List{"AWS", "eu-north-1", "Europa (Estocolmo)"});
+	reglas.Add(List{"AWS", "me-south-1", "Medio Oriente (Baréin)"});
+	reglas.Add(List{"AWS", "sa-east-1", "América del Sur (São Paulo)"});
+	reglas.Add(List{"GCP", "asia-east1", "Condado de Changhua, Taiwán"});
+	reglas.Add(List{"GCP", "asia-east2", "Hong Kong"});
+	reglas.Add(List{"GCP", "asia-northeast1", "Tokio, Japón"});
+	reglas.Add(List{"GCP", "asia-northeast2", "Osaka, Japón"});
+	reglas.Add(List{"GCP", "asia-south1", "Bombay, India"});
+	reglas.Add(List{"GCP", "asia-southeast1", "Jurong West, Singapur"});
+	reglas.Add(List{"GCP", "australia-southeast1", "Sídney, Australia"});
+	reglas.Add(List{"GCP", "europe-north1", "Hamina, Finlandia"});
+	reglas.Add(List{"GCP", "europe-west1", "Saint-Ghislain, Bélgica"});
+	reglas.Add(List{"GCP", "europe-west2", "Londres, Inglaterra, Reino Unido"});
+	reglas.Add(List{"GCP", "europe-west3", "Fráncfort, Alemania"});
+	reglas.Add(List{"GCP", "europe-west4", "Puerto de Ems, Países Bajos"});
+	reglas.Add(List{"GCP", "europe-west6", "Zúrich, Suiza"});
+	reglas.Add(List{"GCP", "northamerica-northeast1", "Montreal, Quebec, Canadá"});
+	reglas.Add(List{"GCP", "southamerica-east1", "Osasco (São Paulo), Brasil"});
+	reglas.Add(List{"GCP", "us-central1", "Council Bluffs, Iowa, EE.UU."});
+	reglas.Add(List{"GCP", "us-east1", "Moncks Corner, Carolina del Sur, EE.UU."});
+	reglas.Add(List{"GCP", "us-east4", "Ashburn, Virginia, EE.UU."});
+	reglas.Add(List{"GCP", "us-west1", "The Dalles, Oregón, EE.UU."});
+	reglas.Add(List{"GCP", "us-west2", "Los Ángeles, California, EE.UU."});
+	
+	
+	var proveedor = Infraestructura.AllInstances.first();
+	if (proveedor.isTypeOf(Infraestructura)) {
+		var azs = proveedor.ambientesdesplegue.flatten().vpc.flatten().collect(i | i.subred).flatten().collect(c | c.az);
+			
+		for (az in azs){
+			var existe = false;
+			for (regla in reglas){
+				if(proveedor.tipo.name = regla[0] and az = regla[1]){
+					existe = true;
+					break;
+				}
+			}
+			if (existe) {
+			result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.tipo.name + " - " + az  + " esta correcta");	
+			}else{
+				result.Add("la combinacion proveedor y zona de disponibilidad " + proveedor.tipo.name + " - " + az  + " no es válida");
+			}
+		}
+		
+		
+		
+	}
+
+	if (result.size() > 0){
+		return result;	
+	}
+	else{
+		return "No se evaluaron reglas";
+	}
+	
+}

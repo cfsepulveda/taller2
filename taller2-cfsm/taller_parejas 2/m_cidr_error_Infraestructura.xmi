@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cloud_computing:Infraestructura xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cloud_computing="https://uniandes.edu.co/cloud_computing" nombreProyecto="infra 1">
+  <logins nombreConexion="login 1" usuario="user" contrasena="pass" accessId="user" secret="pass"/>
+  <ambientesdesplegue alias="ambinte">
+    <servidores xsi:type="cloud_computing:ServidorAlmacenamiento" nombre="almacenamienot 1" vpc="//@ambientesdesplegue.0/@vpc.0" subred="//@ambientesdesplegue.0/@vpc.0/@subred.0" serversecuritygroup="//@securitygroups.0" tamanoInicial="500GB"/>
+    <servidores xsi:type="cloud_computing:ServidorAplicacion" nombre="Ap server 1" vpc="//@ambientesdesplegue.0/@vpc.0" subred="//@ambientesdesplegue.0/@vpc.0/@subred.0" serversecuritygroup="//@securitygroups.0"/>
+    <servidores xsi:type="cloud_computing:ServidorBaseDeDatos" nombre="db1" vpc="//@ambientesdesplegue.0/@vpc.0" subred="//@ambientesdesplegue.0/@vpc.0/@subred.0" serversecuritygroup="//@securitygroups.0"/>
+    <vpc name="vpc1">
+      <subred name="subred1" cidr="172.25.0.1/55" az="us-east-1"/>
+    </vpc>
+    <conexion nombre="app server con almacenamienot" servidor2="//@ambientesdesplegue.0/@servidores.0" servidor1="//@ambientesdesplegue.0/@servidores.1"/>
+    <conexion nombre="app server con database" servidor2="//@ambientesdesplegue.0/@servidores.2" servidor1="//@ambientesdesplegue.0/@servidores.1"/>
+  </ambientesdesplegue>
+  <securitygroups name="sec grou 1" description="sec grou 1">
+    <rulesSG type="Custom TCP" protocol="TCP" portRange="1024 to 6000" Source="Custom TCP" description="entrada varios"/>
+  </securitygroups>
+  <gateway nombre="Gate1" vpc="//@ambientesdesplegue.0/@vpc.0"/>
+</cloud_computing:Infraestructura>
